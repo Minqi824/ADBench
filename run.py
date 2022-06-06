@@ -222,7 +222,7 @@ class RunPipeline():
 
         try:
             # model fitting, currently most of models are implemented to output the anomaly score
-            if self.model_name not in ['SDAD', 'WSGAN', 'DeepSAD', 'FS', 'ResNet', 'FTTransformer']:
+            if self.model_name not in ['DeepSAD', 'ResNet', 'FTTransformer']:
                 # fitting
                 self.clf = self.clf.fit(X_train=self.data['X_train'], y_train=self.data['y_train'],
                                         ratio=sum(self.data['y_test']) / len(self.data['y_test']))

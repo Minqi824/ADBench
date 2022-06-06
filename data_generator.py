@@ -293,7 +293,7 @@ class DataGenerator():
                              ['FashionMNIST_' + str(i) for i in range(10)] +\
                              ['CIFAR10_' + str(i) for i in range(10)] +\
                              ['SVHN_' + str(i) for i in range(10)]:
-            data = np.load(os.path.join('datasets_NLP_CV', self.dataset + '.npz'))
+            data = np.load(os.path.join('datasets', 'NLPCV', self.dataset + '.npz'))
             X = data['X']
             y = data['y']
 
@@ -352,7 +352,7 @@ class DataGenerator():
             # 因为dependency outlier生成的时间太长了, 这边加载了提前生成好的样本(大于3000的数据集抽样到了3000)
             if realistic_synthetic_mode == 'dependency':
                 print('使用了提前生成的dependency outliers...')
-                dataset_dict = np.load('dependency_outlier_large.npz', allow_pickle=True)
+                dataset_dict = np.load(os.path.join('datasets', 'Dependency_outlier', 'dependency_outlier_large.npz'), allow_pickle=True)
                 dataset_dict = dataset_dict['dataset'].item()
 
                 if self.dataset in dataset_dict.keys():
