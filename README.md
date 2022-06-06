@@ -1,39 +1,13 @@
 # ADBench
-Official Implement of "ADBench: Anomaly Detection Benchmark".
+Official Implementation of the paper "ADBench: Anomaly Detection Benchmark".
 
-  ### Quickly Implementation of ADBench
-
-    # 1. 设置路径
-    import os
-    import sys
+  ### Quickly Implement ADBench for Your Customized Algorithm
+    run_customized.ipynb
     
-    os.chdir('...') # 设置成你本地repo的地址
-    sys.path.append('...')
+  ### Reproduce the Results in Our Papers
+    run.py
 
-    # 2. 加载目前已有的模型(如下表**Import**列所示)
-    from baseline.PyOD import PYOD
-
-    # 3. 实例化
-    '''
-    PyOD相关的模型, 以及supervised相关的模型, 需要指定模型名称(如下表**Model**列所示)
-    '''
-    model = PYOD(model_name='...')
-
-    # 4. 训练
-    model.fit(X_train, y_train)
-
-    # 5. 预测
-    score_test = model.predict_score(X_test)
-
-    # 6. 评价
-    from myutils import Utils
-    utils = Utils()
-
-    result = utils.metric(y_true=y_test, y_score=score_test, pos_label=1) # 结果中包含计算的AUC-ROC以及AUC-PR
-
-
-
-  ### Supported Benchmark Algorithms
+  ### Supported Benchmark Algorithms (continuous updating...)
 |  Model  | Paper/Year | Type |  DL  |       Import        |  Source  |
 | :-----: | :--------: | :--: | :--: | :-----------------: | :------: |
 | [MCD]() | xxx, xxx  | Unsupervised |  &cross;   | from baseline.PyOD import PYOD | [Link](https://pyod.readthedocs.io/en/latest/#) |
