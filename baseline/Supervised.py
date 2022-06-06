@@ -10,7 +10,7 @@ from catboost import CatBoostClassifier
 from myutils import Utils
 
 class supervised():
-    def __init__(self, seed:int, model_name:str=None, n_estimators:int=100):
+    def __init__(self, seed:int, model_name:str=None):
         self.seed = seed
         self.utils = Utils()
 

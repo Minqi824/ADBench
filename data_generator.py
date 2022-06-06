@@ -15,55 +15,47 @@ from copulas.univariate import GaussianKDE
 
 from myutils import Utils
 
-# to do: leverage the categorical feature in the current datasets
 # currently, data generator only supports for generating the binary classification datasets
 class DataGenerator():
     def __init__(self, seed:int=42, dataset:str=None, test_size:float=0.3,
-                 generate_duplicates=False, n_samples_threshold=1000, show_statistic=False):
+                 generate_duplicates=True, n_samples_threshold=1000):
         '''
-        Only global parameters should be provided in the DataGenerator instantiation
-
-        seed: seed for reproducible experimental results
-        dataset: dataset name
-        test_size: testing data size
+        :param seed: seed for reproducible results
+        :param dataset: specific the dataset name
+        :param test_size: testing set size
+        :param generate_duplicates: whether to generate duplicated samples when sample size is too small
+        :param n_samples_threshold: threshold for generating the above duplicates, if generate_duplicates is False, then datasets with sample size smaller than n_samples_threshold will be dropped
         '''
 
         self.seed = seed
         self.dataset = dataset
         self.test_size = test_size
 
-        # 当数据量不够时, 是否生成重复样本
         self.generate_duplicates = generate_duplicates
         self.n_samples_threshold = n_samples_threshold
-
-        # 是否展示统计结果
-        self.show_statistic = show_statistic
 
         # myutils function
         self.utils = Utils()
 
-
-    '''
-    By default, generator will generate real-world datasets.
-    However, the realistic synthetic data can be generated, which follows the paper
-    "Benchmarking Unsupervised Outlier Detection with Realistic Synthetic Data"
-
-    realistic_synthetic_mode can be either local or global based on the original paper
-    alpha and percentage are two parameters cited in the paper
-    '''
     def generate_realistic_synthetic(self, X, y, realistic_synthetic_mode, alpha:int, percentage:float):
         '''
-        Currently, three types of realistic synthetic outliers can be generated:
-        1. local outliers: where normal data follows the GMM distribuion, and anomalies follow the GMM distribution with bigger covariance
-        2. dependency outliers: where normal data follows the vine coupula distribution, and anomalies follow the independent distribution captured by GaussianKDE
-        3. global outliers: where normal data follows the GMM distribuion, and anomalies follow the uniform distribution
+        Currently, four types of realistic synthetic outliers can be generated:
+        1. local outliers: where normal data follows the GMM distribuion, and anomalies follow the GMM distribution with modified covariance
+        2. global outliers: where normal data follows the GMM distribuion, and anomalies follow the uniform distribution
+        3. dependency outliers: where normal data follows the vine coupula distribution, and anomalies follow the independent distribution captured by GaussianKDE
+        4. cluster outliers: where normal data follows the GMM distribuion, and anomalies follow the GMM distribution with modified mean
+
+        :param X: input X
+        :param y: input y
+        :param realistic_synthetic_mode: the type of generated outliers
+        :param alpha: the scaling parameter for controling the generated local and cluster anomalies
+        :param percentage: controling the generated global anomalies
         '''
 
         if realistic_synthetic_mode in ['local', 'cluster', 'dependency', 'global']:
             pass
         else:
             raise NotImplementedError
-
 
         # the number of normal data and anomalies
         pts_n = len(np.where(y == 0)[0])
@@ -153,8 +145,7 @@ class DataGenerator():
     Here we also consider the robustness of baseline models, where three types of noise can be added
     1. Duplicated anomalies, which should be added to training and testing set, respectively
     2. Irrelevant features, which should be added to both training and testing set
-    3. Anomaly contamination, which should be only added to the training set
-    4. Label contamination, which should be only added to the training set
+    3. Annotation errors (Label flips), which should be only added to the training set
     '''
     def add_duplicated_anomalies(self, X, y, duplicate_times:int):
         if duplicate_times <= 1:
@@ -163,14 +154,6 @@ class DataGenerator():
             # index of normal and anomaly data
             idx_n = np.where(y==0)[0]
             idx_a = np.where(y==1)[0]
-
-            # # generate duplicated anomalies
-            # pts_a = len(idx_a)
-            # idx_a = np.random.choice(idx_a, ceil(pts_a / duplicate_times))
-            # idx_a = np.random.choice(idx_a, pts_a)
-            #
-            # idx = np.append(idx_n, idx_a); random.shuffle(idx)
-            # X = X[idx]; y = y[idx]
 
             # generate duplicated anomalies
             idx_a = np.random.choice(idx_a, int(len(idx_a) * duplicate_times))
@@ -204,23 +187,10 @@ class DataGenerator():
 
         return X, y
 
-    def remove_anomaly_contamination(self, idx_unlabeled_anomaly, contam_ratio:float):
-        idx_unlabeled_anomaly = np.random.choice(idx_unlabeled_anomaly, int(contam_ratio * len(idx_unlabeled_anomaly)), replace=False)
-        return idx_unlabeled_anomaly
-
     def add_label_contamination(self, X, y, noise_ratio:float):
         if noise_ratio == 0.0:
             pass
         else:
-            # # here we mainly consider the situation where labeled anomalies have contamination, i.e., unlabeled normal data
-            # idx_n = np.where(y==0)[0]
-            # idx_a = np.where(y==1)[0]
-            #
-            # noise_num = int(noise_ratio / (1 - noise_ratio) * len(idx_a))
-            # # here replace is set to true for we observe that some datasets the anomalies are even more than normal data
-            # idx_n_noise = np.random.choice(idx_n, noise_num, replace=True)
-            # y[idx_n_noise] = 1
-
             # here we consider the label flips situation: a label is randomly filpped to another class with probability p (i.e., noise ratio)
             idx_flips = np.random.choice(np.arange(len(y)), int(len(y) * noise_ratio), replace=False)
             y[idx_flips] = 1 - y[idx_flips] # change 0 to 1 and 1 to 0
@@ -315,43 +285,26 @@ class DataGenerator():
         else:
             raise NotImplementedError
 
-        ################################
-        # 如果数据集异常占比过高(超过5%), 异常样本抽样
-        # if (sum(y) / len(y)) > 0.05:
-        #     print(f'数据集{self.dataset}异常占比过大, 正在抽样...')
-        #     self.utils.set_seed(self.seed)
-        #     idx_n = np.where(y==0)[0]
-        #     idx_a = np.where(y==1)[0]
-        #     idx_a = np.random.choice(idx_a, int(0.05 * len(idx_n) / 0.95), replace=False)
-        #
-        #     idx = np.append(idx_n, idx_a)
-        #     random.shuffle(idx)
-        #
-        #     X = X[idx]
-        #     y = y[idx]
-
-        # 如果数据集大小不足, 生成duplicate样本:
+        # if the dataset is too small, generating duplicate smaples up to n_samples_threshold
         if len(y) < self.n_samples_threshold and self.generate_duplicates:
-            print(f'数据集{self.dataset}正在生成duplicate samples...')
+            print(f'generating duplicate samples for dataset {self.dataset}...')
             self.utils.set_seed(self.seed)
             idx_duplicate = np.random.choice(np.arange(len(y)), self.n_samples_threshold, replace=True)
             X = X[idx_duplicate]
             y = y[idx_duplicate]
 
-        # 如果数据集过大, 整体样本抽样
+        # if the dataset is too large, subsampling for considering the computational cost
         if len(y) > 10000:
-            print(f'数据集{self.dataset}数据量过大, 正在抽样...')
+            print(f'subsampling for dataset {self.dataset}...')
             self.utils.set_seed(self.seed)
             idx_sample = np.random.choice(np.arange(len(y)), 10000, replace=False)
             X = X[idx_sample]
             y = y[idx_sample]
-        ################################
 
         # whether to generate realistic synthetic outliers
         if realistic_synthetic_mode is not None:
-            # 因为dependency outlier生成的时间太长了, 这边加载了提前生成好的样本(大于3000的数据集抽样到了3000)
+            # we generate the dependency anomalies in advance, since the Vine Copula could spend too long for generation
             if realistic_synthetic_mode == 'dependency':
-                print('使用了提前生成的dependency outliers...')
                 dataset_dict = np.load(os.path.join('datasets', 'Dependency_outlier', 'dependency_outlier_large.npz'), allow_pickle=True)
                 dataset_dict = dataset_dict['dataset'].item()
 
@@ -375,9 +328,6 @@ class DataGenerator():
 
         elif noise_type == 'irrelevant_features':
             X, y = self.add_irrelevant_features(X, y, noise_ratio=noise_ratio)
-
-        elif noise_type == 'anomaly_contamination':
-            pass
 
         elif noise_type == 'label_contamination':
             pass
@@ -418,7 +368,7 @@ class DataGenerator():
                 idx_labeled_anomaly = np.random.choice(idx_anomaly, int(la * len(idx_anomaly)), replace=False)
         elif type(la) == int:
             if la > len(idx_anomaly):
-                raise AssertionError(f'设置的nla超过了异常样本的总数:{len(idx_anomaly)}')
+                raise AssertionError(f'the number of labeled anomalies are greater than the total anomalies: {len(idx_anomaly)} !')
             else:
                 idx_labeled_anomaly = np.random.choice(idx_anomaly, la, replace=False)
         else:
@@ -438,106 +388,4 @@ class DataGenerator():
         y_train[idx_unlabeled] = 0
         y_train[idx_labeled_anomaly] = 1
 
-        return {'X_train':X_train, 'y_train':y_train, 'X_test':X_test, 'y_test':y_test,
-                'n_labeled_anomalies':n_labeled_anomalies}
-
-    # generate out-of-distribution dataset (to do)
-    def generator_OOD(self,
-                      ID_num: int=2, OOD_ratio: float=0.5,
-                      n_samples_train=7000, n_samples_test=3000, anomaly_ratio=0.01):
-        '''
-        ID_num: number of in-distribution anomaly classes in the training set
-        OOD_ratio: the out-of-distribution anomaly ratio in the testing set
-        n_samples_train: the training set size
-        n_samples_test: the testing set size
-        '''
-
-        # kddcup99 data
-        data_org = pd.read_csv(os.path.join('datasets_unprocessed', 'kddcup99.csv'))
-
-        #观察所有类别分布
-        if self.show_statistic:
-            classes = list(data_org['label'].drop_duplicates())
-            for i in range(len(classes)):
-                print(f"class: {classes[i]}, count: {data_org[data_org['label']==classes[i]].shape[0]}")
-
-        #set seed and shuffle
-        self.utils.set_seed(self.seed)
-        data = data_org.sample(frac=1).reset_index(drop=True)
-
-        # global parameters
-        anomaly_class_pool = data['label'].drop_duplicates().values
-        anomaly_class_pool = [_ for _ in anomaly_class_pool if _ != 'normal.' and sum(data['label']==_) >=
-                              int((n_samples_train+n_samples_test)*anomaly_ratio)]
-
-        # ID anomaly class pool(从总共的异常类别中抽取几个作为in distribution的异常)
-        anomaly_class_ID_pool = list(combinations(anomaly_class_pool, self.ID_num))
-
-        # ID anomaly class, 从所有的ID异常类别中随机抽取一种情况
-        anomaly_class_ID = list(anomaly_class_ID_pool[np.random.choice(np.arange(len(anomaly_class_ID_pool)), 1)[0]])
-        # OOD anomaly class
-        anomaly_class_OOD = list(set(anomaly_class_pool) - set(anomaly_class_ID))
-
-        if self.show_statistic:
-            print(f'ID 异常类别: {anomaly_class_ID}; OOD 异常类别: {anomaly_class_OOD}')
-
-        # sampling for the normal samples
-        idx_normal = np.where(data['label'] == 'normal.')[0]
-        # normal samples of training set
-        idx_normal_train = np.random.choice(idx_normal, int(n_samples_train * (1-anomaly_ratio)), replace=False)
-        # normal samples of testing set
-        idx_normal_test = np.random.choice(np.setdiff1d(idx_normal, idx_normal_train),
-                                           int(n_samples_test * (1-anomaly_ratio)), replace=False)
-
-        # in the training set, all anomalies are in-distribution anomaly class
-        # in the testing set, half of the anomalies are in-distribution and another half are out-of-distribution
-
-        # the index of in-distribution anomalies
-        idx_anomalies_ID = []
-        for c in anomaly_class_ID:
-            idx_anomalies_ID.extend(list(np.where(data['label'] == c)[0]))
-
-        # the index of out-of-distribution anomalies
-        idx_anomalies_OOD = []
-        for c in anomaly_class_OOD:
-            idx_anomalies_OOD.extend(list(np.where(data['label'] == c)[0]))
-
-        # to array
-        idx_anomalies_ID = np.array(idx_anomalies_ID)
-        idx_anomalies_OOD = np.array(idx_anomalies_OOD)
-
-        # training set anomalies
-        idx_anomalies_ID_train = np.random.choice(idx_anomalies_ID, int(n_samples_train*anomaly_ratio), replace=False)
-
-        idx_anomalies_ID_test = np.random.choice(np.setdiff1d(idx_anomalies_ID, idx_anomalies_ID_train),
-                                                 int(n_samples_test * anomaly_ratio * (1 - self.OOD_ratio)), replace=False)
-        idx_anomalies_OOD_test =np.random.choice(idx_anomalies_OOD,
-                                                 int(n_samples_test * anomaly_ratio * self.OOD_ratio), replace=False)
-
-        idx_train = np.concatenate([idx_normal_train, idx_anomalies_ID_train])
-        idx_test = np.concatenate([idx_normal_test, idx_anomalies_ID_test, idx_anomalies_OOD_test])
-
-        # combine
-        y_train = np.append(np.repeat(0, len(idx_normal_train)),
-                            np.repeat(1, len(idx_anomalies_ID_train)))
-        X_train = data.drop(['label'], axis=1).values[idx_train]
-
-        y_test = np.append(np.repeat(0, len(idx_normal_test)),
-                           np.repeat(1, len(idx_anomalies_ID_test) + len(idx_anomalies_OOD_test)))
-        X_test = data.drop(['label'], axis=1).values[idx_test]
-
-        # shuffle idx
-        self.utils.set_seed(self.seed)
-        idx_train = np.random.choice(np.arange(len(idx_train)), len(idx_train), replace=False)
-        idx_test = np.random.choice(np.arange(len(idx_test)), len(idx_test), replace=False)
-
-        X_train = X_train[idx_train]; y_train = y_train[idx_train]
-        X_test = X_test[idx_test]; y_test = y_test[idx_test]
-
-        # minmax scaling
-        scaler = MinMaxScaler().fit(X_train)
-        X_train = scaler.transform(X_train)
-        X_test = scaler.transform(X_test)
-
-        return {'X_train': X_train, 'y_train': y_train, 'X_test': X_test, 'y_test': y_test}
-
+        return {'X_train':X_train, 'y_train':y_train, 'X_test':X_test, 'y_test':y_test}

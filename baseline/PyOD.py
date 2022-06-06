@@ -39,6 +39,11 @@ except Exception as error:
 
 class PYOD():
     def __init__(self, seed, model_name, tune=False):
+        '''
+        :param seed: seed for reproducible results
+        :param model_name: model name
+        :param tune: if necessary, tune the hyper-parameter based on the validation set constructed by the labeled anomalies
+        '''
         self.seed = seed
         self.utils = Utils()
 
