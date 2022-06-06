@@ -1,0 +1,1158 @@
+2021-09-12 16:39:37,251 - root - INFO - Log file is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD/log.txt
+2021-09-12 16:39:37,251 - root - INFO - Export path is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD
+2021-09-12 16:39:37,251 - root - INFO - Dataset: annthyroid
+2021-09-12 16:39:37,251 - root - INFO - Network: annthyroid_mlp
+2021-09-12 16:39:37,251 - root - INFO - Eta-parameter: 1.00
+2021-09-12 16:39:37,254 - root - INFO - Set seed to 1.
+2021-09-12 16:39:37,254 - root - INFO - Computation device: cpu
+2021-09-12 16:39:37,254 - root - INFO - Number of threads: 0
+2021-09-12 16:39:37,254 - root - INFO - Number of dataloader workers: 0
+2021-09-12 16:39:37,314 - root - INFO - Pretraining: False
+2021-09-12 16:39:37,314 - root - INFO - Training optimizer: adam
+2021-09-12 16:39:37,314 - root - INFO - Training learning rate: 0.001
+2021-09-12 16:39:37,314 - root - INFO - Training epochs: 50
+2021-09-12 16:39:37,314 - root - INFO - Training learning rate scheduler milestones: [25]
+2021-09-12 16:39:37,314 - root - INFO - Training batch size: 128
+2021-09-12 16:39:37,314 - root - INFO - Training weight decay: 1e-06
+2021-09-12 16:39:37,317 - root - INFO - Initializing center c...
+2021-09-12 16:39:37,431 - root - INFO - Center c initialized.
+2021-09-12 16:39:37,431 - root - INFO - Starting training...
+2021-09-12 16:39:37,647 - root - INFO - | Epoch: 001/050 | Train Time: 0.216s | Train Loss: 0.240723 |
+2021-09-12 16:39:37,882 - root - INFO - | Epoch: 002/050 | Train Time: 0.234s | Train Loss: 0.153688 |
+2021-09-12 16:39:38,122 - root - INFO - | Epoch: 003/050 | Train Time: 0.240s | Train Loss: 0.138678 |
+2021-09-12 16:39:38,375 - root - INFO - | Epoch: 004/050 | Train Time: 0.253s | Train Loss: 0.132386 |
+2021-09-12 16:39:38,605 - root - INFO - | Epoch: 005/050 | Train Time: 0.229s | Train Loss: 0.126873 |
+2021-09-12 16:39:38,857 - root - INFO - | Epoch: 006/050 | Train Time: 0.252s | Train Loss: 0.122203 |
+2021-09-12 16:39:39,081 - root - INFO - | Epoch: 007/050 | Train Time: 0.222s | Train Loss: 0.119270 |
+2021-09-12 16:39:39,308 - root - INFO - | Epoch: 008/050 | Train Time: 0.226s | Train Loss: 0.108545 |
+2021-09-12 16:39:39,540 - root - INFO - | Epoch: 009/050 | Train Time: 0.232s | Train Loss: 0.110858 |
+2021-09-12 16:39:39,758 - root - INFO - | Epoch: 010/050 | Train Time: 0.216s | Train Loss: 0.104260 |
+2021-09-12 16:39:39,985 - root - INFO - | Epoch: 011/050 | Train Time: 0.227s | Train Loss: 0.101879 |
+2021-09-12 16:39:40,222 - root - INFO - | Epoch: 012/050 | Train Time: 0.236s | Train Loss: 0.105879 |
+2021-09-12 16:39:40,465 - root - INFO - | Epoch: 013/050 | Train Time: 0.242s | Train Loss: 0.097575 |
+2021-09-12 16:39:40,699 - root - INFO - | Epoch: 014/050 | Train Time: 0.234s | Train Loss: 0.095464 |
+2021-09-12 16:39:40,936 - root - INFO - | Epoch: 015/050 | Train Time: 0.236s | Train Loss: 0.094551 |
+2021-09-12 16:39:41,169 - root - INFO - | Epoch: 016/050 | Train Time: 0.233s | Train Loss: 0.095857 |
+2021-09-12 16:39:41,395 - root - INFO - | Epoch: 017/050 | Train Time: 0.226s | Train Loss: 0.089460 |
+2021-09-12 16:39:41,635 - root - INFO - | Epoch: 018/050 | Train Time: 0.238s | Train Loss: 0.091580 |
+2021-09-12 16:39:41,877 - root - INFO - | Epoch: 019/050 | Train Time: 0.241s | Train Loss: 0.089794 |
+2021-09-12 16:39:42,119 - root - INFO - | Epoch: 020/050 | Train Time: 0.242s | Train Loss: 0.089967 |
+2021-09-12 16:39:42,364 - root - INFO - | Epoch: 021/050 | Train Time: 0.244s | Train Loss: 0.088392 |
+2021-09-12 16:39:42,602 - root - INFO - | Epoch: 022/050 | Train Time: 0.238s | Train Loss: 0.087363 |
+2021-09-12 16:39:42,837 - root - INFO - | Epoch: 023/050 | Train Time: 0.234s | Train Loss: 0.089213 |
+2021-09-12 16:40:08,601 - root - INFO - Log file is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD/log.txt
+2021-09-12 16:40:08,602 - root - INFO - Export path is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD
+2021-09-12 16:40:08,602 - root - INFO - Dataset: annthyroid
+2021-09-12 16:40:08,602 - root - INFO - Network: annthyroid_mlp
+2021-09-12 16:40:08,602 - root - INFO - Eta-parameter: 1.00
+2021-09-12 16:40:08,604 - root - INFO - Set seed to 1.
+2021-09-12 16:40:08,605 - root - INFO - Computation device: cpu
+2021-09-12 16:40:08,605 - root - INFO - Number of threads: 0
+2021-09-12 16:40:08,605 - root - INFO - Number of dataloader workers: 0
+2021-09-12 16:40:08,664 - root - INFO - Pretraining: False
+2021-09-12 16:40:08,664 - root - INFO - Training optimizer: adam
+2021-09-12 16:40:08,664 - root - INFO - Training learning rate: 0.001
+2021-09-12 16:40:08,664 - root - INFO - Training epochs: 50
+2021-09-12 16:40:08,665 - root - INFO - Training learning rate scheduler milestones: [25]
+2021-09-12 16:40:08,665 - root - INFO - Training batch size: 128
+2021-09-12 16:40:08,665 - root - INFO - Training weight decay: 1e-06
+2021-09-12 16:40:08,665 - root - INFO - Initializing center c...
+2021-09-12 16:40:08,779 - root - INFO - Center c initialized.
+2021-09-12 16:40:08,779 - root - INFO - Starting training...
+2021-09-12 16:40:08,990 - root - INFO - | Epoch: 001/050 | Train Time: 0.210s | Train Loss: 0.240723 |
+2021-09-12 16:40:09,203 - root - INFO - | Epoch: 002/050 | Train Time: 0.213s | Train Loss: 0.153688 |
+2021-09-12 16:40:09,417 - root - INFO - | Epoch: 003/050 | Train Time: 0.214s | Train Loss: 0.138678 |
+2021-09-12 16:40:09,641 - root - INFO - | Epoch: 004/050 | Train Time: 0.223s | Train Loss: 0.132386 |
+2021-09-12 16:40:09,874 - root - INFO - | Epoch: 005/050 | Train Time: 0.233s | Train Loss: 0.126873 |
+2021-09-12 16:40:10,109 - root - INFO - | Epoch: 006/050 | Train Time: 0.234s | Train Loss: 0.122203 |
+2021-09-12 16:40:10,351 - root - INFO - | Epoch: 007/050 | Train Time: 0.242s | Train Loss: 0.119270 |
+2021-09-12 16:40:10,589 - root - INFO - | Epoch: 008/050 | Train Time: 0.238s | Train Loss: 0.108545 |
+2021-09-12 16:40:10,820 - root - INFO - | Epoch: 009/050 | Train Time: 0.230s | Train Loss: 0.110858 |
+2021-09-12 16:40:11,041 - root - INFO - | Epoch: 010/050 | Train Time: 0.221s | Train Loss: 0.104260 |
+2021-09-12 16:40:11,292 - root - INFO - | Epoch: 011/050 | Train Time: 0.251s | Train Loss: 0.101879 |
+2021-09-12 16:40:11,563 - root - INFO - | Epoch: 012/050 | Train Time: 0.268s | Train Loss: 0.105879 |
+2021-09-12 16:40:11,833 - root - INFO - | Epoch: 013/050 | Train Time: 0.270s | Train Loss: 0.097575 |
+2021-09-12 16:40:12,109 - root - INFO - | Epoch: 014/050 | Train Time: 0.276s | Train Loss: 0.095464 |
+2021-09-12 16:40:12,361 - root - INFO - | Epoch: 015/050 | Train Time: 0.251s | Train Loss: 0.094551 |
+2021-09-12 16:40:12,606 - root - INFO - | Epoch: 016/050 | Train Time: 0.244s | Train Loss: 0.095857 |
+2021-09-12 16:40:12,850 - root - INFO - | Epoch: 017/050 | Train Time: 0.244s | Train Loss: 0.089460 |
+2021-09-12 16:40:13,089 - root - INFO - | Epoch: 018/050 | Train Time: 0.237s | Train Loss: 0.091580 |
+2021-09-12 16:40:13,320 - root - INFO - | Epoch: 019/050 | Train Time: 0.231s | Train Loss: 0.089794 |
+2021-09-12 16:40:13,545 - root - INFO - | Epoch: 020/050 | Train Time: 0.225s | Train Loss: 0.089967 |
+2021-09-12 16:40:13,785 - root - INFO - | Epoch: 021/050 | Train Time: 0.239s | Train Loss: 0.088392 |
+2021-09-12 16:40:13,999 - root - INFO - | Epoch: 022/050 | Train Time: 0.213s | Train Loss: 0.087363 |
+2021-09-12 16:40:14,219 - root - INFO - | Epoch: 023/050 | Train Time: 0.219s | Train Loss: 0.089213 |
+2021-09-12 16:40:14,437 - root - INFO - | Epoch: 024/050 | Train Time: 0.218s | Train Loss: 0.086109 |
+2021-09-12 16:40:14,657 - root - INFO - | Epoch: 025/050 | Train Time: 0.220s | Train Loss: 0.084148 |
+2021-09-12 16:40:14,663 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,672 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,680 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,686 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,693 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,698 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,705 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,711 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,717 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,723 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,729 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,735 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,742 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,749 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,755 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,760 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,767 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,773 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,779 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,785 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,791 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,796 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,803 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,808 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,814 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,820 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,825 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,831 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,836 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,842 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,848 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,853 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,860 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,865 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,871 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,877 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,883 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,889 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,896 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:14,896 - root - INFO - | Epoch: 026/050 | Train Time: 0.238s | Train Loss: 0.079778 |
+2021-09-12 16:40:15,121 - root - INFO - | Epoch: 027/050 | Train Time: 0.225s | Train Loss: 0.082882 |
+2021-09-12 16:40:15,350 - root - INFO - | Epoch: 028/050 | Train Time: 0.228s | Train Loss: 0.080053 |
+2021-09-12 16:40:15,589 - root - INFO - | Epoch: 029/050 | Train Time: 0.238s | Train Loss: 0.087090 |
+2021-09-12 16:40:15,817 - root - INFO - | Epoch: 030/050 | Train Time: 0.228s | Train Loss: 0.085987 |
+2021-09-12 16:40:16,046 - root - INFO - | Epoch: 031/050 | Train Time: 0.228s | Train Loss: 0.080687 |
+2021-09-12 16:40:16,286 - root - INFO - | Epoch: 032/050 | Train Time: 0.238s | Train Loss: 0.086067 |
+2021-09-12 16:40:16,533 - root - INFO - | Epoch: 033/050 | Train Time: 0.247s | Train Loss: 0.080507 |
+2021-09-12 16:40:16,782 - root - INFO - | Epoch: 034/050 | Train Time: 0.248s | Train Loss: 0.076167 |
+2021-09-12 16:40:17,035 - root - INFO - | Epoch: 035/050 | Train Time: 0.253s | Train Loss: 0.073381 |
+2021-09-12 16:40:17,298 - root - INFO - | Epoch: 036/050 | Train Time: 0.263s | Train Loss: 0.073748 |
+2021-09-12 16:40:17,537 - root - INFO - | Epoch: 037/050 | Train Time: 0.238s | Train Loss: 0.080515 |
+2021-09-12 16:40:17,777 - root - INFO - | Epoch: 038/050 | Train Time: 0.239s | Train Loss: 0.072875 |
+2021-09-12 16:40:18,049 - root - INFO - | Epoch: 039/050 | Train Time: 0.272s | Train Loss: 0.071664 |
+2021-09-12 16:40:18,288 - root - INFO - | Epoch: 040/050 | Train Time: 0.238s | Train Loss: 0.070943 |
+2021-09-12 16:40:18,529 - root - INFO - | Epoch: 041/050 | Train Time: 0.241s | Train Loss: 0.078633 |
+2021-09-12 16:40:18,758 - root - INFO - | Epoch: 042/050 | Train Time: 0.229s | Train Loss: 0.070894 |
+2021-09-12 16:40:18,987 - root - INFO - | Epoch: 043/050 | Train Time: 0.227s | Train Loss: 0.074155 |
+2021-09-12 16:40:19,224 - root - INFO - | Epoch: 044/050 | Train Time: 0.236s | Train Loss: 0.073862 |
+2021-09-12 16:40:19,486 - root - INFO - | Epoch: 045/050 | Train Time: 0.262s | Train Loss: 0.074143 |
+2021-09-12 16:40:19,769 - root - INFO - | Epoch: 046/050 | Train Time: 0.282s | Train Loss: 0.074477 |
+2021-09-12 16:40:20,056 - root - INFO - | Epoch: 047/050 | Train Time: 0.287s | Train Loss: 0.072630 |
+2021-09-12 16:40:20,395 - root - INFO - | Epoch: 048/050 | Train Time: 0.339s | Train Loss: 0.078039 |
+2021-09-12 16:40:20,681 - root - INFO - | Epoch: 049/050 | Train Time: 0.286s | Train Loss: 0.074994 |
+2021-09-12 16:40:20,936 - root - INFO - | Epoch: 050/050 | Train Time: 0.254s | Train Loss: 0.074318 |
+2021-09-12 16:40:20,936 - root - INFO - Training Time: 12.156s
+2021-09-12 16:40:20,936 - root - INFO - Finished training.
+2021-09-12 16:40:20,937 - root - INFO - Starting testing...
+2021-09-12 16:40:21,017 - root - INFO - Test Loss: 0.039842
+2021-09-12 16:40:21,017 - root - INFO - Test AUCROC: 79.20%
+2021-09-12 16:40:21,017 - root - INFO - Test AUCPR: 35.62%
+2021-09-12 16:40:21,017 - root - INFO - Test Time: 0.075s
+2021-09-12 16:40:21,017 - root - INFO - Finished testing.
+2021-09-12 16:40:21,021 - root - INFO - Log file is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD/log.txt
+2021-09-12 16:40:21,021 - root - INFO - Log file is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD/log.txt
+2021-09-12 16:40:21,022 - root - INFO - Export path is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD
+2021-09-12 16:40:21,022 - root - INFO - Export path is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD
+2021-09-12 16:40:21,022 - root - INFO - Dataset: annthyroid
+2021-09-12 16:40:21,022 - root - INFO - Dataset: annthyroid
+2021-09-12 16:40:21,022 - root - INFO - Network: annthyroid_mlp
+2021-09-12 16:40:21,022 - root - INFO - Network: annthyroid_mlp
+2021-09-12 16:40:21,022 - root - INFO - Eta-parameter: 1.00
+2021-09-12 16:40:21,022 - root - INFO - Eta-parameter: 1.00
+2021-09-12 16:40:21,026 - root - INFO - Set seed to 2.
+2021-09-12 16:40:21,026 - root - INFO - Set seed to 2.
+2021-09-12 16:40:21,026 - root - INFO - Computation device: cpu
+2021-09-12 16:40:21,026 - root - INFO - Computation device: cpu
+2021-09-12 16:40:21,026 - root - INFO - Number of threads: 0
+2021-09-12 16:40:21,026 - root - INFO - Number of threads: 0
+2021-09-12 16:40:21,027 - root - INFO - Number of dataloader workers: 0
+2021-09-12 16:40:21,027 - root - INFO - Number of dataloader workers: 0
+2021-09-12 16:40:21,114 - root - INFO - Pretraining: False
+2021-09-12 16:40:21,114 - root - INFO - Pretraining: False
+2021-09-12 16:40:21,114 - root - INFO - Training optimizer: adam
+2021-09-12 16:40:21,114 - root - INFO - Training optimizer: adam
+2021-09-12 16:40:21,115 - root - INFO - Training learning rate: 0.001
+2021-09-12 16:40:21,115 - root - INFO - Training learning rate: 0.001
+2021-09-12 16:40:21,115 - root - INFO - Training epochs: 50
+2021-09-12 16:40:21,115 - root - INFO - Training epochs: 50
+2021-09-12 16:40:21,115 - root - INFO - Training learning rate scheduler milestones: [25]
+2021-09-12 16:40:21,115 - root - INFO - Training learning rate scheduler milestones: [25]
+2021-09-12 16:40:21,115 - root - INFO - Training batch size: 128
+2021-09-12 16:40:21,115 - root - INFO - Training batch size: 128
+2021-09-12 16:40:21,115 - root - INFO - Training weight decay: 1e-06
+2021-09-12 16:40:21,115 - root - INFO - Training weight decay: 1e-06
+2021-09-12 16:40:21,116 - root - INFO - Initializing center c...
+2021-09-12 16:40:21,116 - root - INFO - Initializing center c...
+2021-09-12 16:40:21,338 - root - INFO - Center c initialized.
+2021-09-12 16:40:21,338 - root - INFO - Center c initialized.
+2021-09-12 16:40:21,338 - root - INFO - Starting training...
+2021-09-12 16:40:21,338 - root - INFO - Starting training...
+2021-09-12 16:40:21,571 - root - INFO - | Epoch: 001/050 | Train Time: 0.232s | Train Loss: 0.281927 |
+2021-09-12 16:40:21,571 - root - INFO - | Epoch: 001/050 | Train Time: 0.232s | Train Loss: 0.281927 |
+2021-09-12 16:40:21,795 - root - INFO - | Epoch: 002/050 | Train Time: 0.224s | Train Loss: 0.162525 |
+2021-09-12 16:40:21,795 - root - INFO - | Epoch: 002/050 | Train Time: 0.224s | Train Loss: 0.162525 |
+2021-09-12 16:40:22,044 - root - INFO - | Epoch: 003/050 | Train Time: 0.248s | Train Loss: 0.141487 |
+2021-09-12 16:40:22,044 - root - INFO - | Epoch: 003/050 | Train Time: 0.248s | Train Loss: 0.141487 |
+2021-09-12 16:40:22,291 - root - INFO - | Epoch: 004/050 | Train Time: 0.246s | Train Loss: 0.128267 |
+2021-09-12 16:40:22,291 - root - INFO - | Epoch: 004/050 | Train Time: 0.246s | Train Loss: 0.128267 |
+2021-09-12 16:40:22,559 - root - INFO - | Epoch: 005/050 | Train Time: 0.268s | Train Loss: 0.118879 |
+2021-09-12 16:40:22,559 - root - INFO - | Epoch: 005/050 | Train Time: 0.268s | Train Loss: 0.118879 |
+2021-09-12 16:40:22,967 - root - INFO - | Epoch: 006/050 | Train Time: 0.408s | Train Loss: 0.111385 |
+2021-09-12 16:40:22,967 - root - INFO - | Epoch: 006/050 | Train Time: 0.408s | Train Loss: 0.111385 |
+2021-09-12 16:40:23,368 - root - INFO - | Epoch: 007/050 | Train Time: 0.401s | Train Loss: 0.102580 |
+2021-09-12 16:40:23,368 - root - INFO - | Epoch: 007/050 | Train Time: 0.401s | Train Loss: 0.102580 |
+2021-09-12 16:40:23,677 - root - INFO - | Epoch: 008/050 | Train Time: 0.309s | Train Loss: 0.098958 |
+2021-09-12 16:40:23,677 - root - INFO - | Epoch: 008/050 | Train Time: 0.309s | Train Loss: 0.098958 |
+2021-09-12 16:40:23,947 - root - INFO - | Epoch: 009/050 | Train Time: 0.270s | Train Loss: 0.090400 |
+2021-09-12 16:40:23,947 - root - INFO - | Epoch: 009/050 | Train Time: 0.270s | Train Loss: 0.090400 |
+2021-09-12 16:40:24,183 - root - INFO - | Epoch: 010/050 | Train Time: 0.234s | Train Loss: 0.087483 |
+2021-09-12 16:40:24,183 - root - INFO - | Epoch: 010/050 | Train Time: 0.234s | Train Loss: 0.087483 |
+2021-09-12 16:40:24,432 - root - INFO - | Epoch: 011/050 | Train Time: 0.249s | Train Loss: 0.087323 |
+2021-09-12 16:40:24,432 - root - INFO - | Epoch: 011/050 | Train Time: 0.249s | Train Loss: 0.087323 |
+2021-09-12 16:40:24,702 - root - INFO - | Epoch: 012/050 | Train Time: 0.270s | Train Loss: 0.084788 |
+2021-09-12 16:40:24,702 - root - INFO - | Epoch: 012/050 | Train Time: 0.270s | Train Loss: 0.084788 |
+2021-09-12 16:40:25,005 - root - INFO - | Epoch: 013/050 | Train Time: 0.303s | Train Loss: 0.080046 |
+2021-09-12 16:40:25,005 - root - INFO - | Epoch: 013/050 | Train Time: 0.303s | Train Loss: 0.080046 |
+2021-09-12 16:40:25,270 - root - INFO - | Epoch: 014/050 | Train Time: 0.263s | Train Loss: 0.078479 |
+2021-09-12 16:40:25,270 - root - INFO - | Epoch: 014/050 | Train Time: 0.263s | Train Loss: 0.078479 |
+2021-09-12 16:40:25,527 - root - INFO - | Epoch: 015/050 | Train Time: 0.257s | Train Loss: 0.081471 |
+2021-09-12 16:40:25,527 - root - INFO - | Epoch: 015/050 | Train Time: 0.257s | Train Loss: 0.081471 |
+2021-09-12 16:40:25,751 - root - INFO - | Epoch: 016/050 | Train Time: 0.224s | Train Loss: 0.074919 |
+2021-09-12 16:40:25,751 - root - INFO - | Epoch: 016/050 | Train Time: 0.224s | Train Loss: 0.074919 |
+2021-09-12 16:40:26,118 - root - INFO - | Epoch: 017/050 | Train Time: 0.366s | Train Loss: 0.073878 |
+2021-09-12 16:40:26,118 - root - INFO - | Epoch: 017/050 | Train Time: 0.366s | Train Loss: 0.073878 |
+2021-09-12 16:40:26,429 - root - INFO - | Epoch: 018/050 | Train Time: 0.310s | Train Loss: 0.073375 |
+2021-09-12 16:40:26,429 - root - INFO - | Epoch: 018/050 | Train Time: 0.310s | Train Loss: 0.073375 |
+2021-09-12 16:40:26,735 - root - INFO - | Epoch: 019/050 | Train Time: 0.305s | Train Loss: 0.068852 |
+2021-09-12 16:40:26,735 - root - INFO - | Epoch: 019/050 | Train Time: 0.305s | Train Loss: 0.068852 |
+2021-09-12 16:40:27,027 - root - INFO - | Epoch: 020/050 | Train Time: 0.292s | Train Loss: 0.067691 |
+2021-09-12 16:40:27,027 - root - INFO - | Epoch: 020/050 | Train Time: 0.292s | Train Loss: 0.067691 |
+2021-09-12 16:40:27,289 - root - INFO - | Epoch: 021/050 | Train Time: 0.261s | Train Loss: 0.064448 |
+2021-09-12 16:40:27,289 - root - INFO - | Epoch: 021/050 | Train Time: 0.261s | Train Loss: 0.064448 |
+2021-09-12 16:40:27,592 - root - INFO - | Epoch: 022/050 | Train Time: 0.302s | Train Loss: 0.069171 |
+2021-09-12 16:40:27,592 - root - INFO - | Epoch: 022/050 | Train Time: 0.302s | Train Loss: 0.069171 |
+2021-09-12 16:40:27,880 - root - INFO - | Epoch: 023/050 | Train Time: 0.287s | Train Loss: 0.066765 |
+2021-09-12 16:40:27,880 - root - INFO - | Epoch: 023/050 | Train Time: 0.287s | Train Loss: 0.066765 |
+2021-09-12 16:40:28,142 - root - INFO - | Epoch: 024/050 | Train Time: 0.261s | Train Loss: 0.072441 |
+2021-09-12 16:40:28,142 - root - INFO - | Epoch: 024/050 | Train Time: 0.261s | Train Loss: 0.072441 |
+2021-09-12 16:40:28,419 - root - INFO - | Epoch: 025/050 | Train Time: 0.277s | Train Loss: 0.070703 |
+2021-09-12 16:40:28,419 - root - INFO - | Epoch: 025/050 | Train Time: 0.277s | Train Loss: 0.070703 |
+2021-09-12 16:40:28,427 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,427 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,434 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,434 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,442 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,442 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,449 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,449 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,457 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,457 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,465 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,465 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,472 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,472 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,480 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,480 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,490 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,490 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,500 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,500 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,511 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,511 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,521 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,521 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,531 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,531 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,541 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,541 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,549 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,549 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,558 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,558 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,575 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,575 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,592 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,592 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,605 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,605 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,617 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,617 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,628 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,628 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,643 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,643 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,653 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,653 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,663 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,663 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,673 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,673 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,687 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,687 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,699 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,699 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,709 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,709 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,723 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,723 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,737 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,737 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,763 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,763 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,778 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,778 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,790 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,790 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,800 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,800 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,813 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,813 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,825 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,825 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,836 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,836 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,851 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,851 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,862 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,862 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:28,862 - root - INFO - | Epoch: 026/050 | Train Time: 0.443s | Train Loss: 0.064602 |
+2021-09-12 16:40:28,862 - root - INFO - | Epoch: 026/050 | Train Time: 0.443s | Train Loss: 0.064602 |
+2021-09-12 16:40:29,319 - root - INFO - | Epoch: 027/050 | Train Time: 0.456s | Train Loss: 0.073801 |
+2021-09-12 16:40:29,319 - root - INFO - | Epoch: 027/050 | Train Time: 0.456s | Train Loss: 0.073801 |
+2021-09-12 16:40:29,740 - root - INFO - | Epoch: 028/050 | Train Time: 0.420s | Train Loss: 0.064828 |
+2021-09-12 16:40:29,740 - root - INFO - | Epoch: 028/050 | Train Time: 0.420s | Train Loss: 0.064828 |
+2021-09-12 16:40:30,389 - root - INFO - | Epoch: 029/050 | Train Time: 0.648s | Train Loss: 0.068318 |
+2021-09-12 16:40:30,389 - root - INFO - | Epoch: 029/050 | Train Time: 0.648s | Train Loss: 0.068318 |
+2021-09-12 16:40:30,885 - root - INFO - | Epoch: 030/050 | Train Time: 0.496s | Train Loss: 0.062042 |
+2021-09-12 16:40:30,885 - root - INFO - | Epoch: 030/050 | Train Time: 0.496s | Train Loss: 0.062042 |
+2021-09-12 16:40:31,637 - root - INFO - | Epoch: 031/050 | Train Time: 0.751s | Train Loss: 0.067505 |
+2021-09-12 16:40:31,637 - root - INFO - | Epoch: 031/050 | Train Time: 0.751s | Train Loss: 0.067505 |
+2021-09-12 16:40:32,249 - root - INFO - | Epoch: 032/050 | Train Time: 0.611s | Train Loss: 0.061357 |
+2021-09-12 16:40:32,249 - root - INFO - | Epoch: 032/050 | Train Time: 0.611s | Train Loss: 0.061357 |
+2021-09-12 16:40:32,964 - root - INFO - | Epoch: 033/050 | Train Time: 0.714s | Train Loss: 0.061566 |
+2021-09-12 16:40:32,964 - root - INFO - | Epoch: 033/050 | Train Time: 0.714s | Train Loss: 0.061566 |
+2021-09-12 16:40:33,441 - root - INFO - | Epoch: 034/050 | Train Time: 0.476s | Train Loss: 0.061852 |
+2021-09-12 16:40:33,441 - root - INFO - | Epoch: 034/050 | Train Time: 0.476s | Train Loss: 0.061852 |
+2021-09-12 16:40:33,911 - root - INFO - | Epoch: 035/050 | Train Time: 0.470s | Train Loss: 0.060352 |
+2021-09-12 16:40:33,911 - root - INFO - | Epoch: 035/050 | Train Time: 0.470s | Train Loss: 0.060352 |
+2021-09-12 16:40:34,334 - root - INFO - | Epoch: 036/050 | Train Time: 0.422s | Train Loss: 0.056926 |
+2021-09-12 16:40:34,334 - root - INFO - | Epoch: 036/050 | Train Time: 0.422s | Train Loss: 0.056926 |
+2021-09-12 16:40:34,720 - root - INFO - | Epoch: 037/050 | Train Time: 0.385s | Train Loss: 0.062335 |
+2021-09-12 16:40:34,720 - root - INFO - | Epoch: 037/050 | Train Time: 0.385s | Train Loss: 0.062335 |
+2021-09-12 16:40:35,088 - root - INFO - | Epoch: 038/050 | Train Time: 0.367s | Train Loss: 0.062014 |
+2021-09-12 16:40:35,088 - root - INFO - | Epoch: 038/050 | Train Time: 0.367s | Train Loss: 0.062014 |
+2021-09-12 16:40:35,462 - root - INFO - | Epoch: 039/050 | Train Time: 0.374s | Train Loss: 0.054366 |
+2021-09-12 16:40:35,462 - root - INFO - | Epoch: 039/050 | Train Time: 0.374s | Train Loss: 0.054366 |
+2021-09-12 16:40:35,870 - root - INFO - | Epoch: 040/050 | Train Time: 0.407s | Train Loss: 0.061047 |
+2021-09-12 16:40:35,870 - root - INFO - | Epoch: 040/050 | Train Time: 0.407s | Train Loss: 0.061047 |
+2021-09-12 16:40:36,247 - root - INFO - | Epoch: 041/050 | Train Time: 0.377s | Train Loss: 0.055998 |
+2021-09-12 16:40:36,247 - root - INFO - | Epoch: 041/050 | Train Time: 0.377s | Train Loss: 0.055998 |
+2021-09-12 16:40:36,604 - root - INFO - | Epoch: 042/050 | Train Time: 0.356s | Train Loss: 0.059844 |
+2021-09-12 16:40:36,604 - root - INFO - | Epoch: 042/050 | Train Time: 0.356s | Train Loss: 0.059844 |
+2021-09-12 16:40:36,898 - root - INFO - | Epoch: 043/050 | Train Time: 0.293s | Train Loss: 0.059677 |
+2021-09-12 16:40:36,898 - root - INFO - | Epoch: 043/050 | Train Time: 0.293s | Train Loss: 0.059677 |
+2021-09-12 16:40:37,147 - root - INFO - | Epoch: 044/050 | Train Time: 0.247s | Train Loss: 0.061530 |
+2021-09-12 16:40:37,147 - root - INFO - | Epoch: 044/050 | Train Time: 0.247s | Train Loss: 0.061530 |
+2021-09-12 16:40:37,376 - root - INFO - | Epoch: 045/050 | Train Time: 0.229s | Train Loss: 0.058933 |
+2021-09-12 16:40:37,376 - root - INFO - | Epoch: 045/050 | Train Time: 0.229s | Train Loss: 0.058933 |
+2021-09-12 16:40:37,629 - root - INFO - | Epoch: 046/050 | Train Time: 0.252s | Train Loss: 0.057509 |
+2021-09-12 16:40:37,629 - root - INFO - | Epoch: 046/050 | Train Time: 0.252s | Train Loss: 0.057509 |
+2021-09-12 16:40:37,932 - root - INFO - | Epoch: 047/050 | Train Time: 0.303s | Train Loss: 0.063925 |
+2021-09-12 16:40:37,932 - root - INFO - | Epoch: 047/050 | Train Time: 0.303s | Train Loss: 0.063925 |
+2021-09-12 16:40:38,174 - root - INFO - | Epoch: 048/050 | Train Time: 0.242s | Train Loss: 0.059348 |
+2021-09-12 16:40:38,174 - root - INFO - | Epoch: 048/050 | Train Time: 0.242s | Train Loss: 0.059348 |
+2021-09-12 16:40:38,402 - root - INFO - | Epoch: 049/050 | Train Time: 0.227s | Train Loss: 0.058896 |
+2021-09-12 16:40:38,402 - root - INFO - | Epoch: 049/050 | Train Time: 0.227s | Train Loss: 0.058896 |
+2021-09-12 16:40:38,650 - root - INFO - | Epoch: 050/050 | Train Time: 0.248s | Train Loss: 0.053206 |
+2021-09-12 16:40:38,650 - root - INFO - | Epoch: 050/050 | Train Time: 0.248s | Train Loss: 0.053206 |
+2021-09-12 16:40:38,650 - root - INFO - Training Time: 17.311s
+2021-09-12 16:40:38,650 - root - INFO - Training Time: 17.311s
+2021-09-12 16:40:38,650 - root - INFO - Finished training.
+2021-09-12 16:40:38,650 - root - INFO - Finished training.
+2021-09-12 16:40:38,651 - root - INFO - Starting testing...
+2021-09-12 16:40:38,651 - root - INFO - Starting testing...
+2021-09-12 16:40:38,755 - root - INFO - Test Loss: 0.029461
+2021-09-12 16:40:38,755 - root - INFO - Test Loss: 0.029461
+2021-09-12 16:40:38,755 - root - INFO - Test AUCROC: 77.10%
+2021-09-12 16:40:38,755 - root - INFO - Test AUCROC: 77.10%
+2021-09-12 16:40:38,756 - root - INFO - Test AUCPR: 31.86%
+2021-09-12 16:40:38,756 - root - INFO - Test AUCPR: 31.86%
+2021-09-12 16:40:38,756 - root - INFO - Test Time: 0.099s
+2021-09-12 16:40:38,756 - root - INFO - Test Time: 0.099s
+2021-09-12 16:40:38,756 - root - INFO - Finished testing.
+2021-09-12 16:40:38,756 - root - INFO - Finished testing.
+2021-09-12 16:40:38,759 - root - INFO - Log file is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD/log.txt
+2021-09-12 16:40:38,759 - root - INFO - Log file is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD/log.txt
+2021-09-12 16:40:38,759 - root - INFO - Log file is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD/log.txt
+2021-09-12 16:40:38,759 - root - INFO - Export path is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD
+2021-09-12 16:40:38,759 - root - INFO - Export path is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD
+2021-09-12 16:40:38,759 - root - INFO - Export path is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD
+2021-09-12 16:40:38,759 - root - INFO - Dataset: annthyroid
+2021-09-12 16:40:38,759 - root - INFO - Dataset: annthyroid
+2021-09-12 16:40:38,759 - root - INFO - Dataset: annthyroid
+2021-09-12 16:40:38,759 - root - INFO - Network: annthyroid_mlp
+2021-09-12 16:40:38,759 - root - INFO - Network: annthyroid_mlp
+2021-09-12 16:40:38,759 - root - INFO - Network: annthyroid_mlp
+2021-09-12 16:40:38,759 - root - INFO - Eta-parameter: 1.00
+2021-09-12 16:40:38,759 - root - INFO - Eta-parameter: 1.00
+2021-09-12 16:40:38,759 - root - INFO - Eta-parameter: 1.00
+2021-09-12 16:40:38,761 - root - INFO - Set seed to 3.
+2021-09-12 16:40:38,761 - root - INFO - Set seed to 3.
+2021-09-12 16:40:38,761 - root - INFO - Set seed to 3.
+2021-09-12 16:40:38,761 - root - INFO - Computation device: cpu
+2021-09-12 16:40:38,761 - root - INFO - Computation device: cpu
+2021-09-12 16:40:38,761 - root - INFO - Computation device: cpu
+2021-09-12 16:40:38,761 - root - INFO - Number of threads: 0
+2021-09-12 16:40:38,761 - root - INFO - Number of threads: 0
+2021-09-12 16:40:38,761 - root - INFO - Number of threads: 0
+2021-09-12 16:40:38,761 - root - INFO - Number of dataloader workers: 0
+2021-09-12 16:40:38,761 - root - INFO - Number of dataloader workers: 0
+2021-09-12 16:40:38,761 - root - INFO - Number of dataloader workers: 0
+2021-09-12 16:40:38,836 - root - INFO - Pretraining: False
+2021-09-12 16:40:38,836 - root - INFO - Pretraining: False
+2021-09-12 16:40:38,836 - root - INFO - Pretraining: False
+2021-09-12 16:40:38,836 - root - INFO - Training optimizer: adam
+2021-09-12 16:40:38,836 - root - INFO - Training optimizer: adam
+2021-09-12 16:40:38,836 - root - INFO - Training optimizer: adam
+2021-09-12 16:40:38,836 - root - INFO - Training learning rate: 0.001
+2021-09-12 16:40:38,836 - root - INFO - Training learning rate: 0.001
+2021-09-12 16:40:38,836 - root - INFO - Training learning rate: 0.001
+2021-09-12 16:40:38,836 - root - INFO - Training epochs: 50
+2021-09-12 16:40:38,836 - root - INFO - Training epochs: 50
+2021-09-12 16:40:38,836 - root - INFO - Training epochs: 50
+2021-09-12 16:40:38,837 - root - INFO - Training learning rate scheduler milestones: [25]
+2021-09-12 16:40:38,837 - root - INFO - Training learning rate scheduler milestones: [25]
+2021-09-12 16:40:38,837 - root - INFO - Training learning rate scheduler milestones: [25]
+2021-09-12 16:40:38,837 - root - INFO - Training batch size: 128
+2021-09-12 16:40:38,837 - root - INFO - Training batch size: 128
+2021-09-12 16:40:38,837 - root - INFO - Training batch size: 128
+2021-09-12 16:40:38,837 - root - INFO - Training weight decay: 1e-06
+2021-09-12 16:40:38,837 - root - INFO - Training weight decay: 1e-06
+2021-09-12 16:40:38,837 - root - INFO - Training weight decay: 1e-06
+2021-09-12 16:40:38,838 - root - INFO - Initializing center c...
+2021-09-12 16:40:38,838 - root - INFO - Initializing center c...
+2021-09-12 16:40:38,838 - root - INFO - Initializing center c...
+2021-09-12 16:40:38,980 - root - INFO - Center c initialized.
+2021-09-12 16:40:38,980 - root - INFO - Center c initialized.
+2021-09-12 16:40:38,980 - root - INFO - Center c initialized.
+2021-09-12 16:40:38,980 - root - INFO - Starting training...
+2021-09-12 16:40:38,980 - root - INFO - Starting training...
+2021-09-12 16:40:38,980 - root - INFO - Starting training...
+2021-09-12 16:40:39,207 - root - INFO - | Epoch: 001/050 | Train Time: 0.227s | Train Loss: 0.254218 |
+2021-09-12 16:40:39,207 - root - INFO - | Epoch: 001/050 | Train Time: 0.227s | Train Loss: 0.254218 |
+2021-09-12 16:40:39,207 - root - INFO - | Epoch: 001/050 | Train Time: 0.227s | Train Loss: 0.254218 |
+2021-09-12 16:40:39,443 - root - INFO - | Epoch: 002/050 | Train Time: 0.234s | Train Loss: 0.146508 |
+2021-09-12 16:40:39,443 - root - INFO - | Epoch: 002/050 | Train Time: 0.234s | Train Loss: 0.146508 |
+2021-09-12 16:40:39,443 - root - INFO - | Epoch: 002/050 | Train Time: 0.234s | Train Loss: 0.146508 |
+2021-09-12 16:40:39,665 - root - INFO - | Epoch: 003/050 | Train Time: 0.222s | Train Loss: 0.128893 |
+2021-09-12 16:40:39,665 - root - INFO - | Epoch: 003/050 | Train Time: 0.222s | Train Loss: 0.128893 |
+2021-09-12 16:40:39,665 - root - INFO - | Epoch: 003/050 | Train Time: 0.222s | Train Loss: 0.128893 |
+2021-09-12 16:40:39,886 - root - INFO - | Epoch: 004/050 | Train Time: 0.221s | Train Loss: 0.135631 |
+2021-09-12 16:40:39,886 - root - INFO - | Epoch: 004/050 | Train Time: 0.221s | Train Loss: 0.135631 |
+2021-09-12 16:40:39,886 - root - INFO - | Epoch: 004/050 | Train Time: 0.221s | Train Loss: 0.135631 |
+2021-09-12 16:40:40,117 - root - INFO - | Epoch: 005/050 | Train Time: 0.230s | Train Loss: 0.119493 |
+2021-09-12 16:40:40,117 - root - INFO - | Epoch: 005/050 | Train Time: 0.230s | Train Loss: 0.119493 |
+2021-09-12 16:40:40,117 - root - INFO - | Epoch: 005/050 | Train Time: 0.230s | Train Loss: 0.119493 |
+2021-09-12 16:40:40,344 - root - INFO - | Epoch: 006/050 | Train Time: 0.226s | Train Loss: 0.114369 |
+2021-09-12 16:40:40,344 - root - INFO - | Epoch: 006/050 | Train Time: 0.226s | Train Loss: 0.114369 |
+2021-09-12 16:40:40,344 - root - INFO - | Epoch: 006/050 | Train Time: 0.226s | Train Loss: 0.114369 |
+2021-09-12 16:40:40,583 - root - INFO - | Epoch: 007/050 | Train Time: 0.238s | Train Loss: 0.108293 |
+2021-09-12 16:40:40,583 - root - INFO - | Epoch: 007/050 | Train Time: 0.238s | Train Loss: 0.108293 |
+2021-09-12 16:40:40,583 - root - INFO - | Epoch: 007/050 | Train Time: 0.238s | Train Loss: 0.108293 |
+2021-09-12 16:40:40,816 - root - INFO - | Epoch: 008/050 | Train Time: 0.232s | Train Loss: 0.103213 |
+2021-09-12 16:40:40,816 - root - INFO - | Epoch: 008/050 | Train Time: 0.232s | Train Loss: 0.103213 |
+2021-09-12 16:40:40,816 - root - INFO - | Epoch: 008/050 | Train Time: 0.232s | Train Loss: 0.103213 |
+2021-09-12 16:40:41,065 - root - INFO - | Epoch: 009/050 | Train Time: 0.249s | Train Loss: 0.100965 |
+2021-09-12 16:40:41,065 - root - INFO - | Epoch: 009/050 | Train Time: 0.249s | Train Loss: 0.100965 |
+2021-09-12 16:40:41,065 - root - INFO - | Epoch: 009/050 | Train Time: 0.249s | Train Loss: 0.100965 |
+2021-09-12 16:40:41,302 - root - INFO - | Epoch: 010/050 | Train Time: 0.236s | Train Loss: 0.100487 |
+2021-09-12 16:40:41,302 - root - INFO - | Epoch: 010/050 | Train Time: 0.236s | Train Loss: 0.100487 |
+2021-09-12 16:40:41,302 - root - INFO - | Epoch: 010/050 | Train Time: 0.236s | Train Loss: 0.100487 |
+2021-09-12 16:40:41,529 - root - INFO - | Epoch: 011/050 | Train Time: 0.226s | Train Loss: 0.092888 |
+2021-09-12 16:40:41,529 - root - INFO - | Epoch: 011/050 | Train Time: 0.226s | Train Loss: 0.092888 |
+2021-09-12 16:40:41,529 - root - INFO - | Epoch: 011/050 | Train Time: 0.226s | Train Loss: 0.092888 |
+2021-09-12 16:40:41,743 - root - INFO - | Epoch: 012/050 | Train Time: 0.213s | Train Loss: 0.090689 |
+2021-09-12 16:40:41,743 - root - INFO - | Epoch: 012/050 | Train Time: 0.213s | Train Loss: 0.090689 |
+2021-09-12 16:40:41,743 - root - INFO - | Epoch: 012/050 | Train Time: 0.213s | Train Loss: 0.090689 |
+2021-09-12 16:40:41,956 - root - INFO - | Epoch: 013/050 | Train Time: 0.213s | Train Loss: 0.096022 |
+2021-09-12 16:40:41,956 - root - INFO - | Epoch: 013/050 | Train Time: 0.213s | Train Loss: 0.096022 |
+2021-09-12 16:40:41,956 - root - INFO - | Epoch: 013/050 | Train Time: 0.213s | Train Loss: 0.096022 |
+2021-09-12 16:40:42,179 - root - INFO - | Epoch: 014/050 | Train Time: 0.222s | Train Loss: 0.090102 |
+2021-09-12 16:40:42,179 - root - INFO - | Epoch: 014/050 | Train Time: 0.222s | Train Loss: 0.090102 |
+2021-09-12 16:40:42,179 - root - INFO - | Epoch: 014/050 | Train Time: 0.222s | Train Loss: 0.090102 |
+2021-09-12 16:40:42,393 - root - INFO - | Epoch: 015/050 | Train Time: 0.213s | Train Loss: 0.086533 |
+2021-09-12 16:40:42,393 - root - INFO - | Epoch: 015/050 | Train Time: 0.213s | Train Loss: 0.086533 |
+2021-09-12 16:40:42,393 - root - INFO - | Epoch: 015/050 | Train Time: 0.213s | Train Loss: 0.086533 |
+2021-09-12 16:40:42,606 - root - INFO - | Epoch: 016/050 | Train Time: 0.212s | Train Loss: 0.082915 |
+2021-09-12 16:40:42,606 - root - INFO - | Epoch: 016/050 | Train Time: 0.212s | Train Loss: 0.082915 |
+2021-09-12 16:40:42,606 - root - INFO - | Epoch: 016/050 | Train Time: 0.212s | Train Loss: 0.082915 |
+2021-09-12 16:40:42,825 - root - INFO - | Epoch: 017/050 | Train Time: 0.218s | Train Loss: 0.078819 |
+2021-09-12 16:40:42,825 - root - INFO - | Epoch: 017/050 | Train Time: 0.218s | Train Loss: 0.078819 |
+2021-09-12 16:40:42,825 - root - INFO - | Epoch: 017/050 | Train Time: 0.218s | Train Loss: 0.078819 |
+2021-09-12 16:40:43,064 - root - INFO - | Epoch: 018/050 | Train Time: 0.239s | Train Loss: 0.078206 |
+2021-09-12 16:40:43,064 - root - INFO - | Epoch: 018/050 | Train Time: 0.239s | Train Loss: 0.078206 |
+2021-09-12 16:40:43,064 - root - INFO - | Epoch: 018/050 | Train Time: 0.239s | Train Loss: 0.078206 |
+2021-09-12 16:40:43,296 - root - INFO - | Epoch: 019/050 | Train Time: 0.232s | Train Loss: 0.078744 |
+2021-09-12 16:40:43,296 - root - INFO - | Epoch: 019/050 | Train Time: 0.232s | Train Loss: 0.078744 |
+2021-09-12 16:40:43,296 - root - INFO - | Epoch: 019/050 | Train Time: 0.232s | Train Loss: 0.078744 |
+2021-09-12 16:40:43,512 - root - INFO - | Epoch: 020/050 | Train Time: 0.215s | Train Loss: 0.079733 |
+2021-09-12 16:40:43,512 - root - INFO - | Epoch: 020/050 | Train Time: 0.215s | Train Loss: 0.079733 |
+2021-09-12 16:40:43,512 - root - INFO - | Epoch: 020/050 | Train Time: 0.215s | Train Loss: 0.079733 |
+2021-09-12 16:40:43,731 - root - INFO - | Epoch: 021/050 | Train Time: 0.218s | Train Loss: 0.076503 |
+2021-09-12 16:40:43,731 - root - INFO - | Epoch: 021/050 | Train Time: 0.218s | Train Loss: 0.076503 |
+2021-09-12 16:40:43,731 - root - INFO - | Epoch: 021/050 | Train Time: 0.218s | Train Loss: 0.076503 |
+2021-09-12 16:40:43,947 - root - INFO - | Epoch: 022/050 | Train Time: 0.214s | Train Loss: 0.072674 |
+2021-09-12 16:40:43,947 - root - INFO - | Epoch: 022/050 | Train Time: 0.214s | Train Loss: 0.072674 |
+2021-09-12 16:40:43,947 - root - INFO - | Epoch: 022/050 | Train Time: 0.214s | Train Loss: 0.072674 |
+2021-09-12 16:40:44,156 - root - INFO - | Epoch: 023/050 | Train Time: 0.208s | Train Loss: 0.074499 |
+2021-09-12 16:40:44,156 - root - INFO - | Epoch: 023/050 | Train Time: 0.208s | Train Loss: 0.074499 |
+2021-09-12 16:40:44,156 - root - INFO - | Epoch: 023/050 | Train Time: 0.208s | Train Loss: 0.074499 |
+2021-09-12 16:40:44,365 - root - INFO - | Epoch: 024/050 | Train Time: 0.207s | Train Loss: 0.077692 |
+2021-09-12 16:40:44,365 - root - INFO - | Epoch: 024/050 | Train Time: 0.207s | Train Loss: 0.077692 |
+2021-09-12 16:40:44,365 - root - INFO - | Epoch: 024/050 | Train Time: 0.207s | Train Loss: 0.077692 |
+2021-09-12 16:40:44,571 - root - INFO - | Epoch: 025/050 | Train Time: 0.205s | Train Loss: 0.074032 |
+2021-09-12 16:40:44,571 - root - INFO - | Epoch: 025/050 | Train Time: 0.205s | Train Loss: 0.074032 |
+2021-09-12 16:40:44,571 - root - INFO - | Epoch: 025/050 | Train Time: 0.205s | Train Loss: 0.074032 |
+2021-09-12 16:40:44,577 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,577 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,577 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,584 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,584 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,584 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,591 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,591 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,591 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,597 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,597 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,597 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,602 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,602 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,602 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,607 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,607 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,607 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,613 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,613 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,613 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,618 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,618 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,618 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,624 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,624 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,624 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,629 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,629 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,629 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,634 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,634 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,634 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,640 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,640 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,640 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,647 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,647 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,647 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,653 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,653 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,653 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,660 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,660 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,660 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,665 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,665 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,665 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,670 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,670 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,670 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,675 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,675 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,675 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,680 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,680 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,680 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,686 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,686 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,686 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,692 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,692 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,692 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,698 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,698 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,698 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,703 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,703 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,703 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,709 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,709 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,709 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,714 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,714 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,714 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,720 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,720 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,720 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,726 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,726 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,726 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,731 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,731 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,731 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,736 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,736 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,736 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,742 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,742 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,742 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,748 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,748 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,748 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,752 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,752 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,752 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,759 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,759 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,759 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,765 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,765 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,765 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,770 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,770 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,770 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,775 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,775 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,775 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,780 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,780 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,780 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,786 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,786 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,786 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,792 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,792 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,792 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:44,792 - root - INFO - | Epoch: 026/050 | Train Time: 0.220s | Train Loss: 0.074852 |
+2021-09-12 16:40:44,792 - root - INFO - | Epoch: 026/050 | Train Time: 0.220s | Train Loss: 0.074852 |
+2021-09-12 16:40:44,792 - root - INFO - | Epoch: 026/050 | Train Time: 0.220s | Train Loss: 0.074852 |
+2021-09-12 16:40:45,008 - root - INFO - | Epoch: 027/050 | Train Time: 0.215s | Train Loss: 0.071634 |
+2021-09-12 16:40:45,008 - root - INFO - | Epoch: 027/050 | Train Time: 0.215s | Train Loss: 0.071634 |
+2021-09-12 16:40:45,008 - root - INFO - | Epoch: 027/050 | Train Time: 0.215s | Train Loss: 0.071634 |
+2021-09-12 16:40:45,242 - root - INFO - | Epoch: 028/050 | Train Time: 0.234s | Train Loss: 0.069270 |
+2021-09-12 16:40:45,242 - root - INFO - | Epoch: 028/050 | Train Time: 0.234s | Train Loss: 0.069270 |
+2021-09-12 16:40:45,242 - root - INFO - | Epoch: 028/050 | Train Time: 0.234s | Train Loss: 0.069270 |
+2021-09-12 16:40:45,496 - root - INFO - | Epoch: 029/050 | Train Time: 0.254s | Train Loss: 0.067714 |
+2021-09-12 16:40:45,496 - root - INFO - | Epoch: 029/050 | Train Time: 0.254s | Train Loss: 0.067714 |
+2021-09-12 16:40:45,496 - root - INFO - | Epoch: 029/050 | Train Time: 0.254s | Train Loss: 0.067714 |
+2021-09-12 16:40:45,745 - root - INFO - | Epoch: 030/050 | Train Time: 0.248s | Train Loss: 0.071283 |
+2021-09-12 16:40:45,745 - root - INFO - | Epoch: 030/050 | Train Time: 0.248s | Train Loss: 0.071283 |
+2021-09-12 16:40:45,745 - root - INFO - | Epoch: 030/050 | Train Time: 0.248s | Train Loss: 0.071283 |
+2021-09-12 16:40:46,047 - root - INFO - | Epoch: 031/050 | Train Time: 0.301s | Train Loss: 0.069001 |
+2021-09-12 16:40:46,047 - root - INFO - | Epoch: 031/050 | Train Time: 0.301s | Train Loss: 0.069001 |
+2021-09-12 16:40:46,047 - root - INFO - | Epoch: 031/050 | Train Time: 0.301s | Train Loss: 0.069001 |
+2021-09-12 16:40:46,291 - root - INFO - | Epoch: 032/050 | Train Time: 0.244s | Train Loss: 0.066103 |
+2021-09-12 16:40:46,291 - root - INFO - | Epoch: 032/050 | Train Time: 0.244s | Train Loss: 0.066103 |
+2021-09-12 16:40:46,291 - root - INFO - | Epoch: 032/050 | Train Time: 0.244s | Train Loss: 0.066103 |
+2021-09-12 16:40:46,601 - root - INFO - | Epoch: 033/050 | Train Time: 0.308s | Train Loss: 0.065635 |
+2021-09-12 16:40:46,601 - root - INFO - | Epoch: 033/050 | Train Time: 0.308s | Train Loss: 0.065635 |
+2021-09-12 16:40:46,601 - root - INFO - | Epoch: 033/050 | Train Time: 0.308s | Train Loss: 0.065635 |
+2021-09-12 16:40:46,857 - root - INFO - | Epoch: 034/050 | Train Time: 0.256s | Train Loss: 0.067505 |
+2021-09-12 16:40:46,857 - root - INFO - | Epoch: 034/050 | Train Time: 0.256s | Train Loss: 0.067505 |
+2021-09-12 16:40:46,857 - root - INFO - | Epoch: 034/050 | Train Time: 0.256s | Train Loss: 0.067505 |
+2021-09-12 16:40:47,095 - root - INFO - | Epoch: 035/050 | Train Time: 0.237s | Train Loss: 0.077583 |
+2021-09-12 16:40:47,095 - root - INFO - | Epoch: 035/050 | Train Time: 0.237s | Train Loss: 0.077583 |
+2021-09-12 16:40:47,095 - root - INFO - | Epoch: 035/050 | Train Time: 0.237s | Train Loss: 0.077583 |
+2021-09-12 16:40:47,320 - root - INFO - | Epoch: 036/050 | Train Time: 0.223s | Train Loss: 0.079006 |
+2021-09-12 16:40:47,320 - root - INFO - | Epoch: 036/050 | Train Time: 0.223s | Train Loss: 0.079006 |
+2021-09-12 16:40:47,320 - root - INFO - | Epoch: 036/050 | Train Time: 0.223s | Train Loss: 0.079006 |
+2021-09-12 16:40:47,540 - root - INFO - | Epoch: 037/050 | Train Time: 0.220s | Train Loss: 0.066588 |
+2021-09-12 16:40:47,540 - root - INFO - | Epoch: 037/050 | Train Time: 0.220s | Train Loss: 0.066588 |
+2021-09-12 16:40:47,540 - root - INFO - | Epoch: 037/050 | Train Time: 0.220s | Train Loss: 0.066588 |
+2021-09-12 16:40:47,766 - root - INFO - | Epoch: 038/050 | Train Time: 0.225s | Train Loss: 0.068580 |
+2021-09-12 16:40:47,766 - root - INFO - | Epoch: 038/050 | Train Time: 0.225s | Train Loss: 0.068580 |
+2021-09-12 16:40:47,766 - root - INFO - | Epoch: 038/050 | Train Time: 0.225s | Train Loss: 0.068580 |
+2021-09-12 16:40:48,005 - root - INFO - | Epoch: 039/050 | Train Time: 0.238s | Train Loss: 0.070997 |
+2021-09-12 16:40:48,005 - root - INFO - | Epoch: 039/050 | Train Time: 0.238s | Train Loss: 0.070997 |
+2021-09-12 16:40:48,005 - root - INFO - | Epoch: 039/050 | Train Time: 0.238s | Train Loss: 0.070997 |
+2021-09-12 16:40:48,233 - root - INFO - | Epoch: 040/050 | Train Time: 0.227s | Train Loss: 0.064905 |
+2021-09-12 16:40:48,233 - root - INFO - | Epoch: 040/050 | Train Time: 0.227s | Train Loss: 0.064905 |
+2021-09-12 16:40:48,233 - root - INFO - | Epoch: 040/050 | Train Time: 0.227s | Train Loss: 0.064905 |
+2021-09-12 16:40:48,455 - root - INFO - | Epoch: 041/050 | Train Time: 0.221s | Train Loss: 0.068490 |
+2021-09-12 16:40:48,455 - root - INFO - | Epoch: 041/050 | Train Time: 0.221s | Train Loss: 0.068490 |
+2021-09-12 16:40:48,455 - root - INFO - | Epoch: 041/050 | Train Time: 0.221s | Train Loss: 0.068490 |
+2021-09-12 16:40:48,678 - root - INFO - | Epoch: 042/050 | Train Time: 0.223s | Train Loss: 0.066526 |
+2021-09-12 16:40:48,678 - root - INFO - | Epoch: 042/050 | Train Time: 0.223s | Train Loss: 0.066526 |
+2021-09-12 16:40:48,678 - root - INFO - | Epoch: 042/050 | Train Time: 0.223s | Train Loss: 0.066526 |
+2021-09-12 16:40:48,894 - root - INFO - | Epoch: 043/050 | Train Time: 0.215s | Train Loss: 0.064206 |
+2021-09-12 16:40:48,894 - root - INFO - | Epoch: 043/050 | Train Time: 0.215s | Train Loss: 0.064206 |
+2021-09-12 16:40:48,894 - root - INFO - | Epoch: 043/050 | Train Time: 0.215s | Train Loss: 0.064206 |
+2021-09-12 16:40:49,112 - root - INFO - | Epoch: 044/050 | Train Time: 0.217s | Train Loss: 0.063937 |
+2021-09-12 16:40:49,112 - root - INFO - | Epoch: 044/050 | Train Time: 0.217s | Train Loss: 0.063937 |
+2021-09-12 16:40:49,112 - root - INFO - | Epoch: 044/050 | Train Time: 0.217s | Train Loss: 0.063937 |
+2021-09-12 16:40:49,321 - root - INFO - | Epoch: 045/050 | Train Time: 0.209s | Train Loss: 0.065475 |
+2021-09-12 16:40:49,321 - root - INFO - | Epoch: 045/050 | Train Time: 0.209s | Train Loss: 0.065475 |
+2021-09-12 16:40:49,321 - root - INFO - | Epoch: 045/050 | Train Time: 0.209s | Train Loss: 0.065475 |
+2021-09-12 16:40:49,534 - root - INFO - | Epoch: 046/050 | Train Time: 0.211s | Train Loss: 0.063698 |
+2021-09-12 16:40:49,534 - root - INFO - | Epoch: 046/050 | Train Time: 0.211s | Train Loss: 0.063698 |
+2021-09-12 16:40:49,534 - root - INFO - | Epoch: 046/050 | Train Time: 0.211s | Train Loss: 0.063698 |
+2021-09-12 16:40:49,737 - root - INFO - | Epoch: 047/050 | Train Time: 0.203s | Train Loss: 0.061794 |
+2021-09-12 16:40:49,737 - root - INFO - | Epoch: 047/050 | Train Time: 0.203s | Train Loss: 0.061794 |
+2021-09-12 16:40:49,737 - root - INFO - | Epoch: 047/050 | Train Time: 0.203s | Train Loss: 0.061794 |
+2021-09-12 16:40:49,951 - root - INFO - | Epoch: 048/050 | Train Time: 0.212s | Train Loss: 0.063103 |
+2021-09-12 16:40:49,951 - root - INFO - | Epoch: 048/050 | Train Time: 0.212s | Train Loss: 0.063103 |
+2021-09-12 16:40:49,951 - root - INFO - | Epoch: 048/050 | Train Time: 0.212s | Train Loss: 0.063103 |
+2021-09-12 16:40:50,157 - root - INFO - | Epoch: 049/050 | Train Time: 0.205s | Train Loss: 0.063021 |
+2021-09-12 16:40:50,157 - root - INFO - | Epoch: 049/050 | Train Time: 0.205s | Train Loss: 0.063021 |
+2021-09-12 16:40:50,157 - root - INFO - | Epoch: 049/050 | Train Time: 0.205s | Train Loss: 0.063021 |
+2021-09-12 16:40:50,372 - root - INFO - | Epoch: 050/050 | Train Time: 0.214s | Train Loss: 0.065313 |
+2021-09-12 16:40:50,372 - root - INFO - | Epoch: 050/050 | Train Time: 0.214s | Train Loss: 0.065313 |
+2021-09-12 16:40:50,372 - root - INFO - | Epoch: 050/050 | Train Time: 0.214s | Train Loss: 0.065313 |
+2021-09-12 16:40:50,373 - root - INFO - Training Time: 11.394s
+2021-09-12 16:40:50,373 - root - INFO - Training Time: 11.394s
+2021-09-12 16:40:50,373 - root - INFO - Training Time: 11.394s
+2021-09-12 16:40:50,373 - root - INFO - Finished training.
+2021-09-12 16:40:50,373 - root - INFO - Finished training.
+2021-09-12 16:40:50,373 - root - INFO - Finished training.
+2021-09-12 16:40:50,373 - root - INFO - Starting testing...
+2021-09-12 16:40:50,373 - root - INFO - Starting testing...
+2021-09-12 16:40:50,373 - root - INFO - Starting testing...
+2021-09-12 16:40:50,438 - root - INFO - Test Loss: 0.034197
+2021-09-12 16:40:50,438 - root - INFO - Test Loss: 0.034197
+2021-09-12 16:40:50,438 - root - INFO - Test Loss: 0.034197
+2021-09-12 16:40:50,439 - root - INFO - Test AUCROC: 73.55%
+2021-09-12 16:40:50,439 - root - INFO - Test AUCROC: 73.55%
+2021-09-12 16:40:50,439 - root - INFO - Test AUCROC: 73.55%
+2021-09-12 16:40:50,439 - root - INFO - Test AUCPR: 39.08%
+2021-09-12 16:40:50,439 - root - INFO - Test AUCPR: 39.08%
+2021-09-12 16:40:50,439 - root - INFO - Test AUCPR: 39.08%
+2021-09-12 16:40:50,439 - root - INFO - Test Time: 0.061s
+2021-09-12 16:40:50,439 - root - INFO - Test Time: 0.061s
+2021-09-12 16:40:50,439 - root - INFO - Test Time: 0.061s
+2021-09-12 16:40:50,439 - root - INFO - Finished testing.
+2021-09-12 16:40:50,439 - root - INFO - Finished testing.
+2021-09-12 16:40:50,439 - root - INFO - Finished testing.
+2021-09-12 16:40:50,442 - root - INFO - Log file is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD/log.txt
+2021-09-12 16:40:50,442 - root - INFO - Log file is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD/log.txt
+2021-09-12 16:40:50,442 - root - INFO - Log file is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD/log.txt
+2021-09-12 16:40:50,442 - root - INFO - Log file is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD/log.txt
+2021-09-12 16:40:50,442 - root - INFO - Export path is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD
+2021-09-12 16:40:50,442 - root - INFO - Export path is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD
+2021-09-12 16:40:50,442 - root - INFO - Export path is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD
+2021-09-12 16:40:50,442 - root - INFO - Export path is E:\Research_Anomaly Detection\Research_UNet\RWSNet\baseline\DeepSAD
+2021-09-12 16:40:50,443 - root - INFO - Dataset: annthyroid
+2021-09-12 16:40:50,443 - root - INFO - Dataset: annthyroid
+2021-09-12 16:40:50,443 - root - INFO - Dataset: annthyroid
+2021-09-12 16:40:50,443 - root - INFO - Dataset: annthyroid
+2021-09-12 16:40:50,443 - root - INFO - Network: annthyroid_mlp
+2021-09-12 16:40:50,443 - root - INFO - Network: annthyroid_mlp
+2021-09-12 16:40:50,443 - root - INFO - Network: annthyroid_mlp
+2021-09-12 16:40:50,443 - root - INFO - Network: annthyroid_mlp
+2021-09-12 16:40:50,443 - root - INFO - Eta-parameter: 1.00
+2021-09-12 16:40:50,443 - root - INFO - Eta-parameter: 1.00
+2021-09-12 16:40:50,443 - root - INFO - Eta-parameter: 1.00
+2021-09-12 16:40:50,443 - root - INFO - Eta-parameter: 1.00
+2021-09-12 16:40:50,445 - root - INFO - Set seed to 4.
+2021-09-12 16:40:50,445 - root - INFO - Set seed to 4.
+2021-09-12 16:40:50,445 - root - INFO - Set seed to 4.
+2021-09-12 16:40:50,445 - root - INFO - Set seed to 4.
+2021-09-12 16:40:50,445 - root - INFO - Computation device: cpu
+2021-09-12 16:40:50,445 - root - INFO - Computation device: cpu
+2021-09-12 16:40:50,445 - root - INFO - Computation device: cpu
+2021-09-12 16:40:50,445 - root - INFO - Computation device: cpu
+2021-09-12 16:40:50,445 - root - INFO - Number of threads: 0
+2021-09-12 16:40:50,445 - root - INFO - Number of threads: 0
+2021-09-12 16:40:50,445 - root - INFO - Number of threads: 0
+2021-09-12 16:40:50,445 - root - INFO - Number of threads: 0
+2021-09-12 16:40:50,446 - root - INFO - Number of dataloader workers: 0
+2021-09-12 16:40:50,446 - root - INFO - Number of dataloader workers: 0
+2021-09-12 16:40:50,446 - root - INFO - Number of dataloader workers: 0
+2021-09-12 16:40:50,446 - root - INFO - Number of dataloader workers: 0
+2021-09-12 16:40:50,522 - root - INFO - Pretraining: False
+2021-09-12 16:40:50,522 - root - INFO - Pretraining: False
+2021-09-12 16:40:50,522 - root - INFO - Pretraining: False
+2021-09-12 16:40:50,522 - root - INFO - Pretraining: False
+2021-09-12 16:40:50,522 - root - INFO - Training optimizer: adam
+2021-09-12 16:40:50,522 - root - INFO - Training optimizer: adam
+2021-09-12 16:40:50,522 - root - INFO - Training optimizer: adam
+2021-09-12 16:40:50,522 - root - INFO - Training optimizer: adam
+2021-09-12 16:40:50,522 - root - INFO - Training learning rate: 0.001
+2021-09-12 16:40:50,522 - root - INFO - Training learning rate: 0.001
+2021-09-12 16:40:50,522 - root - INFO - Training learning rate: 0.001
+2021-09-12 16:40:50,522 - root - INFO - Training learning rate: 0.001
+2021-09-12 16:40:50,523 - root - INFO - Training epochs: 50
+2021-09-12 16:40:50,523 - root - INFO - Training epochs: 50
+2021-09-12 16:40:50,523 - root - INFO - Training epochs: 50
+2021-09-12 16:40:50,523 - root - INFO - Training epochs: 50
+2021-09-12 16:40:50,523 - root - INFO - Training learning rate scheduler milestones: [25]
+2021-09-12 16:40:50,523 - root - INFO - Training learning rate scheduler milestones: [25]
+2021-09-12 16:40:50,523 - root - INFO - Training learning rate scheduler milestones: [25]
+2021-09-12 16:40:50,523 - root - INFO - Training learning rate scheduler milestones: [25]
+2021-09-12 16:40:50,523 - root - INFO - Training batch size: 128
+2021-09-12 16:40:50,523 - root - INFO - Training batch size: 128
+2021-09-12 16:40:50,523 - root - INFO - Training batch size: 128
+2021-09-12 16:40:50,523 - root - INFO - Training batch size: 128
+2021-09-12 16:40:50,523 - root - INFO - Training weight decay: 1e-06
+2021-09-12 16:40:50,523 - root - INFO - Training weight decay: 1e-06
+2021-09-12 16:40:50,523 - root - INFO - Training weight decay: 1e-06
+2021-09-12 16:40:50,523 - root - INFO - Training weight decay: 1e-06
+2021-09-12 16:40:50,524 - root - INFO - Initializing center c...
+2021-09-12 16:40:50,524 - root - INFO - Initializing center c...
+2021-09-12 16:40:50,524 - root - INFO - Initializing center c...
+2021-09-12 16:40:50,524 - root - INFO - Initializing center c...
+2021-09-12 16:40:50,660 - root - INFO - Center c initialized.
+2021-09-12 16:40:50,660 - root - INFO - Center c initialized.
+2021-09-12 16:40:50,660 - root - INFO - Center c initialized.
+2021-09-12 16:40:50,660 - root - INFO - Center c initialized.
+2021-09-12 16:40:50,661 - root - INFO - Starting training...
+2021-09-12 16:40:50,661 - root - INFO - Starting training...
+2021-09-12 16:40:50,661 - root - INFO - Starting training...
+2021-09-12 16:40:50,661 - root - INFO - Starting training...
+2021-09-12 16:40:50,871 - root - INFO - | Epoch: 001/050 | Train Time: 0.210s | Train Loss: 0.234840 |
+2021-09-12 16:40:50,871 - root - INFO - | Epoch: 001/050 | Train Time: 0.210s | Train Loss: 0.234840 |
+2021-09-12 16:40:50,871 - root - INFO - | Epoch: 001/050 | Train Time: 0.210s | Train Loss: 0.234840 |
+2021-09-12 16:40:50,871 - root - INFO - | Epoch: 001/050 | Train Time: 0.210s | Train Loss: 0.234840 |
+2021-09-12 16:40:51,081 - root - INFO - | Epoch: 002/050 | Train Time: 0.209s | Train Loss: 0.142106 |
+2021-09-12 16:40:51,081 - root - INFO - | Epoch: 002/050 | Train Time: 0.209s | Train Loss: 0.142106 |
+2021-09-12 16:40:51,081 - root - INFO - | Epoch: 002/050 | Train Time: 0.209s | Train Loss: 0.142106 |
+2021-09-12 16:40:51,081 - root - INFO - | Epoch: 002/050 | Train Time: 0.209s | Train Loss: 0.142106 |
+2021-09-12 16:40:51,294 - root - INFO - | Epoch: 003/050 | Train Time: 0.213s | Train Loss: 0.130227 |
+2021-09-12 16:40:51,294 - root - INFO - | Epoch: 003/050 | Train Time: 0.213s | Train Loss: 0.130227 |
+2021-09-12 16:40:51,294 - root - INFO - | Epoch: 003/050 | Train Time: 0.213s | Train Loss: 0.130227 |
+2021-09-12 16:40:51,294 - root - INFO - | Epoch: 003/050 | Train Time: 0.213s | Train Loss: 0.130227 |
+2021-09-12 16:40:51,507 - root - INFO - | Epoch: 004/050 | Train Time: 0.213s | Train Loss: 0.122694 |
+2021-09-12 16:40:51,507 - root - INFO - | Epoch: 004/050 | Train Time: 0.213s | Train Loss: 0.122694 |
+2021-09-12 16:40:51,507 - root - INFO - | Epoch: 004/050 | Train Time: 0.213s | Train Loss: 0.122694 |
+2021-09-12 16:40:51,507 - root - INFO - | Epoch: 004/050 | Train Time: 0.213s | Train Loss: 0.122694 |
+2021-09-12 16:40:51,715 - root - INFO - | Epoch: 005/050 | Train Time: 0.207s | Train Loss: 0.117691 |
+2021-09-12 16:40:51,715 - root - INFO - | Epoch: 005/050 | Train Time: 0.207s | Train Loss: 0.117691 |
+2021-09-12 16:40:51,715 - root - INFO - | Epoch: 005/050 | Train Time: 0.207s | Train Loss: 0.117691 |
+2021-09-12 16:40:51,715 - root - INFO - | Epoch: 005/050 | Train Time: 0.207s | Train Loss: 0.117691 |
+2021-09-12 16:40:51,934 - root - INFO - | Epoch: 006/050 | Train Time: 0.218s | Train Loss: 0.111850 |
+2021-09-12 16:40:51,934 - root - INFO - | Epoch: 006/050 | Train Time: 0.218s | Train Loss: 0.111850 |
+2021-09-12 16:40:51,934 - root - INFO - | Epoch: 006/050 | Train Time: 0.218s | Train Loss: 0.111850 |
+2021-09-12 16:40:51,934 - root - INFO - | Epoch: 006/050 | Train Time: 0.218s | Train Loss: 0.111850 |
+2021-09-12 16:40:52,160 - root - INFO - | Epoch: 007/050 | Train Time: 0.225s | Train Loss: 0.108180 |
+2021-09-12 16:40:52,160 - root - INFO - | Epoch: 007/050 | Train Time: 0.225s | Train Loss: 0.108180 |
+2021-09-12 16:40:52,160 - root - INFO - | Epoch: 007/050 | Train Time: 0.225s | Train Loss: 0.108180 |
+2021-09-12 16:40:52,160 - root - INFO - | Epoch: 007/050 | Train Time: 0.225s | Train Loss: 0.108180 |
+2021-09-12 16:40:52,389 - root - INFO - | Epoch: 008/050 | Train Time: 0.229s | Train Loss: 0.109440 |
+2021-09-12 16:40:52,389 - root - INFO - | Epoch: 008/050 | Train Time: 0.229s | Train Loss: 0.109440 |
+2021-09-12 16:40:52,389 - root - INFO - | Epoch: 008/050 | Train Time: 0.229s | Train Loss: 0.109440 |
+2021-09-12 16:40:52,389 - root - INFO - | Epoch: 008/050 | Train Time: 0.229s | Train Loss: 0.109440 |
+2021-09-12 16:40:52,656 - root - INFO - | Epoch: 009/050 | Train Time: 0.267s | Train Loss: 0.109790 |
+2021-09-12 16:40:52,656 - root - INFO - | Epoch: 009/050 | Train Time: 0.267s | Train Loss: 0.109790 |
+2021-09-12 16:40:52,656 - root - INFO - | Epoch: 009/050 | Train Time: 0.267s | Train Loss: 0.109790 |
+2021-09-12 16:40:52,656 - root - INFO - | Epoch: 009/050 | Train Time: 0.267s | Train Loss: 0.109790 |
+2021-09-12 16:40:52,917 - root - INFO - | Epoch: 010/050 | Train Time: 0.259s | Train Loss: 0.101351 |
+2021-09-12 16:40:52,917 - root - INFO - | Epoch: 010/050 | Train Time: 0.259s | Train Loss: 0.101351 |
+2021-09-12 16:40:52,917 - root - INFO - | Epoch: 010/050 | Train Time: 0.259s | Train Loss: 0.101351 |
+2021-09-12 16:40:52,917 - root - INFO - | Epoch: 010/050 | Train Time: 0.259s | Train Loss: 0.101351 |
+2021-09-12 16:40:53,175 - root - INFO - | Epoch: 011/050 | Train Time: 0.257s | Train Loss: 0.102300 |
+2021-09-12 16:40:53,175 - root - INFO - | Epoch: 011/050 | Train Time: 0.257s | Train Loss: 0.102300 |
+2021-09-12 16:40:53,175 - root - INFO - | Epoch: 011/050 | Train Time: 0.257s | Train Loss: 0.102300 |
+2021-09-12 16:40:53,175 - root - INFO - | Epoch: 011/050 | Train Time: 0.257s | Train Loss: 0.102300 |
+2021-09-12 16:40:53,403 - root - INFO - | Epoch: 012/050 | Train Time: 0.228s | Train Loss: 0.098673 |
+2021-09-12 16:40:53,403 - root - INFO - | Epoch: 012/050 | Train Time: 0.228s | Train Loss: 0.098673 |
+2021-09-12 16:40:53,403 - root - INFO - | Epoch: 012/050 | Train Time: 0.228s | Train Loss: 0.098673 |
+2021-09-12 16:40:53,403 - root - INFO - | Epoch: 012/050 | Train Time: 0.228s | Train Loss: 0.098673 |
+2021-09-12 16:40:53,627 - root - INFO - | Epoch: 013/050 | Train Time: 0.223s | Train Loss: 0.099219 |
+2021-09-12 16:40:53,627 - root - INFO - | Epoch: 013/050 | Train Time: 0.223s | Train Loss: 0.099219 |
+2021-09-12 16:40:53,627 - root - INFO - | Epoch: 013/050 | Train Time: 0.223s | Train Loss: 0.099219 |
+2021-09-12 16:40:53,627 - root - INFO - | Epoch: 013/050 | Train Time: 0.223s | Train Loss: 0.099219 |
+2021-09-12 16:40:53,956 - root - INFO - | Epoch: 014/050 | Train Time: 0.329s | Train Loss: 0.098594 |
+2021-09-12 16:40:53,956 - root - INFO - | Epoch: 014/050 | Train Time: 0.329s | Train Loss: 0.098594 |
+2021-09-12 16:40:53,956 - root - INFO - | Epoch: 014/050 | Train Time: 0.329s | Train Loss: 0.098594 |
+2021-09-12 16:40:53,956 - root - INFO - | Epoch: 014/050 | Train Time: 0.329s | Train Loss: 0.098594 |
+2021-09-12 16:40:54,209 - root - INFO - | Epoch: 015/050 | Train Time: 0.253s | Train Loss: 0.091924 |
+2021-09-12 16:40:54,209 - root - INFO - | Epoch: 015/050 | Train Time: 0.253s | Train Loss: 0.091924 |
+2021-09-12 16:40:54,209 - root - INFO - | Epoch: 015/050 | Train Time: 0.253s | Train Loss: 0.091924 |
+2021-09-12 16:40:54,209 - root - INFO - | Epoch: 015/050 | Train Time: 0.253s | Train Loss: 0.091924 |
+2021-09-12 16:40:54,471 - root - INFO - | Epoch: 016/050 | Train Time: 0.261s | Train Loss: 0.091744 |
+2021-09-12 16:40:54,471 - root - INFO - | Epoch: 016/050 | Train Time: 0.261s | Train Loss: 0.091744 |
+2021-09-12 16:40:54,471 - root - INFO - | Epoch: 016/050 | Train Time: 0.261s | Train Loss: 0.091744 |
+2021-09-12 16:40:54,471 - root - INFO - | Epoch: 016/050 | Train Time: 0.261s | Train Loss: 0.091744 |
+2021-09-12 16:40:54,733 - root - INFO - | Epoch: 017/050 | Train Time: 0.261s | Train Loss: 0.092053 |
+2021-09-12 16:40:54,733 - root - INFO - | Epoch: 017/050 | Train Time: 0.261s | Train Loss: 0.092053 |
+2021-09-12 16:40:54,733 - root - INFO - | Epoch: 017/050 | Train Time: 0.261s | Train Loss: 0.092053 |
+2021-09-12 16:40:54,733 - root - INFO - | Epoch: 017/050 | Train Time: 0.261s | Train Loss: 0.092053 |
+2021-09-12 16:40:55,073 - root - INFO - | Epoch: 018/050 | Train Time: 0.339s | Train Loss: 0.093293 |
+2021-09-12 16:40:55,073 - root - INFO - | Epoch: 018/050 | Train Time: 0.339s | Train Loss: 0.093293 |
+2021-09-12 16:40:55,073 - root - INFO - | Epoch: 018/050 | Train Time: 0.339s | Train Loss: 0.093293 |
+2021-09-12 16:40:55,073 - root - INFO - | Epoch: 018/050 | Train Time: 0.339s | Train Loss: 0.093293 |
+2021-09-12 16:40:55,393 - root - INFO - | Epoch: 019/050 | Train Time: 0.319s | Train Loss: 0.090389 |
+2021-09-12 16:40:55,393 - root - INFO - | Epoch: 019/050 | Train Time: 0.319s | Train Loss: 0.090389 |
+2021-09-12 16:40:55,393 - root - INFO - | Epoch: 019/050 | Train Time: 0.319s | Train Loss: 0.090389 |
+2021-09-12 16:40:55,393 - root - INFO - | Epoch: 019/050 | Train Time: 0.319s | Train Loss: 0.090389 |
+2021-09-12 16:40:55,696 - root - INFO - | Epoch: 020/050 | Train Time: 0.303s | Train Loss: 0.091626 |
+2021-09-12 16:40:55,696 - root - INFO - | Epoch: 020/050 | Train Time: 0.303s | Train Loss: 0.091626 |
+2021-09-12 16:40:55,696 - root - INFO - | Epoch: 020/050 | Train Time: 0.303s | Train Loss: 0.091626 |
+2021-09-12 16:40:55,696 - root - INFO - | Epoch: 020/050 | Train Time: 0.303s | Train Loss: 0.091626 |
+2021-09-12 16:40:56,016 - root - INFO - | Epoch: 021/050 | Train Time: 0.319s | Train Loss: 0.086652 |
+2021-09-12 16:40:56,016 - root - INFO - | Epoch: 021/050 | Train Time: 0.319s | Train Loss: 0.086652 |
+2021-09-12 16:40:56,016 - root - INFO - | Epoch: 021/050 | Train Time: 0.319s | Train Loss: 0.086652 |
+2021-09-12 16:40:56,016 - root - INFO - | Epoch: 021/050 | Train Time: 0.319s | Train Loss: 0.086652 |
+2021-09-12 16:40:56,322 - root - INFO - | Epoch: 022/050 | Train Time: 0.305s | Train Loss: 0.088294 |
+2021-09-12 16:40:56,322 - root - INFO - | Epoch: 022/050 | Train Time: 0.305s | Train Loss: 0.088294 |
+2021-09-12 16:40:56,322 - root - INFO - | Epoch: 022/050 | Train Time: 0.305s | Train Loss: 0.088294 |
+2021-09-12 16:40:56,322 - root - INFO - | Epoch: 022/050 | Train Time: 0.305s | Train Loss: 0.088294 |
+2021-09-12 16:40:56,584 - root - INFO - | Epoch: 023/050 | Train Time: 0.262s | Train Loss: 0.081783 |
+2021-09-12 16:40:56,584 - root - INFO - | Epoch: 023/050 | Train Time: 0.262s | Train Loss: 0.081783 |
+2021-09-12 16:40:56,584 - root - INFO - | Epoch: 023/050 | Train Time: 0.262s | Train Loss: 0.081783 |
+2021-09-12 16:40:56,584 - root - INFO - | Epoch: 023/050 | Train Time: 0.262s | Train Loss: 0.081783 |
+2021-09-12 16:40:56,834 - root - INFO - | Epoch: 024/050 | Train Time: 0.250s | Train Loss: 0.086779 |
+2021-09-12 16:40:56,834 - root - INFO - | Epoch: 024/050 | Train Time: 0.250s | Train Loss: 0.086779 |
+2021-09-12 16:40:56,834 - root - INFO - | Epoch: 024/050 | Train Time: 0.250s | Train Loss: 0.086779 |
+2021-09-12 16:40:56,834 - root - INFO - | Epoch: 024/050 | Train Time: 0.250s | Train Loss: 0.086779 |
+2021-09-12 16:40:57,077 - root - INFO - | Epoch: 025/050 | Train Time: 0.243s | Train Loss: 0.081242 |
+2021-09-12 16:40:57,077 - root - INFO - | Epoch: 025/050 | Train Time: 0.243s | Train Loss: 0.081242 |
+2021-09-12 16:40:57,077 - root - INFO - | Epoch: 025/050 | Train Time: 0.243s | Train Loss: 0.081242 |
+2021-09-12 16:40:57,077 - root - INFO - | Epoch: 025/050 | Train Time: 0.243s | Train Loss: 0.081242 |
+2021-09-12 16:40:57,084 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,084 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,084 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,084 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,091 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,091 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,091 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,091 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,098 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,098 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,098 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,098 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,104 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,104 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,104 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,104 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,110 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,110 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,110 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,110 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,117 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,117 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,117 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,117 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,124 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,124 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,124 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,124 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,130 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,130 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,130 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,130 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,136 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,136 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,136 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,136 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,143 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,143 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,143 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,143 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,150 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,150 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,150 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,150 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,155 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,155 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,155 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,155 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,162 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,162 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,162 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,162 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,169 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,169 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,169 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,169 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,175 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,175 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,175 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,175 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,182 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,182 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,182 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,182 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,188 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,188 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,188 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,188 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,194 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,194 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,194 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,194 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,201 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,201 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,201 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,201 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,207 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,207 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,207 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,207 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,212 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,212 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,212 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,212 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,218 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,218 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,218 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,218 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,224 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,224 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,224 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,224 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,232 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,232 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,232 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,232 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,240 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,240 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,240 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,240 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,246 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,246 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,246 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,246 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,253 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,253 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,253 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,253 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,262 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,262 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,262 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,262 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,270 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,270 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,270 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,270 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,278 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,278 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,278 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,278 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,286 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,286 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,286 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,286 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,295 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,295 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,295 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,295 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,303 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,303 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,303 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,303 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,310 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,310 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,310 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,310 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,316 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,316 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,316 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,316 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,323 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,323 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,323 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,323 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,331 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,331 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,331 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,331 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,337 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,337 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,337 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,337 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,345 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,345 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,345 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,345 - root - INFO -   LR scheduler: new learning rate is 0.0001
+2021-09-12 16:40:57,345 - root - INFO - | Epoch: 026/050 | Train Time: 0.267s | Train Loss: 0.088366 |
+2021-09-12 16:40:57,345 - root - INFO - | Epoch: 026/050 | Train Time: 0.267s | Train Loss: 0.088366 |
+2021-09-12 16:40:57,345 - root - INFO - | Epoch: 026/050 | Train Time: 0.267s | Train Loss: 0.088366 |
+2021-09-12 16:40:57,345 - root - INFO - | Epoch: 026/050 | Train Time: 0.267s | Train Loss: 0.088366 |
+2021-09-12 16:40:57,580 - root - INFO - | Epoch: 027/050 | Train Time: 0.235s | Train Loss: 0.084047 |
+2021-09-12 16:40:57,580 - root - INFO - | Epoch: 027/050 | Train Time: 0.235s | Train Loss: 0.084047 |
+2021-09-12 16:40:57,580 - root - INFO - | Epoch: 027/050 | Train Time: 0.235s | Train Loss: 0.084047 |
+2021-09-12 16:40:57,580 - root - INFO - | Epoch: 027/050 | Train Time: 0.235s | Train Loss: 0.084047 |
+2021-09-12 16:40:57,821 - root - INFO - | Epoch: 028/050 | Train Time: 0.240s | Train Loss: 0.081069 |
+2021-09-12 16:40:57,821 - root - INFO - | Epoch: 028/050 | Train Time: 0.240s | Train Loss: 0.081069 |
+2021-09-12 16:40:57,821 - root - INFO - | Epoch: 028/050 | Train Time: 0.240s | Train Loss: 0.081069 |
+2021-09-12 16:40:57,821 - root - INFO - | Epoch: 028/050 | Train Time: 0.240s | Train Loss: 0.081069 |
+2021-09-12 16:40:58,085 - root - INFO - | Epoch: 029/050 | Train Time: 0.263s | Train Loss: 0.086376 |
+2021-09-12 16:40:58,085 - root - INFO - | Epoch: 029/050 | Train Time: 0.263s | Train Loss: 0.086376 |
+2021-09-12 16:40:58,085 - root - INFO - | Epoch: 029/050 | Train Time: 0.263s | Train Loss: 0.086376 |
+2021-09-12 16:40:58,085 - root - INFO - | Epoch: 029/050 | Train Time: 0.263s | Train Loss: 0.086376 |
+2021-09-12 16:40:58,325 - root - INFO - | Epoch: 030/050 | Train Time: 0.240s | Train Loss: 0.083388 |
+2021-09-12 16:40:58,325 - root - INFO - | Epoch: 030/050 | Train Time: 0.240s | Train Loss: 0.083388 |
+2021-09-12 16:40:58,325 - root - INFO - | Epoch: 030/050 | Train Time: 0.240s | Train Loss: 0.083388 |
+2021-09-12 16:40:58,325 - root - INFO - | Epoch: 030/050 | Train Time: 0.240s | Train Loss: 0.083388 |
+2021-09-12 16:40:58,571 - root - INFO - | Epoch: 031/050 | Train Time: 0.245s | Train Loss: 0.080358 |
+2021-09-12 16:40:58,571 - root - INFO - | Epoch: 031/050 | Train Time: 0.245s | Train Loss: 0.080358 |
+2021-09-12 16:40:58,571 - root - INFO - | Epoch: 031/050 | Train Time: 0.245s | Train Loss: 0.080358 |
+2021-09-12 16:40:58,571 - root - INFO - | Epoch: 031/050 | Train Time: 0.245s | Train Loss: 0.080358 |
+2021-09-12 16:40:58,797 - root - INFO - | Epoch: 032/050 | Train Time: 0.225s | Train Loss: 0.080949 |
+2021-09-12 16:40:58,797 - root - INFO - | Epoch: 032/050 | Train Time: 0.225s | Train Loss: 0.080949 |
+2021-09-12 16:40:58,797 - root - INFO - | Epoch: 032/050 | Train Time: 0.225s | Train Loss: 0.080949 |
+2021-09-12 16:40:58,797 - root - INFO - | Epoch: 032/050 | Train Time: 0.225s | Train Loss: 0.080949 |
+2021-09-12 16:40:59,037 - root - INFO - | Epoch: 033/050 | Train Time: 0.240s | Train Loss: 0.079548 |
+2021-09-12 16:40:59,037 - root - INFO - | Epoch: 033/050 | Train Time: 0.240s | Train Loss: 0.079548 |
+2021-09-12 16:40:59,037 - root - INFO - | Epoch: 033/050 | Train Time: 0.240s | Train Loss: 0.079548 |
+2021-09-12 16:40:59,037 - root - INFO - | Epoch: 033/050 | Train Time: 0.240s | Train Loss: 0.079548 |
+2021-09-12 16:40:59,282 - root - INFO - | Epoch: 034/050 | Train Time: 0.243s | Train Loss: 0.084042 |
+2021-09-12 16:40:59,282 - root - INFO - | Epoch: 034/050 | Train Time: 0.243s | Train Loss: 0.084042 |
+2021-09-12 16:40:59,282 - root - INFO - | Epoch: 034/050 | Train Time: 0.243s | Train Loss: 0.084042 |
+2021-09-12 16:40:59,282 - root - INFO - | Epoch: 034/050 | Train Time: 0.243s | Train Loss: 0.084042 |
+2021-09-12 16:40:59,512 - root - INFO - | Epoch: 035/050 | Train Time: 0.229s | Train Loss: 0.082019 |
+2021-09-12 16:40:59,512 - root - INFO - | Epoch: 035/050 | Train Time: 0.229s | Train Loss: 0.082019 |
+2021-09-12 16:40:59,512 - root - INFO - | Epoch: 035/050 | Train Time: 0.229s | Train Loss: 0.082019 |
+2021-09-12 16:40:59,512 - root - INFO - | Epoch: 035/050 | Train Time: 0.229s | Train Loss: 0.082019 |
+2021-09-12 16:40:59,750 - root - INFO - | Epoch: 036/050 | Train Time: 0.238s | Train Loss: 0.082926 |
+2021-09-12 16:40:59,750 - root - INFO - | Epoch: 036/050 | Train Time: 0.238s | Train Loss: 0.082926 |
+2021-09-12 16:40:59,750 - root - INFO - | Epoch: 036/050 | Train Time: 0.238s | Train Loss: 0.082926 |
+2021-09-12 16:40:59,750 - root - INFO - | Epoch: 036/050 | Train Time: 0.238s | Train Loss: 0.082926 |
+2021-09-12 16:41:00,085 - root - INFO - | Epoch: 037/050 | Train Time: 0.334s | Train Loss: 0.077937 |
+2021-09-12 16:41:00,085 - root - INFO - | Epoch: 037/050 | Train Time: 0.334s | Train Loss: 0.077937 |
+2021-09-12 16:41:00,085 - root - INFO - | Epoch: 037/050 | Train Time: 0.334s | Train Loss: 0.077937 |
+2021-09-12 16:41:00,085 - root - INFO - | Epoch: 037/050 | Train Time: 0.334s | Train Loss: 0.077937 |
+2021-09-12 16:41:00,371 - root - INFO - | Epoch: 038/050 | Train Time: 0.285s | Train Loss: 0.080798 |
+2021-09-12 16:41:00,371 - root - INFO - | Epoch: 038/050 | Train Time: 0.285s | Train Loss: 0.080798 |
+2021-09-12 16:41:00,371 - root - INFO - | Epoch: 038/050 | Train Time: 0.285s | Train Loss: 0.080798 |
+2021-09-12 16:41:00,371 - root - INFO - | Epoch: 038/050 | Train Time: 0.285s | Train Loss: 0.080798 |
+2021-09-12 16:41:00,618 - root - INFO - | Epoch: 039/050 | Train Time: 0.247s | Train Loss: 0.074550 |
+2021-09-12 16:41:00,618 - root - INFO - | Epoch: 039/050 | Train Time: 0.247s | Train Loss: 0.074550 |
+2021-09-12 16:41:00,618 - root - INFO - | Epoch: 039/050 | Train Time: 0.247s | Train Loss: 0.074550 |
+2021-09-12 16:41:00,618 - root - INFO - | Epoch: 039/050 | Train Time: 0.247s | Train Loss: 0.074550 |
+2021-09-12 16:41:00,842 - root - INFO - | Epoch: 040/050 | Train Time: 0.224s | Train Loss: 0.082281 |
+2021-09-12 16:41:00,842 - root - INFO - | Epoch: 040/050 | Train Time: 0.224s | Train Loss: 0.082281 |
+2021-09-12 16:41:00,842 - root - INFO - | Epoch: 040/050 | Train Time: 0.224s | Train Loss: 0.082281 |
+2021-09-12 16:41:00,842 - root - INFO - | Epoch: 040/050 | Train Time: 0.224s | Train Loss: 0.082281 |
+2021-09-12 16:41:01,090 - root - INFO - | Epoch: 041/050 | Train Time: 0.247s | Train Loss: 0.080488 |
+2021-09-12 16:41:01,090 - root - INFO - | Epoch: 041/050 | Train Time: 0.247s | Train Loss: 0.080488 |
+2021-09-12 16:41:01,090 - root - INFO - | Epoch: 041/050 | Train Time: 0.247s | Train Loss: 0.080488 |
+2021-09-12 16:41:01,090 - root - INFO - | Epoch: 041/050 | Train Time: 0.247s | Train Loss: 0.080488 |
+2021-09-12 16:41:01,340 - root - INFO - | Epoch: 042/050 | Train Time: 0.249s | Train Loss: 0.073950 |
+2021-09-12 16:41:01,340 - root - INFO - | Epoch: 042/050 | Train Time: 0.249s | Train Loss: 0.073950 |
+2021-09-12 16:41:01,340 - root - INFO - | Epoch: 042/050 | Train Time: 0.249s | Train Loss: 0.073950 |
+2021-09-12 16:41:01,340 - root - INFO - | Epoch: 042/050 | Train Time: 0.249s | Train Loss: 0.073950 |
+2021-09-12 16:41:01,595 - root - INFO - | Epoch: 043/050 | Train Time: 0.254s | Train Loss: 0.077398 |
+2021-09-12 16:41:01,595 - root - INFO - | Epoch: 043/050 | Train Time: 0.254s | Train Loss: 0.077398 |
+2021-09-12 16:41:01,595 - root - INFO - | Epoch: 043/050 | Train Time: 0.254s | Train Loss: 0.077398 |
+2021-09-12 16:41:01,595 - root - INFO - | Epoch: 043/050 | Train Time: 0.254s | Train Loss: 0.077398 |
+2021-09-12 16:41:01,856 - root - INFO - | Epoch: 044/050 | Train Time: 0.260s | Train Loss: 0.074240 |
+2021-09-12 16:41:01,856 - root - INFO - | Epoch: 044/050 | Train Time: 0.260s | Train Loss: 0.074240 |
+2021-09-12 16:41:01,856 - root - INFO - | Epoch: 044/050 | Train Time: 0.260s | Train Loss: 0.074240 |
+2021-09-12 16:41:01,856 - root - INFO - | Epoch: 044/050 | Train Time: 0.260s | Train Loss: 0.074240 |
+2021-09-12 16:41:02,097 - root - INFO - | Epoch: 045/050 | Train Time: 0.241s | Train Loss: 0.075921 |
+2021-09-12 16:41:02,097 - root - INFO - | Epoch: 045/050 | Train Time: 0.241s | Train Loss: 0.075921 |
+2021-09-12 16:41:02,097 - root - INFO - | Epoch: 045/050 | Train Time: 0.241s | Train Loss: 0.075921 |
+2021-09-12 16:41:02,097 - root - INFO - | Epoch: 045/050 | Train Time: 0.241s | Train Loss: 0.075921 |
+2021-09-12 16:41:02,336 - root - INFO - | Epoch: 046/050 | Train Time: 0.238s | Train Loss: 0.075128 |
+2021-09-12 16:41:02,336 - root - INFO - | Epoch: 046/050 | Train Time: 0.238s | Train Loss: 0.075128 |
+2021-09-12 16:41:02,336 - root - INFO - | Epoch: 046/050 | Train Time: 0.238s | Train Loss: 0.075128 |
+2021-09-12 16:41:02,336 - root - INFO - | Epoch: 046/050 | Train Time: 0.238s | Train Loss: 0.075128 |
+2021-09-12 16:41:02,569 - root - INFO - | Epoch: 047/050 | Train Time: 0.232s | Train Loss: 0.077778 |
+2021-09-12 16:41:02,569 - root - INFO - | Epoch: 047/050 | Train Time: 0.232s | Train Loss: 0.077778 |
+2021-09-12 16:41:02,569 - root - INFO - | Epoch: 047/050 | Train Time: 0.232s | Train Loss: 0.077778 |
+2021-09-12 16:41:02,569 - root - INFO - | Epoch: 047/050 | Train Time: 0.232s | Train Loss: 0.077778 |
