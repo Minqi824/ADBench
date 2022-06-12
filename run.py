@@ -37,7 +37,7 @@ class RunPipeline():
         :param NLP_CV: whether to test on the NLP and CV datasets, which are transformed by the pretrained Bert and ResNet18 model
         :param generate_duplicates: whether to generate duplicated samples when sample size is too small
         :param n_samples_threshold: threshold for generating the above duplicates, if generate_duplicates is False, then datasets with sample size smaller than n_samples_threshold will be dropped
-        :param realistic_synthetic_mode: local, global, dependency and clustered —— whether to generate the realistic synthetic anomalies to test different algorithms
+        :param realistic_synthetic_mode: local, global, dependency or cluster —— whether to generate the realistic synthetic anomalies to test different algorithms
         :param noise_type: duplicated_anomalies, irrelevant_features or label_contamination —— whether to test the model robustness
         '''
 
