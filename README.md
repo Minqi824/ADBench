@@ -2,6 +2,42 @@ Official implementation of _**ADBench**: Anomaly Detection Benchmark_.
 ****
 
 
+### Introduction
+ADBench is (to our best knowledge) the most comprehensive tabular anomaly detection benchmark.
+By analyzing both research needs and deployment requirements in industry,
+ADBench covers the experiments with three major angles in anomaly detection:
+_(i)_ the availability of supervision (e.g., ground truth labels) 
+by including 14 unsupervised, 7 semi-supervised, and 9 supervised methods;
+_(ii)_ algorithm performance under different types of anomalies by 
+simulating the environments with 4 types of anomalies; and
+_(iii)_ algorithm robustness and stability under 3 settings of data corruptions. 
+The Figure below provides an overview of our proposed ADBench.
+![ADBench](figs/ADBench.png)
+
+### Dependency
+The experiment code is written in Python 3 and built on a number of Python packages:  
+- scikit-learn==0.20.3 
+- pyod==0.9.8 
+- Keras==2.3.0 
+- tensorflow==1.15.0 
+- torch==1.9.0
+
+Batch installation is possible using the supplied "requirements.txt":
+```angular2html
+pip install -r requirements.txt
+```
+
+
+### Datasets
+![Daasets](figs/Datasets.png)
+
+### Algorithms
+![Algorithms](figs/Algorithms.png)
+
+## Results
+
+
+## Quickly implement ADBench for benchmarking AD algorithms.
 
 
   ### Quickly Implement ADBench for Your Customized Algorithm
