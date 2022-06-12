@@ -22,12 +22,7 @@ The experiment code is written in Python 3 and built on a number of Python packa
 - Keras==2.3.0 
 - tensorflow==1.15.0 
 - torch==1.9.0
-
-Batch installation is possible using the supplied "requirements.txt":
-```angular2html
-pip install -r requirements.txt
-```
-
+- rtdl==0.0.13
 
 ### Datasets
 ADBench includes 55 existing and freshly proposed datasets, as shown in the following Table.  
@@ -92,8 +87,8 @@ For each algorithm, we also introduce its specific implementation in the followi
 
 ### Results in Our Papers
 - For complete results of ADBench, please refer to the original paper.
-- For reproduce experiment results of ADBench, please run the code in run.py.
+- For reproduce experiment results of ADBench, please run the code in [run.py](run.py).
 
 ### Quickly implement ADBench for benchmarking AD algorithms.
 We provide an example for quickly implementing ADBench for any customized (AD) algorithms,
-as shown in the run_customized.ipynb.
+as shown in the [run_customized.ipynb](run_customized.ipynb).
