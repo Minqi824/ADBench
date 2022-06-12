@@ -95,3 +95,5 @@ For each algorithm, we also introduce its specific implementation in the followi
 - For reproduce experiment results of ADBench, please run the code in run.py.
 
 ### Quickly implement ADBench for benchmarking AD algorithms.
+We provide an example for quickly implementing ADBench for any customized (AD) algorithms,
+as shown in the run_customized.ipynb.
