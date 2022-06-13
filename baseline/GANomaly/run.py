@@ -17,7 +17,7 @@ class GANomaly():
         self.device = self.utils.get_device()  # get device
         self.seed = seed
 
-        #hyper-parameters
+        # hyper-parameters
         self.epochs = epochs
         self.batch_size = batch_size
         self.act_fun = act_fun

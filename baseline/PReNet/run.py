@@ -69,7 +69,6 @@ class PReNet():
             X_train_a_tensor = self.X_train_tensor[index_a]
             X_train_u_tensor = self.X_train_tensor[index_u]
 
-            #注意x的顺序需要在u之前，即(a,u)而非(u,a)对
             with torch.no_grad():
                 score_a_x = self.model(X_train_a_tensor, torch.cat(num * [X[i].view(1, -1)]))
                 score_x_u = self.model(torch.cat(num * [X[i].view(1, -1)]), X_train_u_tensor)
@@ -77,7 +76,7 @@ class PReNet():
             score_sub = torch.mean(score_a_x + score_x_u)
             score_sub = score_sub.numpy()[()]
 
-            #entire score
+            # entire score
             score.append(score_sub)
 
         return np.array(score)

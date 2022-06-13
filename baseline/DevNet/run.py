@@ -33,11 +33,6 @@ from sklearn.model_selection import train_test_split
 from myutils import Utils
 import time
 
-'''
-- devnet有通过loss进行early stopping的机制
-- 实际发现devnet paper中声称有作用的score distribution标准化,并没有显著作用
-- 真正起作用的是训练中的超参nb_batch,每一轮epoch都训练20个batch,无论数据集是大是小
-'''
 class DevNet():
     def __init__(self, seed, model_name='DevNet', save_suffix=None):
         self.utils = Utils()

@@ -4,11 +4,6 @@ from myutils import Utils
 
 
 class REPEN():
-    '''
-    该段代码并非REPEN原来paper的代码,源码好像有问题
-    mode: 暂时选的supervised
-    known_outliers: 不知道怎么设置,看代码设置了一个比较大的数,根据实验结果来看还比较正常
-    '''
     def __init__(self, seed, model_name='REPEN', save_suffix=None,
                  mode:str='supervised', hidden_dim:int=20, batch_size:int=256, nb_batch:int=50, n_epochs:int=30):
         self.utils = Utils()

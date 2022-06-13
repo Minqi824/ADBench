@@ -10,15 +10,12 @@ from .deepsad import deepsad
 from .datasets.main import load_dataset
 from myutils import Utils
 
-#感觉DeepSAD源码的构造太复杂了...这边调整了一些不必要的代码
 class DeepSAD():
     def __init__(self, seed, model_name='DeepSAD'):
         self.utils = Utils()
         self.device = self.utils.get_device()  # get device
         self.seed = seed
 
-        # hyper-parameters,基本与源代码中参数都是一致的 (DeepSAD的超参是真的多...)
-        # 可以用super().__init__来写
         self.net_name = 'dense'
         self.xp_path = None
         self.load_config = None
