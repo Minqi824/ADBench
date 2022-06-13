@@ -145,7 +145,6 @@ class RunPipeline():
         dataset_list_org = [os.path.splitext(_)[0] for _ in os.listdir(os.path.join(os.getcwd(), 'datasets'))
                             if os.path.splitext(_)[1] != '']
 
-        # 将不符合标准的数据集筛除
         dataset_list = []
         dataset_size = []
 
