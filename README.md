@@ -1,27 +1,48 @@
-Official implementation of _**ADBench**: Anomaly Detection Benchmark_.
+Official implementation of _**ADBench**: Anomaly Detection Benchmark_. __Please star, watch, and fork ADBench for the active updates!__
 ****
 
 
-### Introduction
-ADBench is (to our best knowledge) the most comprehensive tabular anomaly detection benchmark.
-By analyzing both research needs and deployment requirements in industry,
-ADBench covers the experiments with three major angles in anomaly detection:
-(_i_) the availability of supervision (e.g., ground truth labels) 
+## Why Do You Need ADBench?
+
+ADBench is (to our best knowledge) **the most comprehensive tabular anomaly detection benchmark**, where we analyze the performance of **30** anomaly detection algorithms on **55** benchmark datasets. By analyzing both research needs and deployment requirements in industry,
+ADBench conducts 93,654 experiments with three major angles in anomaly detection:
+ 1. **the availability of supervision** (e.g., ground truth labels) 
 by including 14 unsupervised, 7 semi-supervised, and 9 supervised methods;
-(_ii_) algorithm performance under different types of anomalies by 
+ 2. **algorithm performance under different types of anomalies** by 
 simulating the environments with 4 types of anomalies; and
-(_iii_) algorithm robustness and stability under 3 settings of data corruptions. 
-The Figure below provides an overview of our proposed ADBench.
+ 3. **algorithm robustness and stability** under 3 settings of data corruptions. 
+
+**Key Takeaways**: Adbench answers many questions for both researchers with interesting findings: 
+1. (**!!!**) surprisingly none of the benchmarked unsupervised algorithms is statistically better than others, emphasizing the importance of algorithm selection;
+2. (**!!**) with merely 1% labeled anomalies, most semi-supervised methods can outperform the best unsupervised method, justifying the importance of supervision;
+3. in controlled environments, we observe that best unsupervised methods for specific types of anomalies are even better than semi- and fully-supervised methods, revealing the necessity of understanding data characteristics;
+4. semi-supervised methods show potential in achieving robustness in noisy and corrupted data, possibly due to their efficiency in using labels and feature selection.
+5. (**!!!!!**) and many more can be found in our papers (Section 4)
+
+The Figure below provides an overview of our proposed ADBench (see our [paper (to be released)]() for details).
 
 ![ADBench](figs/ADBench.png)
+
+----
+
+## How to use ADBench?
+
+We envision three primary usages of ADBench:
+
+- **Have better understanding of anomaly detection algorithms**: please read our [paper (to be released)]() for details
+- **Conduct future research on anomaly detection**: we list 4 important future research questions in the paper--see Section 4 to see some thoughts!
+- **Access rich algorithm implementation and datasets**: see details below for how to use them
+- **Benchmark your anomaly detection algorithms**: see [notebook](https://github.com/Minqi824/ADBench/blob/main/run_customized.ipynb) for instruction.
+
+
 
 ### Dependency
 The experiment code is written in Python 3 and built on a number of Python packages:  
 - scikit-learn==0.20.3 
 - pyod==0.9.8 
-- Keras==2.3.0 
-- tensorflow==1.15.0 
-- torch==1.9.0
+- Keras==2.3.0 (required only for certain deep learning methods)
+- tensorflow==1.15.0 (required only for certain deep learning methods)
+- torch==1.9.0 (required only for certain deep learning methods)
 - rtdl==0.0.13
 
 ### Datasets
@@ -37,7 +58,7 @@ Pretrained models are applied to extract data embedding from NLP and CV datasets
 For NLP datasets, we use BERT pretrained on the BookCorpus and English Wikipedia to extract the embedding of the [CLS] token.
 For CV datasets, we use ResNet18 pretrained on the ImageNet to extract the embedding after the last average pooling layer.
 
-![Daasets](figs/Datasets.png)
+![Dataasets](figs/Datasets.png)
 
 ### Algorithms
 Compared to the previous benchmark studies, we have a larger algorithm collection with
