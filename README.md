@@ -1,12 +1,18 @@
 Official implementation of _**ADBench**: Anomaly Detection Benchmark_. __Please star, watch, and fork ADBench for the active updates!__
 ****
 
+## Who Are We? ✨
+
+ADBench is a colloborative product between researchers at _Shanghai University of Finance and Economics (SUFE)_ and _Carnegie Mellon University (CMU)_. The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao)--the author(s) of important anomaly detection libraries, including  
+anomaly detection for tabular ([PyOD](https://github.com/yzhao062/pyod)), time-series ([TODS](https://github.com/datamllab/tods)), 
+and graph data ([PyGOD](https://github.com/pygod-team/pygod)). 
+
 
 ## Why Do You Need ADBench?
 
 ADBench is (to our best knowledge) **the most comprehensive tabular anomaly detection benchmark**, where we analyze the performance of **30** anomaly detection algorithms on **55** benchmark datasets. By analyzing both research needs and deployment requirements in industry,
-ADBench conducts 93,654 experiments with three major angles in anomaly detection:
- 1. **the availability of supervision** (e.g., ground truth labels) 
+ADBench conducts 93,654 experiments with three major angles:
+ 1. **the effect of supervision** (e.g., ground truth labels) 
 by including 14 unsupervised, 7 semi-supervised, and 9 supervised methods;
  2. **algorithm performance under different types of anomalies** by 
 simulating the environments with 4 types of anomalies; and
