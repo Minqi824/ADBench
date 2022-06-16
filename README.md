@@ -21,11 +21,11 @@ simulating the environments with 4 types of anomalies; and
  3. **algorithm robustness and stability** under 3 settings of data corruptions. 
 
 **Key Takeaways**: Adbench answers many questions for both researchers with interesting findings: 
-1. (:heavy_exclamation_mark: :heavy_exclamation_mark: :heavy_exclamation_mark:) surprisingly none of the benchmarked unsupervised algorithms is statistically better than others, emphasizing the importance of algorithm selection;
-2. (:heavy_exclamation_mark: :heavy_exclamation_mark:) with merely 1% labeled anomalies, most semi-supervised methods can outperform the best unsupervised method, justifying the importance of supervision;
+1. :bangbang: surprisingly none of the benchmarked unsupervised algorithms is statistically better than others, emphasizing the importance of algorithm selection;
+2. :bangbang: with merely 1% labeled anomalies, most semi-supervised methods can outperform the best unsupervised method, justifying the importance of supervision;
 3. in controlled environments, we observe that best unsupervised methods for specific types of anomalies are even better than semi- and fully-supervised methods, revealing the necessity of understanding data characteristics;
 4. semi-supervised methods show potential in achieving robustness in noisy and corrupted data, possibly due to their efficiency in using labels and feature selection;
-5. (:heavy_exclamation_mark: :heavy_exclamation_mark: :heavy_exclamation_mark:  :heavy_exclamation_mark: :heavy_exclamation_mark:) and many more can be found in our papers (Section 4)
+5. :interrobang: and many more can be found in our papers (Section 4)
 
 The Figure below provides an overview of our proposed ADBench (see our [paper](https://github.com/Minqi824/ADBench/blob/main/paper/ADBench_paper.pdf) for details).
 
