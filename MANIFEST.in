@@ -1,0 +1,4 @@
+prune datasets
+prune README.md
+include README.rst
+include requirements.txt

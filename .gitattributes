@@ -1,0 +1,5 @@
+docs/* linguist-documentation
+datasets/* linguist-documentation
+notebooks/*.ipynb linguist-documentation
+*.ipynb linguist-documentation
+examples/*.ipynb linguist-documentation=false
