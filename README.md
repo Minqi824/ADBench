@@ -5,7 +5,7 @@ __Please star, watch, and fork ADBench for the active updates!__
 
 ## Who Are We? ✨
 
-ADBench is a colloborative product between researchers at _Shanghai University of Finance and Economics (SUFE)_ and _Carnegie Mellon University (CMU)_. The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao062)--the author(s) of important anomaly detection libraries, including  
+ADBench is a colloborative product between researchers at _Shanghai University of Finance and Economics (SUFE)_ and _Carnegie Mellon University (CMU)_. The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao062) and [Xiyang Hu (CMU)](https://github.com/xiyanghu)--the author(s) of important anomaly detection libraries, including  
 anomaly detection for tabular ([PyOD](https://github.com/yzhao062/pyod)), time-series ([TODS](https://github.com/datamllab/tods)), 
 and graph data ([PyGOD](https://github.com/pygod-team/pygod)). 
 
@@ -21,11 +21,11 @@ simulating the environments with 4 types of anomalies; and
  3. **algorithm robustness and stability** under 3 settings of data corruptions. 
 
 **Key Takeaways**: Adbench answers many questions for both researchers with interesting findings: 
-1. (**!!!**) surprisingly none of the benchmarked unsupervised algorithms is statistically better than others, emphasizing the importance of algorithm selection;
-2. (**!!**) with merely 1% labeled anomalies, most semi-supervised methods can outperform the best unsupervised method, justifying the importance of supervision;
+1. (:heavy_exclamation_mark: :heavy_exclamation_mark: :heavy_exclamation_mark:) surprisingly none of the benchmarked unsupervised algorithms is statistically better than others, emphasizing the importance of algorithm selection;
+2. (:heavy_exclamation_mark: :heavy_exclamation_mark:) with merely 1% labeled anomalies, most semi-supervised methods can outperform the best unsupervised method, justifying the importance of supervision;
 3. in controlled environments, we observe that best unsupervised methods for specific types of anomalies are even better than semi- and fully-supervised methods, revealing the necessity of understanding data characteristics;
-4. semi-supervised methods show potential in achieving robustness in noisy and corrupted data, possibly due to their efficiency in using labels and feature selection.
-5. (**!!!!!**) and many more can be found in our papers (Section 4)
+4. semi-supervised methods show potential in achieving robustness in noisy and corrupted data, possibly due to their efficiency in using labels and feature selection;
+5. (:heavy_exclamation_mark: :heavy_exclamation_mark: :heavy_exclamation_mark:  :heavy_exclamation_mark: :heavy_exclamation_mark:) and many more can be found in our papers (Section 4)
 
 The Figure below provides an overview of our proposed ADBench (see our [paper](https://github.com/Minqi824/ADBench/blob/main/paper/ADBench_paper.pdf) for details).
 
@@ -55,11 +55,13 @@ The experiment code is written in Python 3 and built on a number of Python packa
 
 ### Datasets
 ADBench includes 55 existing and freshly proposed datasets, as shown in the following Table.  
+
 Among them, 48 widely-used real-world datasets are gathered for model evaluation, which cover many application domains, 
 including healthcare (e.g., disease diagnosis), 
 audio and language processing (e.g., speech recognition), 
 image processing (e.g., object identification), 
 finance (e.g., financial fraud detection), etc.  
+
 **Moreover**, as most of these datasets are relatively small, 
 we introduce 7 more complex datasets from CV and NLP domains with more samples and richer features in ADBench.
 Pretrained models are applied to extract data embedding from NLP and CV datasets to access more complex representation.
@@ -70,11 +72,11 @@ For CV datasets, we use ResNet18 pretrained on the ImageNet to extract the embed
 
 ### Algorithms
 Compared to the previous benchmark studies, we have a larger algorithm collection with
-(_i_) latest unsupervised AD algorithms like DeepSVDD and ECOD;
-(_ii_) SOTA semi-supervised algorithms, including DeepSAD and DevNet;
-(_iii_) latest network architectures like ResNet in computer vision (CV) and Transformer in natural language processing (NLP) domain
+1. latest unsupervised AD algorithms like DeepSVDD and ECOD;
+2. SOTA semi-supervised algorithms, including DeepSAD and DevNet;
+3. latest network architectures like ResNet in computer vision (CV) and Transformer in natural language processing (NLP) domain
 ---we adapt ResNet and FTTransformer models for tabular AD in the proposed ADBench; and
-(_iv_) ensemble learning methods like LightGBM, XGBoost, and CatBoost.
+4. ensemble learning methods like LightGBM, XGBoost, and CatBoost.
 The Figure below shows the algorithms (14 unsupervised, 7 semi-supervised, and 9 supervised algorithms) in ADBench.
 ![Algorithms](figs/Algorithms.png)
 
