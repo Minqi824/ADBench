@@ -1,9 +1,11 @@
-Official implementation of _**ADBench**: Anomaly Detection Benchmark_. __Please star, watch, and fork ADBench for the active updates!__
+Official implementation of paper [_**ADBench**: Anomaly Detection Benchmark_](https://github.com/Minqi824/ADBench/blob/main/paper/ADBench%20Anomaly%20Detection%20Benchmark.pdf). 
+__Please star, watch, and fork ADBench for the active updates!__
+
 ****
 
 ## Who Are We? ✨
 
-ADBench is a colloborative product between researchers at _Shanghai University of Finance and Economics (SUFE)_ and _Carnegie Mellon University (CMU)_. The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao)--the author(s) of important anomaly detection libraries, including  
+ADBench is a colloborative product between researchers at _Shanghai University of Finance and Economics (SUFE)_ and _Carnegie Mellon University (CMU)_. The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao062)--the author(s) of important anomaly detection libraries, including  
 anomaly detection for tabular ([PyOD](https://github.com/yzhao062/pyod)), time-series ([TODS](https://github.com/datamllab/tods)), 
 and graph data ([PyGOD](https://github.com/pygod-team/pygod)). 
 
@@ -25,7 +27,7 @@ simulating the environments with 4 types of anomalies; and
 4. semi-supervised methods show potential in achieving robustness in noisy and corrupted data, possibly due to their efficiency in using labels and feature selection.
 5. (**!!!!!**) and many more can be found in our papers (Section 4)
 
-The Figure below provides an overview of our proposed ADBench (see our [paper (to be released)]() for details).
+The Figure below provides an overview of our proposed ADBench (see our [paper](https://github.com/Minqi824/ADBench/blob/main/paper/ADBench%20Anomaly%20Detection%20Benchmark.pdf) for details).
 
 ![ADBench](figs/ADBench.png)
 
@@ -35,7 +37,7 @@ The Figure below provides an overview of our proposed ADBench (see our [paper (t
 
 We envision three primary usages of ADBench:
 
-- **Have better understanding of anomaly detection algorithms**: please read our [paper (to be released)]() for details
+- **Have better understanding of anomaly detection algorithms**: please read our [paper](https://github.com/Minqi824/ADBench/blob/main/paper/ADBench%20Anomaly%20Detection%20Benchmark.pdf) for details
 - **Conduct future research on anomaly detection**: we list 4 important future research questions in the paper--see Section 4 to see some thoughts!
 - **Access rich algorithm implementation and datasets**: see details below for how to use them
 - **Benchmark your anomaly detection algorithms**: see [notebook](https://github.com/Minqi824/ADBench/blob/main/run_customized.ipynb) for instruction.
