@@ -81,7 +81,11 @@ Pretrained models are applied to extract data embedding from NLP and CV datasets
 For NLP datasets, we use BERT pretrained on the BookCorpus and English Wikipedia to extract the embedding of the [CLS] token.
 For CV datasets, we use ResNet18 pretrained on the ImageNet to extract the embedding after the last average pooling layer.
 
-![Dataasets](figs/Datasets.png)
+|  | Data | # Samples | # Features | # Anomaly | % Anomaly | Category |
+|---|---|---|---|---|---|---|
+| 1 |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
 
 ### Algorithms
 Compared to the previous benchmark studies, we have a larger algorithm collection with
