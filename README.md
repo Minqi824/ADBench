@@ -1,4 +1,4 @@
-Official implementation of paper [_**ADBench**: Anomaly Detection Benchmark_](https://github.com/Minqi824/ADBench/blob/main/paper/ADBench_paper.pdf). 
+Official implementation of paper [_**ADBench**: Anomaly Detection Benchmark_](https://arxiv.org/abs/2206.09426). 
 __Please star, watch, and fork ADBench for the active updates!__
 
 ## Citing ADBench:
@@ -18,7 +18,8 @@ Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/22
 
 ## Who Are We? ✨
 
-ADBench is a colloborative product between researchers at _Shanghai University of Finance and Economics (SUFE)_ and _Carnegie Mellon University (CMU)_. The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao062) and [Xiyang Hu (CMU)](https://github.com/xiyanghu)--the author(s) of important anomaly detection libraries, including  
+ADBench is a colloborative product between researchers at _Shanghai University of Finance and Economics (SUFE)_ and _Carnegie Mellon University (CMU)_. 
+The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao062) and [Xiyang Hu (CMU)](https://github.com/xiyanghu) --the author(s) of important anomaly detection libraries, including  
 anomaly detection for tabular ([PyOD](https://github.com/yzhao062/pyod)), time-series ([TODS](https://github.com/datamllab/tods)), 
 and graph data ([PyGOD](https://github.com/pygod-team/pygod)). 
 
@@ -40,7 +41,7 @@ simulating the environments with 4 types of anomalies; and
 4. semi-supervised methods show potential in achieving robustness in noisy and corrupted data, possibly due to their efficiency in using labels and feature selection;
 5. :interrobang: and many more can be found in our papers (Section 4)
 
-The Figure below provides an overview of our proposed ADBench (see our [paper](https://github.com/Minqi824/ADBench/blob/main/paper/ADBench_paper.pdf) for details).
+The Figure below provides an overview of our proposed ADBench (see our [paper](https://arxiv.org/abs/2206.09426) for details).
 
 ![ADBench](figs/ADBench.png)
 
@@ -50,7 +51,7 @@ The Figure below provides an overview of our proposed ADBench (see our [paper](h
 
 We envision three primary usages of ADBench:
 
-- **Have better understanding of anomaly detection algorithms**: please read our [paper](https://github.com/Minqi824/ADBench/blob/main/paper/ADBench_paper.pdf) for details
+- **Have better understanding of anomaly detection algorithms**: please read our [paper](https://arxiv.org/abs/2206.09426) for details
 - **Conduct future research on anomaly detection**: we list 4 important future research questions in the paper--see Section 4 to see some thoughts!
 - **Access rich algorithm implementation and datasets**: see details below for how to use them
 - **Benchmark your anomaly detection algorithms**: see [notebook](https://github.com/Minqi824/ADBench/blob/main/run_customized.ipynb) for instruction.
@@ -164,6 +165,16 @@ The Figure below shows the algorithms (14 unsupervised, 7 semi-supervised, and 9
 ![Algorithms](figs/Algorithms.png)
 
 For each algorithm, we also introduce its specific implementation in the following Table.
+The only thing worth noting is that model name should be specified 
+(especially for those models deployed by their corresponding package, e.g., [PyOD](https://github.com/yzhao062/pyod)). 
+The following codes show the example to import AD models. 
+Please see the Table for complete AD models included in ADBench and their import methods.
+```python
+from baseline.PyOD import PYOD
+model = PYOD(model_name='XGBOD') # initialization
+model.fit(X_train, y_train) # fit
+score = model.predict_score(X_test) # predict
+```
 |  Model  | Year | Type |  DL  |       Import       |  Source  |
 | :-----: | :--------: | :--: | :--: | :-----------------: | :------: |
 | [PCA](https://apps.dtic.mil/sti/pdfs/ADA465712.pdf) | Before 2017 | Unsup |  &cross;   | from baseline.PyOD import PYOD | [Link](https://pyod.readthedocs.io/en/latest/#) |
@@ -178,7 +189,7 @@ For each algorithm, we also introduce its specific implementation in the followi
 | [ECOD](https://arxiv.org/abs/2201.00382) | 2022  | Unsup |  &cross;   | from baseline.PyOD import PYOD | [Link](https://pyod.readthedocs.io/en/latest/#) |
 | [IForest†](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf?q=isolation-forest) | Before 2017  | Unsup |  &cross;   | from baseline.PyOD import PYOD | [Link](https://pyod.readthedocs.io/en/latest/#) |
 | [LODA†](https://link.springer.com/article/10.1007/s10994-015-5521-0) | Before 2017  | Unsup |  &cross;   | from baseline.PyOD import PYOD | [Link](https://pyod.readthedocs.io/en/latest/#) |
-| [DeepSVDD](http://proceedings.mlr.press/v80/ruff18a/ruff18a.pdf) | 2018  | Unsup |  &check;   | from pyod.models.deep_svdd import DeepSVDD | [Link](https://pyod.readthedocs.io/en/latest/#) |
+| [DeepSVDD](http://proceedings.mlr.press/v80/ruff18a/ruff18a.pdf) | 2018  | Unsup |  &check;   | from baseline.PyOD import PYOD | [Link](https://pyod.readthedocs.io/en/latest/#) |
 | [DAGMM](https://openreview.net/forum?id=BJJLHbb0-) | 2018  | Unsup |  &check;   | from baseline.DAGMM.run import DAGMM | [Link](https://github.com/mperezcarrasco/PyTorch-DAGMM) |
 | [GANomaly](https://arxiv.org/abs/1805.06725) | 2018  | Semi |  &check;   | from baseline.GANomaly.run import GANomaly | [Link](https://github.com/samet-akcay/ganomaly) |
 | [XGBOD†](https://arxiv.org/abs/1912.00290) | 2018  | Semi |  &cross;   | from baseline.PyOD import PYOD | [Link](https://pyod.readthedocs.io/en/latest/#) |
@@ -191,18 +202,18 @@ For each algorithm, we also introduce its specific implementation in the followi
 | [SVM](http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.41.1639) | Before 2017  | Sup |  &cross;   | from baseline.Supervised import supervised | [Link](https://scikit-learn.org/stable/supervised_learning.html) |
 | [MLP](https://files.eric.ed.gov/fulltext/ED294889.pdf) | Before 2017  | Sup |  &check;   | from baseline.Supervised import supervised | [Link](https://scikit-learn.org/stable/supervised_learning.html) |
 | [RF†](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf) | Before 2017  | Sup |  &cross;   | from baseline.Supervised import supervised | [Link](https://scikit-learn.org/stable/supervised_learning.html) |
-| [LGB†](https://proceedings.neurips.cc/paper/2017/file/6449f44a102fde848669bdd9eb6b76fa-Paper.pdf) | NIPS, 2017  | Supervised |  &cross;   | from baseline.Supervised import supervised | [Link](https://lightgbm.readthedocs.io/en/latest/) |
+| [LGB†](https://proceedings.neurips.cc/paper/2017/file/6449f44a102fde848669bdd9eb6b76fa-Paper.pdf) | 2017  | Supervised |  &cross;   | from baseline.Supervised import supervised | [Link](https://lightgbm.readthedocs.io/en/latest/) |
 | [XGB†](https://arxiv.org/abs/1603.02754) | Before 2017  | Sup |  &cross;   | from baseline.Supervised import supervised | [Link](https://catboost.ai/en/docs/) |
 | [CatB†](https://arxiv.org/pdf/1706.09516.pdf) | 2019  | Sup |  &cross;   | from baseline.Supervised import supervised | [Link](https://xgboost.readthedocs.io/en/stable/) |
 | [ResNet](https://arxiv.org/pdf/2106.11959.pdf) | 2019  | Sup |  &check;   | from baseline.FTTransformer.run import FTTransformer | [Link](https://yura52.github.io/rtdl/stable/index.html) |
 | [FTTransformer](https://arxiv.org/pdf/2106.11959.pdf) | 2019  | Sup |  &check;   | from baseline.FTTransformer.run import FTTransformer | [Link](https://yura52.github.io/rtdl/stable/index.html) |
-- '†' marks ensembling.
+- '†' marks ensembling. This symbol is not included in the model name.
 - Un-, semi-, and fully-supervised methods are denoted as _unsup_, _semi_ and _sup_, respectively.
 
 ### Results in Our Papers
-- For complete results of ADBench, please refer to the original paper.
-- For reproduce experiment results of ADBench, please run the code in [run.py](run.py).
+- For complete results of ADBench, please refer to our [paper](https://arxiv.org/abs/2206.09426).
+- For reproduce experiment results of ADBench, please run the [code](run.py).
 
 ### Quickly implement ADBench for benchmarking AD algorithms.
 We provide an example for quickly implementing ADBench for any customized (AD) algorithms,
-as shown in [run_customized.ipynb](run_customized.ipynb).
+as shown in [notebook](run_customized.ipynb).
