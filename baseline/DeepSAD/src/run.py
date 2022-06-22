@@ -20,14 +20,14 @@ class DeepSAD():
         self.xp_path = None
         self.load_config = None
         self.load_model = None
-        self.eta = 1.0 #loss function中的eta
+        self.eta = 1.0 # eta in the loss function
         self.optimizer_name = 'adam'
         self.lr = 0.001
         self.n_epochs = 50
         self.lr_milestone = [0]
         self.batch_size = 128
         self.weight_decay = 1e-6
-        self.pretrain = True #用auto-encoder进行pretrain
+        self.pretrain = True # whether to use auto-encoder for pretraining
         self.ae_optimizer_name = 'adam'
         self.ae_lr = 0.001
         self.ae_n_epochs = 100

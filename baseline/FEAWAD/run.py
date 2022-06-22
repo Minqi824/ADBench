@@ -334,11 +334,10 @@ class FEAWAD():
 
         # pre-trained autoencoder
         self.utils.set_seed(self.seed)
-        AEmodel = self.deviation_network(self.input_shape, 2, None, 0)  #auto-encoder model 预训练
+        AEmodel = self.deviation_network(self.input_shape, 2, None, 0)  # pretrain auto-encoder model
         print('autoencoder pre-training start....')
         AEmodel_name = os.path.join(os.getcwd(), 'baseline', 'FEAWAD', 'model', 'pretrained_autoencoder_'+self.save_suffix+'.h5')
         ae_checkpointer = ModelCheckpoint(AEmodel_name, monitor='loss', verbose=0, save_best_only=True, save_weights_only=True)
-        # 注意此处X_train配合上inlier_indices实际上使用的是unlabeled data预训练autoencoder
         AEmodel.fit_generator(self.auto_encoder_batch_generator_sup(X_train, inlier_indices, self.args.batch_size, self.args.nb_batch, rng),
                                          steps_per_epoch=self.args.nb_batch, epochs=100, callbacks=[ae_checkpointer])
 
