@@ -82,55 +82,62 @@ For NLP datasets, we use BERT pretrained on the BookCorpus and English Wikipedia
 For CV datasets, we use ResNet18 pretrained on the ImageNet to extract the embedding after the last average pooling layer.
 
 |  | Data | # Samples | # Features | # Anomaly | % Anomaly | Category |
-|---|---|---|---|---|---|---|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |1| abalone                         | 4177    | 7        | 2081      | 49.82               |      Biology    |
-|1| ALOI                    | 49534   | 27       | 1508      | 3.04                |     Image     |
-|1| annthyroid   | 7200    | 6        | 534       | 7.42                |      Healthcare    |
-|1| Arrhythmia          | 450     | 259      | 206       | 45.78               | Healthcare      |
-|1| breastw                              | 683     | 9        | 239       | 34.99               | Healthcare  |       
-|1| cardio                               | 1831    | 21       | 176       | 9.61                | Healthcare |        
-|1| Cardiotocography    | 2114    | 21       | 466       | 22.04               | Healthcare         |
-|1| comm.and.crime                | 1994    | 101      | 993       | 49.80                | Socio-economic    |     
-|1| concrete                      | 1030    | 8        | 515       | 50.00                  | Physical      |   
-|1| cover                                | 286048  | 10       | 2747      | 0.96                | Botany    |     
-|1| fault                      | 1941    | 27       | 673       | 34.67               | Physical         |
-|1| glass | 214     | 7        | 9         | 4.21                | Forensic          |
-|1| HeartDisease        | 270     | 13       | 120       | 44.44               | Healthcare        | 
-|1| Hepatitis           | 80      | 19       | 13        | 16.25               | Healthcare         |
-|1| http                                 | 567498  | 3        | 2211      | 0.39                | Web   |      
-|1| imgseg                         | 2310    | 18       | 990       | 42.86               | Image    |     
-|1| InternetAds   | 1966    | 1555     | 368       | 18.72               | Image         |
-|1| Ionosphere        | 351     | 32       | 126       | 35.90                | Oryctognosy         |
-|1| landsat                         | 6435    | 36       | 1333      | 20.71               | Astronautics    |     
-|1| letter                               | 1600    | 32       | 100       | 6.25                | Image     |    
-|1| Lymphography       | 148     | 18       | 6         | 4.05                | Healthcare       |  
-|1| magic.gamma                     | 19020   | 10       | 6688      | 35.16               | Physical        | 
-|1| mammography                          | 11183   | 6        | 260       | 2.32                | Healthcare  |       
-|1| mnist                                | 7603    | 100      | 700       | 9.21                | Image      |   
-|1| musk                                 | 3062    | 166      | 97        | 3.17                | Chemistry   |      
-|1| optdigits                            | 5216    | 64       | 150       | 2.88                | Image     |    
-|1| PageBlocks         | 5393    | 10       | 510       | 9.46                | Document         |
-|1| Parkinson           | 195     | 22       | 147       | 75.38               | Healthcare         |
-|1| pendigits                            | 6870    | 16       | 156       | 2.27                | Image        | 
-|1| Pima                | 768     | 8        | 268       | 34.90                | Healthcare         |
-|1| satellite                            | 6435    | 36       | 2036      | 31.64               | Astronautics     |    
-|1| satimage-2                           | 5803    | 36       | 71        | 1.22                | Astronautics    |     
-|1| shuttle                              | 49097   | 9        | 3511      | 7.15                | Astronautics  |       
-|1| skin                            | 245057  | 3        | 50859     | 20.75               |    Image      |
-|1| smtp                                 | 95156   | 3        | 30        | 0.03                | Web        | 
-|1| SpamBase            | 4207    | 57       | 1679      | 39.91               | Document         |
-|1| speech                               | 3686    | 400      | 61        | 1.65                | Linguistics    |     
-|1| Stamps              | 340     | 9        | 31        | 9.12                | Document         |
-|1| thyroid                              | 3772    | 6        | 93        | 2.47                | Healthcare      |   
-|1| vertebral                            | 240     | 6        | 30        | 12.50                | Biology       |  
-|1| vowels                               | 1456    | 12       | 50        | 3.43                | Linguistics  |       
-|1| Waveform           | 3443    | 21       | 100       | 2.90                 | Physics         |
-|1| WBC                | 223     | 9        | 10        | 4.48                | Healthcare         |
-|1| WDBC               | 367     | 30       | 10        | 2.72                | Healthcare         |
-|1| Wilt                | 4819    | 5        | 257       | 5.33                | Botany         |
-|1| wine                                 | 129     | 13       | 10        | 7.75                | Chemistry   |      
-|1| WPBC             | 198     | 33       | 47        | 23.74               | Healthcare   |      
-|1| yeast                           | 1484    | 8        | 507       | 34.16               | Biology|
+|2| ALOI                    | 49534   | 27       | 1508      | 3.04                |     Image     |
+|3| annthyroid   | 7200    | 6        | 534       | 7.42                |      Healthcare    |
+|4| Arrhythmia          | 450     | 259      | 206       | 45.78               | Healthcare      |
+|5| breastw                              | 683     | 9        | 239       | 34.99               | Healthcare  |       
+|6| cardio                               | 1831    | 21       | 176       | 9.61                | Healthcare |        
+|7| Cardiotocography    | 2114    | 21       | 466       | 22.04               | Healthcare         |
+|8| comm.and.crime                | 1994    | 101      | 993       | 49.80                | Socio-economic    |     
+|9| concrete                      | 1030    | 8        | 515       | 50.00                  | Physical      |   
+|10| cover                                | 286048  | 10       | 2747      | 0.96                | Botany    |     
+|11| fault                      | 1941    | 27       | 673       | 34.67               | Physical         |
+|12| glass | 214     | 7        | 9         | 4.21                | Forensic          |
+|13| HeartDisease        | 270     | 13       | 120       | 44.44               | Healthcare        | 
+|14| Hepatitis           | 80      | 19       | 13        | 16.25               | Healthcare         |
+|15| http                                 | 567498  | 3        | 2211      | 0.39                | Web   |      
+|16| imgseg                         | 2310    | 18       | 990       | 42.86               | Image    |     
+|17| InternetAds   | 1966    | 1555     | 368       | 18.72               | Image         |
+|18| Ionosphere        | 351     | 32       | 126       | 35.90                | Oryctognosy         |
+|19| landsat                         | 6435    | 36       | 1333      | 20.71               | Astronautics    |     
+|20| letter                               | 1600    | 32       | 100       | 6.25                | Image     |    
+|21| Lymphography       | 148     | 18       | 6         | 4.05                | Healthcare       |  
+|22| magic.gamma                     | 19020   | 10       | 6688      | 35.16               | Physical        | 
+|23| mammography                          | 11183   | 6        | 260       | 2.32                | Healthcare  |       
+|24| mnist                                | 7603    | 100      | 700       | 9.21                | Image      |   
+|25| musk                                 | 3062    | 166      | 97        | 3.17                | Chemistry   |      
+|26| optdigits                            | 5216    | 64       | 150       | 2.88                | Image     |    
+|27| PageBlocks         | 5393    | 10       | 510       | 9.46                | Document         |
+|28| Parkinson           | 195     | 22       | 147       | 75.38               | Healthcare         |
+|29| pendigits                            | 6870    | 16       | 156       | 2.27                | Image        | 
+|30| Pima                | 768     | 8        | 268       | 34.90                | Healthcare         |
+|31| satellite                            | 6435    | 36       | 2036      | 31.64               | Astronautics     |    
+|32| satimage-2                           | 5803    | 36       | 71        | 1.22                | Astronautics    |     
+|33| shuttle                              | 49097   | 9        | 3511      | 7.15                | Astronautics  |       
+|34| skin                            | 245057  | 3        | 50859     | 20.75               |    Image      |
+|35| smtp                                 | 95156   | 3        | 30        | 0.03                | Web        | 
+|36| SpamBase            | 4207    | 57       | 1679      | 39.91               | Document         |
+|37| speech                               | 3686    | 400      | 61        | 1.65                | Linguistics    |     
+|38| Stamps              | 340     | 9        | 31        | 9.12                | Document         |
+|39| thyroid                              | 3772    | 6        | 93        | 2.47                | Healthcare      |   
+|40| vertebral                            | 240     | 6        | 30        | 12.50                | Biology       |  
+|41| vowels                               | 1456    | 12       | 50        | 3.43                | Linguistics  |       
+|42| Waveform           | 3443    | 21       | 100       | 2.90                 | Physics         |
+|43| WBC                | 223     | 9        | 10        | 4.48                | Healthcare         |
+|44| WDBC               | 367     | 30       | 10        | 2.72                | Healthcare         |
+|45| Wilt                | 4819    | 5        | 257       | 5.33                | Botany         |
+|46| wine                                 | 129     | 13       | 10        | 7.75                | Chemistry   |      
+|47| WPBC             | 198     | 33       | 47        | 23.74               | Healthcare   |      
+|48| yeast                           | 1484    | 8        | 507       | 34.16               | Biology|
+|49| CIFAR10                           | 5263    | 512        | 263       | 5.00               | Image|
+|50| FashionMNIST                           | 6315    | 512        | 315       | 5.00               | Image|
+|51| SVHN                           | 5208    | 512        | 260       | 5.00               | Image|
+|52| agnews                           | 10000    | 768        | 500       | 5.00               | NLP|
+|53| amazon                           | 10000    | 768        | 500       | 5.00               | NLP|
+|54| imdb                           | 10000    | 768        | 500       | 5.00               | NLP|
+|55| yelp                           | 10000    | 768        | 500       | 5.00               | NLP|
 
 
 
