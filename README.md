@@ -82,9 +82,12 @@ For NLP datasets, we use BERT pretrained on the BookCorpus and English Wikipedia
 For CV datasets, we use ResNet18 pretrained on the ImageNet to extract the embedding after the last average pooling layer.
 
 - We organize the above 55 datasets into user-friendly format. All the datasets are named as "number_data.npz" in the
-[datasets](datasets) folder. For example, one can evaluate AD algorithms on the abalone dataset by the following codes:
+[datasets](datasets) folder. For example, one can evaluate AD algorithms on the abalone dataset by the following codes.
+For multi-class dataset like CIFAR10, additional class numbers should be specified as "number_data_class.npz".
+Please see the folder for more details.
 
 ```python
+import numpy as np
 data = np.load('1_abalone.npz', allow_pickle=True)
 X, y = data['X'], data['y']
 ```
