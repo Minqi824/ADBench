@@ -67,21 +67,30 @@ The experiment code is written in Python 3 and built on a number of Python packa
 - rtdl==0.0.13
 
 ### Datasets
-ADBench includes 55 existing and freshly proposed datasets, as shown in the following Table.  
+ADBench includes 55 existing and freshly proposed datasets, as shown in the following Table. 
 
-Among them, 48 widely-used real-world datasets are gathered for model evaluation, which cover many application domains, 
+- Among them, 48 widely-used real-world datasets are gathered for model evaluation, which cover many application domains, 
 including healthcare (e.g., disease diagnosis), 
 audio and language processing (e.g., speech recognition), 
 image processing (e.g., object identification), 
 finance (e.g., financial fraud detection), etc.  
 
-**Moreover**, as most of these datasets are relatively small, 
+- **Moreover**, as most of these datasets are relatively small, 
 we introduce 7 more complex datasets from CV and NLP domains with more samples and richer features in ADBench.
 Pretrained models are applied to extract data embedding from NLP and CV datasets to access more complex representation.
 For NLP datasets, we use BERT pretrained on the BookCorpus and English Wikipedia to extract the embedding of the [CLS] token.
 For CV datasets, we use ResNet18 pretrained on the ImageNet to extract the embedding after the last average pooling layer.
 
-|  | Data | # Samples | # Features | # Anomaly | % Anomaly | Category |
+- We organize the above 55 datasets into user-friendly format. All the datasets are named as "number_data.npz" in the
+[datasets](datasets) folder. For example, one can evaluate AD algorithms on the abalone dataset by the following codes:
+
+```python
+data = np.load('1_abalone.npz', allow_pickle=True)
+X, y = data['X'], data['y']
+```
+
+
+| Number | Data | # Samples | # Features | # Anomaly | % Anomaly | Category |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |1| abalone                         | 4177    | 7        | 2081      | 49.82               |      Biology    |
 |2| ALOI                    | 49534   | 27       | 1508      | 3.04                |     Image     |
