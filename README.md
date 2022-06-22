@@ -1,10 +1,10 @@
 Official implementation of paper [_**ADBench**: Anomaly Detection Benchmark_](https://github.com/Minqi824/ADBench/blob/main/paper/ADBench_paper.pdf). 
 __Please star, watch, and fork ADBench for the active updates!__
 
-**Citing ADBench**:
-Our ADBench benchmark paper is available on [arxiv](https://arxiv.org/abs/2206.09426). If you use ADBench in a scientific publication, we would appreciate citations to the following paper:
-
-> @misc{han2022adbench,  
+## Citing ADBench:
+Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/2206.09426). If you find this work useful, we would appreciate citations to the following paper:
+```
+@misc{han2022adbench,  
       title={ADBench: Anomaly Detection Benchmark},   
       author={Songqiao Han and Xiyang Hu and Hailiang Huang and Mingqi Jiang and Yue Zhao},  
       year={2022},  
@@ -12,6 +12,7 @@ Our ADBench benchmark paper is available on [arxiv](https://arxiv.org/abs/2206.0
       archivePrefix={arXiv},  
       primaryClass={cs.LG}  
 }
+```
 
 ****
 
