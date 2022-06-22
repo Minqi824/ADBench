@@ -14,6 +14,7 @@ from myutils import Utils
 # unsupervised models
 from baseline.PyOD import PYOD
 from baseline.DAGMM.run import DAGMM
+
 # semi-supervised models
 from baseline.GANomaly.run import GANomaly
 from baseline.DeepSAD.src.run import DeepSAD
@@ -21,12 +22,13 @@ from baseline.REPEN.run import REPEN
 from baseline.DevNet.run import DevNet
 from baseline.PReNet.run import PReNet
 from baseline.FEAWAD.run import FEAWAD
-# fully-supervised models
+
+# # fully-supervised models
 from baseline.Supervised import supervised
 from baseline.FTTransformer.run import FTTransformer
 
 class RunPipeline():
-    def __init__(self, suffix:str=None, mode:str='rla', parallel:str=None, NLP_CV=False,
+    def __init__(self, suffix:str=None, mode:str='rla', parallel:str=None,
                  generate_duplicates=True, n_samples_threshold=1000,
                  realistic_synthetic_mode:str=None,
                  noise_type=None):
@@ -34,7 +36,6 @@ class RunPipeline():
         :param suffix: saved file suffix (including the model performance result and model weights)
         :param mode: rla or nla —— ratio of labeled anomalies or number of labeled anomalies
         :param parallel: unsupervise, semi-supervise or supervise, choosing to parallelly run the code
-        :param NLP_CV: whether to test on the NLP and CV datasets, which are transformed by the pretrained Bert and ResNet18 model
         :param generate_duplicates: whether to generate duplicated samples when sample size is too small
         :param n_samples_threshold: threshold for generating the above duplicates, if generate_duplicates is False, then datasets with sample size smaller than n_samples_threshold will be dropped
         :param realistic_synthetic_mode: local, global, dependency or cluster —— whether to generate the realistic synthetic anomalies to test different algorithms
@@ -55,17 +56,8 @@ class RunPipeline():
         self.noise_type = noise_type
 
         # the suffix of all saved files
-        if NLP_CV:
-            self.suffix = suffix + '_NLP_CV_' + str(realistic_synthetic_mode) + '_' + str(noise_type) + '_' + self.parallel
-        else:
-            self.suffix = suffix + '_Tabular_' + str(realistic_synthetic_mode) + '_' + str(noise_type) + '_' + self.parallel
-
-        # whether to test on the NLP and CV datasets
-        self.NLP_CV = NLP_CV
-
-        if self.NLP_CV:
-            assert self.realistic_synthetic_mode is None
-            assert self.noise_type is None
+        self.suffix = suffix + '_' + 'type(' + str(realistic_synthetic_mode) + ')_' + 'noise(' + str(noise_type) + ')_'\
+                      + self.parallel
 
         # data generator instantiation
         self.data_generator = DataGenerator(generate_duplicates=self.generate_duplicates,
@@ -110,9 +102,9 @@ class RunPipeline():
             # DAGMM
             self.model_dict['DAGMM'] = DAGMM
 
-            # # DeepSVDD (if necessary, the DeepSVDD is only for tensorflow 2.0+)
-            # for _ in ['DeepSVDD']:
-            #     self.model_dict[_] = PYOD
+            # DeepSVDD (if necessary, the DeepSVDD is only for tensorflow 2.0+)
+            for _ in ['DeepSVDD']:
+                self.model_dict[_] = PYOD
 
         # semi-supervised algorithms
         elif self.parallel == 'semi-supervise':
@@ -129,6 +121,7 @@ class RunPipeline():
             # from sklearn
             for _ in ['LR', 'NB', 'SVM', 'MLP', 'RF', 'LGB', 'XGB', 'CatB']:
                 self.model_dict[_] = supervised
+            # ResNet and FTTransformer for tabular data
             for _ in ['ResNet', 'FTTransformer']:
                 self.model_dict[_] = FTTransformer
         else:
@@ -142,8 +135,7 @@ class RunPipeline():
     # dataset filter for delelting those datasets that do not satisfy the experimental requirement
     def dataset_filter(self):
         # dataset list in the current folder
-        dataset_list_org = [os.path.splitext(_)[0] for _ in os.listdir(os.path.join(os.getcwd(), 'datasets'))
-                            if os.path.splitext(_)[1] != '']
+        dataset_list_org = os.listdir('datasets')
 
         dataset_list = []
         dataset_size = []
@@ -158,9 +150,6 @@ class RunPipeline():
                 if not self.generate_duplicates and len(data['y_train']) + len(data['y_test']) < self.n_samples_threshold:
                     add = False
 
-                # elif len(data['y_train']) + len(data['y_test']) > 50000:
-                #     add = False
-
                 else:
                     if self.mode == 'nla' and sum(data['y_train']) >= self.nla_list[-1]:
                         pass
@@ -170,6 +159,11 @@ class RunPipeline():
 
                     else:
                         add = False
+
+            # remove high-dimensional CV and NLP datasets if generating synthetic anomalies or robustness test
+            if self.realistic_synthetic_mode is not None or self.noise_type is not None:
+                if any([_ in dataset for _ in ['CIFAR10, FashionMNIST', 'SVHN', 'agnews', 'amazon', 'imdb', 'yelp']]):
+                    add = False
 
             if add:
                 dataset_list.append(dataset)
@@ -196,20 +190,17 @@ class RunPipeline():
             pass
 
         try:
-            # model fitting, currently most of models are implemented to output the anomaly score
-            if self.model_name not in ['DeepSAD', 'ResNet', 'FTTransformer']:
-                # fitting
-                self.clf = self.clf.fit(X_train=self.data['X_train'], y_train=self.data['y_train'],
-                                        ratio=sum(self.data['y_test']) / len(self.data['y_test']))
-                # predicting score
-                if self.model_name == 'DAGMM':
-                    score_test = self.clf.predict_score(self.data['X_train'], self.data['X_test'])
-                else:
-                    score_test = self.clf.predict_score(self.data['X_test'])
-                # performance
-                result = self.utils.metric(y_true=self.data['y_test'], y_score=score_test, pos_label=1)
+            # fitting
+            self.clf = self.clf.fit(X_train=self.data['X_train'], y_train=self.data['y_train'],
+                                    ratio=sum(self.data['y_test']) / len(self.data['y_test']))
+            # predicting score
+            if self.model_name == 'DAGMM':
+                score_test = self.clf.predict_score(self.data['X_train'], self.data['X_test'])
             else:
-                result = self.clf.fit2test(self.data)
+                score_test = self.clf.predict_score(self.data['X_test'])
+
+            # performance
+            result = self.utils.metric(y_true=self.data['y_test'], y_score=score_test, pos_label=1)
 
             K.clear_session()
             print(f"Model: {self.model_name}, AUC-ROC: {result['aucroc']}, AUC-PR: {result['aucpr']}")
@@ -227,11 +218,7 @@ class RunPipeline():
     # run the experiment
     def run(self):
         #  filteting dataset that do not meet the experimental requirements
-        if self.NLP_CV:
-            dataset_list = [os.path.splitext(_)[0] for _ in os.listdir(os.path.join(os.getcwd(), 'datasets_NLP_CV'))
-                            if os.path.splitext(_)[-1] == '.npz']
-        else:
-            dataset_list = self.dataset_filter()
+        dataset_list = self.dataset_filter()
 
         # experimental parameters
         if self.mode == 'nla':
@@ -260,9 +247,6 @@ class RunPipeline():
                 dataset, la, self.seed = params
 
             if self.parallel == 'unsupervise' and la != 0.0 and self.noise_type is None:
-                continue
-
-            if self.NLP_CV and any([_ in dataset for _ in ['agnews', 'FashionMNIST', 'CIFAR10', 'SVHN']]) and self.seed > 1:
                 continue
 
             print(f'Current experiment parameters: {params}')
@@ -315,6 +299,5 @@ class RunPipeline():
                 df_time.to_csv(os.path.join(os.getcwd(), 'result', 'Time_' + self.suffix + '.csv'), index=True)
 
 # run the above pipeline for reproducing the results in the paper
-pipeline = RunPipeline(suffix='DB_test', parallel='unsupervise', NLP_CV=False,
-                       realistic_synthetic_mode=None, noise_type=None)
+pipeline = RunPipeline(suffix='ADBench_test', parallel='semi-supervise', realistic_synthetic_mode=None, noise_type=None)
 pipeline.run()

@@ -80,13 +80,15 @@ class deepsad(object):
         if self.trainer is None:
             self.trainer = DeepSADTrainer(self.c, self.eta, device=device, n_jobs_dataloader=n_jobs_dataloader)
 
-        self.trainer.test(dataset, self.net)
+        score = self.trainer.test(dataset, self.net)
 
         # Get results
-        self.results['test_aucroc'] = self.trainer.test_aucroc
-        self.results['test_aucpr'] = self.trainer.test_aucpr
+        # self.results['test_aucroc'] = self.trainer.test_aucroc
+        # self.results['test_aucpr'] = self.trainer.test_aucpr
         self.results['test_time'] = self.trainer.test_time
         self.results['test_scores'] = self.trainer.test_scores
+
+        return score
 
     def pretrain(self, dataset: BaseADDataset, input_size ,optimizer_name: str = 'adam', lr: float = 0.001, n_epochs: int = 100,
                  lr_milestones: tuple = (), batch_size: int = 128, weight_decay: float = 1e-6, device: str = 'cuda',

@@ -25,9 +25,17 @@ import tensorflow as tf
 from keras import backend as K
 from keras.models import Model
 from keras.layers import Input, Dense, Subtract,concatenate,Lambda,Reshape
-from keras.optimizers import Adam, RMSprop
 from keras.callbacks import ModelCheckpoint
 from keras.losses import mean_squared_error
+
+try:
+    from keras.optimizers import Adam, RMSprop
+except:
+    from tensorflow.keras.optimizers import Adam, RMSprop
+
+# Disable TF eager execution mode for avoid the errors caused by the custom loss function
+from tensorflow.python.framework.ops import disable_eager_execution
+disable_eager_execution()
 
 class FEAWAD():
     def __init__(self, seed, model_name='FEAWAD', save_suffix=None):
@@ -103,7 +111,7 @@ class FEAWAD():
             cal_norm2 = Lambda(lambda x: tf.norm(x,ord = 2,axis=1))
             sub_norm2 = cal_norm2(sub_result)
             sub_norm2 = Reshape((1,))(sub_norm2)
-            division = Lambda(lambda x:tf.div(x[0],x[1]))
+            division = Lambda(lambda x:tf.divide(x[0],x[1]))
             sub_result = division([sub_result,sub_norm2]) # normalized reconstruction residual error
             conca_tensor = concatenate([sub_result,en2],axis=1) # [hidden representation, normalized reconstruction residual error]
 
@@ -113,7 +121,7 @@ class FEAWAD():
             cal_norm2 = Lambda(lambda x: tf.norm(x,ord = 2,axis=1))
             sub_norm2 = cal_norm2(sub_result)
             sub_norm2 = Reshape((1,))(sub_norm2)
-            division = Lambda(lambda x:tf.div(x[0],x[1]))
+            division = Lambda(lambda x:tf.divide(x[0],x[1]))
             sub_result = division([sub_result,sub_norm2])
             conca_tensor = concatenate([sub_result,en2],axis=1)
 
@@ -125,6 +133,7 @@ class FEAWAD():
         intermediate = concatenate([intermediate,sub_norm2],axis=1) # again, concat the intermediate vector with the residual error
         output_pre = Dense(1, kernel_initializer='glorot_normal',use_bias=True,activation='linear', name = 'score')(intermediate)
         dev_model = Model(x_input, output_pre)
+
         def multi_loss(y_true,y_pred):
             confidence_margin = 5.
 
@@ -188,7 +197,7 @@ class FEAWAD():
             sid = rng.choice(n_inliers, 1)
             ref[i] = train_x[inlier_indices[sid]]
             training_labels[i] = train_x[inlier_indices[sid]]
-        return np.array(ref), np.array(training_labels)
+        return np.array(ref), np.array(training_labels, dtype=float)
 
     def batch_generator_sup(self, x, outlier_indices, inlier_indices, batch_size, nb_batch, rng):
         """batch generator
@@ -227,7 +236,7 @@ class FEAWAD():
                 sid = rng.choice(n_outliers, 1)
                 ref[i] = train_x[outlier_indices[sid]]
                 training_labels += [1]
-        return np.array(ref), np.array(training_labels)
+        return np.array(ref), np.array(training_labels, dtype=float)
 
     def input_batch_generation_sup_sparse(self, train_x, outlier_indices, inlier_indices, batch_size, rng):
         '''
@@ -249,7 +258,7 @@ class FEAWAD():
                 ref[i] = outlier_indices[sid]
                 training_labels += [1]
         ref = train_x[ref, :].toarray()
-        return ref, np.array(training_labels)
+        return ref, np.array(training_labels, dtype=float)
 
     def load_model_weight_predict(self, model_name, input_shape, network_depth, test_x):
         '''

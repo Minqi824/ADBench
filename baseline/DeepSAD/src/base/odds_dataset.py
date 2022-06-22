@@ -22,19 +22,14 @@ class ODDSDataset(Dataset):
 
     def __init__(self, data, train=True):
         super(Dataset, self).__init__()
-        X_train = data['X_train']
-        y_train = data['y_train']
-        X_test = data['X_test']
-        y_test = data['y_test']
-
         self.train = train
 
         if self.train:
-            self.data = torch.tensor(X_train, dtype=torch.float32)
-            self.targets = torch.tensor(y_train, dtype=torch.int64)
+            self.data = torch.tensor(data['X_train'], dtype=torch.float32)
+            self.targets = torch.tensor(data['y_train'], dtype=torch.int64)
         else:
-            self.data = torch.tensor(X_test, dtype=torch.float32)
-            self.targets = torch.tensor(y_test, dtype=torch.int64)
+            self.data = torch.tensor(data['X_test'], dtype=torch.float32)
+            self.targets = torch.tensor(data['y_test'], dtype=torch.int64)
 
         # self.semi_targets = torch.zeros_like(self.targets)
         self.semi_targets = self.targets

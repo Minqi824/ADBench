@@ -3,8 +3,8 @@
 @author: Guansong Pang
 The algorithm was implemented using Python 3.6.6, Keras 2.2.2 and TensorFlow 1.10.1.
 More details can be found in our KDD19 paper.
-Guansong Pang, Chunhua Shen, and Anton van den Hengel. 2019. 
-Deep Anomaly Detection with Deviation Networks. 
+Guansong Pang, Chunhua Shen, and Anton van den Hengel. 2019.
+Deep Anomaly Detection with Deviation Networks.
 In The 25th ACM SIGKDDConference on Knowledge Discovery and Data Mining (KDD ’19),
 August4–8, 2019, Anchorage, AK, USA.ACM, New York, NY, USA, 10 pages. https://doi.org/10.1145/3292500.3330871
 """
@@ -16,8 +16,12 @@ from keras import regularizers
 from keras import backend as K
 from keras.models import Model, load_model
 from keras.layers import Input, Dense
-from keras.optimizers import RMSprop
 from keras.callbacks import ModelCheckpoint, TensorBoard
+
+try:
+    from keras.optimizers import RMSprop # old tf version
+except:
+    from tensorflow.keras.optimizers import RMSprop
 
 import argparse
 import numpy as np
@@ -67,6 +71,7 @@ class DevNet():
         # random_seed = args.ramdn_seed
 
         self.save_suffix = save_suffix
+        self.ref = None # normal distribution reference, created for reusing across subsequent function calls
 
     def dev_network_d(self,input_shape):
         '''
@@ -105,12 +110,15 @@ class DevNet():
         '''
         z-score-based deviation loss
         '''
+
         confidence_margin = 5.
         ## size=5000 is the setting of l in algorithm 1 in the paper
-        ref = K.variable(np.random.normal(loc = 0., scale= 1.0, size = 5000) , dtype='float32')
-        dev = (y_pred - K.mean(ref)) / K.std(ref)
+        if self.ref is None:
+            self.ref = K.variable(np.random.normal(loc = 0., scale= 1.0, size = 5000), dtype='float32')
+        dev = (y_pred - K.mean(self.ref)) / K.std(self.ref)
         inlier_loss = K.abs(dev)
         outlier_loss = K.abs(K.maximum(confidence_margin - dev, 0.))
+
         return K.mean((1 - y_true) * inlier_loss + y_true * outlier_loss)
 
     def deviation_network(self, input_shape, network_depth):
@@ -160,7 +168,7 @@ class DevNet():
                 sid = rng.choice(n_outliers, 1)
                 ref[i] = X_train[outlier_indices[sid]]
                 training_labels += [1]
-        return np.array(ref), np.array(training_labels)
+        return np.array(ref), np.array(training_labels, dtype=float)
 
     def input_batch_generation_sup_sparse(self, X_train, outlier_indices, inlier_indices, batch_size, rng):
         '''
@@ -218,9 +226,9 @@ class DevNet():
                                        save_best_only = True, save_weights_only = True)
 
         self.model.fit_generator(self.batch_generator_sup(X_train, outlier_indices, inlier_indices, batch_size, nb_batch, rng),
-                              steps_per_epoch = nb_batch,
-                              epochs = epochs,
-                              callbacks=[checkpointer])
+                                  steps_per_epoch = nb_batch,
+                                  epochs = epochs,
+                                  callbacks=[checkpointer])
 
         return self
 

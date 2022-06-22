@@ -27,7 +27,7 @@ class AETrainer(BaseTrainer):
         logger = logging.getLogger()
 
         # Get train data loader
-        train_loader, _ = dataset.loaders(batch_size=self.batch_size, num_workers=self.n_jobs_dataloader)
+        train_loader = dataset.loaders(batch_size=self.batch_size, num_workers=self.n_jobs_dataloader)
 
         # Set loss
         criterion = nn.MSELoss(reduction='none')
@@ -86,7 +86,7 @@ class AETrainer(BaseTrainer):
         logger = logging.getLogger()
 
         # Get test data loader
-        _, test_loader = dataset.loaders(batch_size=self.batch_size, num_workers=self.n_jobs_dataloader)
+        test_loader = dataset.loaders(batch_size=self.batch_size, num_workers=self.n_jobs_dataloader)
 
         # Set loss
         criterion = nn.MSELoss(reduction='none')

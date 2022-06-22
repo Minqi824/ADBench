@@ -36,7 +36,7 @@ class DeepSADTrainer(BaseTrainer):
         logger = logging.getLogger()
 
         # Get train data loader
-        train_loader, _ = dataset.loaders(batch_size=self.batch_size, num_workers=self.n_jobs_dataloader)
+        train_loader = dataset.loaders(batch_size=self.batch_size, num_workers=self.n_jobs_dataloader)
 
         # Set device for network
         net = net.to(self.device)
@@ -101,7 +101,7 @@ class DeepSADTrainer(BaseTrainer):
         logger = logging.getLogger()
 
         # Get test data loader
-        _, test_loader = dataset.loaders(batch_size=self.batch_size, num_workers=self.n_jobs_dataloader)
+        test_loader = dataset.loaders(batch_size=self.batch_size, num_workers=self.n_jobs_dataloader)
 
         # Set device for network
         net = net.to(self.device)
@@ -141,17 +141,19 @@ class DeepSADTrainer(BaseTrainer):
 
         # Compute AUC
         _, labels, scores = zip(*idx_label_score)
-        labels = np.array(labels)
+        # labels = np.array(labels)
         scores = np.array(scores)
-        self.test_aucroc = roc_auc_score(labels, scores)
-        self.test_aucpr = average_precision_score(labels, scores, pos_label = 1)
+        # self.test_aucroc = roc_auc_score(labels, scores)
+        # self.test_aucpr = average_precision_score(labels, scores, pos_label = 1)
 
         # Log results
         logger.info('Test Loss: {:.6f}'.format(epoch_loss / n_batches))
-        logger.info('Test AUCROC: {:.2f}%'.format(100. * self.test_aucroc))
-        logger.info('Test AUCPR: {:.2f}%'.format(100. * self.test_aucpr))
+        # logger.info('Test AUCROC: {:.2f}%'.format(100. * self.test_aucroc))
+        # logger.info('Test AUCPR: {:.2f}%'.format(100. * self.test_aucpr))
         logger.info('Test Time: {:.3f}s'.format(self.test_time))
         logger.info('Finished testing.')
+
+        return scores
 
     def init_center_c(self, train_loader: DataLoader, net: BaseNet, eps=0.1):
         """Initialize hypersphere center c as the mean from an initial forward pass on the data."""
