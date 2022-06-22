@@ -38,7 +38,7 @@ from myutils import Utils
 import time
 
 class DevNet():
-    def __init__(self, seed, model_name='DevNet', save_suffix=None):
+    def __init__(self, seed, model_name='DevNet', save_suffix='test'):
         self.utils = Utils()
         self.device = self.utils.get_device()  # get device
         self.seed = seed

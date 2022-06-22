@@ -38,7 +38,7 @@ from tensorflow.python.framework.ops import disable_eager_execution
 disable_eager_execution()
 
 class FEAWAD():
-    def __init__(self, seed, model_name='FEAWAD', save_suffix=None):
+    def __init__(self, seed, model_name='FEAWAD', save_suffix='test'):
         self.utils = Utils()
         self.device = self.utils.get_device()  # get device
         self.seed = seed

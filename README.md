@@ -67,21 +67,56 @@ The experiment code is written in Python 3 and built on a number of Python packa
 - rtdl==0.0.13
 
 ### Quickly implement ADBench for benchmarking AD algorithms.
-We present the following example for quickly implementing ADBench in three different angles illustrated
-in the paper. Currently [55 datasets](#datasets) can be used for evaluating 30 algorithms in ADBench,
+We present the following example for quickly implementing ADBench in _three different Angles_ illustrated
+in the paper. Currently [55 datasets](#datasets) can be used for evaluating [30 algorithms](#algorithms) in ADBench,
 and we encourage to test your customized datasets / algorithms in our ADBench testbed.
+
 
 **_Angle I: Availability of Ground Truth Labels (Supervision)_**
 ```python
+from data_generator import DataGenerator
+from myutils import Utils
 
+# one can use our already included datasets
+data_generator = DataGenerator(dataset='1_abalone.npz')
+# specify the ratio of labeled anomalies to generate X and y
+# la could be any float number in [0.0, 1.0]
+data = data_generator.generator(la=0.1) 
+
+# or specify the X and y of your customized data
+# data_generator = DataGenerator(dataset=None)
+# data = data_generator.generator(X=X, y=y, la=0.1)
+
+# import AD algorithms (e.g., DevNet) and initialization
+from baseline.DevNet.run import DevNet
+model = DevNet(seed=42)
+
+# fitting
+model.fit(X_train=data['X_train'], y_train=data['y_train'])
+
+# prediction
+score = model.predict_score(data['X_test'])
+
+# evaluation
+utils = Utils()
+result = utils.metric(y_true=data['y_test'], y_score=score)
 ```
+
 **_Angle II: Types of Anomalies_**
 ```python
-
+# For Angle II, different types of anomalies are generated as the following
+data_generator = DataGenerator(dataset='1_abalone.npz')
+# the type of anomalies could be 'local', 'global', 'dependency' or 'cluster'.
+data = data_generator.generator(realistic_synthetic_mode='local')
 ```
+
+
 **_Angle III: Model Robustness with Noisy and Corrupted Data_**
 ```python
-
+# For Angle III, different data noises and corruptions are added as the following
+data_generator = DataGenerator(dataset='1_abalone.npz')
+# the type of anomalies could be 'duplicated_anomalies', 'irrelevant_features' or 'label_contamination'.
+data = data_generator.generator(noise_type='duplicated_anomalies')
 ```
 
 - We also provide an example for quickly implementing ADBench, as shown in [notebook](run_customized.ipynb).

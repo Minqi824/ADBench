@@ -299,5 +299,5 @@ class RunPipeline():
                 df_time.to_csv(os.path.join(os.getcwd(), 'result', 'Time_' + self.suffix + '.csv'), index=True)
 
 # run the above pipeline for reproducing the results in the paper
-pipeline = RunPipeline(suffix='ADBench_test', parallel='semi-supervise', realistic_synthetic_mode=None, noise_type=None)
+pipeline = RunPipeline(suffix='ADBench_test', parallel='unsupervise', realistic_synthetic_mode=None, noise_type=None)
 pipeline.run()

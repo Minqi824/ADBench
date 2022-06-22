@@ -4,7 +4,7 @@ from myutils import Utils
 
 
 class REPEN():
-    def __init__(self, seed, model_name='REPEN', save_suffix=None,
+    def __init__(self, seed, model_name='REPEN', save_suffix='test',
                  mode:str='supervised', hidden_dim:int=20, batch_size:int=256, nb_batch:int=50, n_epochs:int=30):
         self.utils = Utils()
         self.device = self.utils.get_device()  # get device

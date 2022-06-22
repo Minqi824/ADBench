@@ -197,7 +197,8 @@ class DataGenerator():
 
         return X, y
 
-    def generator(self, la=None, at_least_one_labeled=False,
+    def generator(self, X=None, y=None,
+                  la=None, at_least_one_labeled=False,
                   realistic_synthetic_mode=None, alpha:int=5, percentage:float=0.1,
                   noise_type=None, duplicate_times:int=2, contam_ratio=1.00, noise_ratio:float=0.05):
         '''
@@ -209,9 +210,12 @@ class DataGenerator():
         self.utils.set_seed(self.seed)
 
         # load dataset
-        data = np.load(os.path.join('datasets', self.dataset), allow_pickle=True)
-        X = data['X']
-        y = data['y']
+        if self.dataset is None:
+            assert X is not None and y is not None, "For customized dataset, you should provide the X and y!"
+        else:
+            data = np.load(os.path.join('datasets', self.dataset), allow_pickle=True)
+            X = data['X']
+            y = data['y']
 
         # number of labeled anomalies in the original data
         if type(la) == float:
