@@ -57,15 +57,36 @@ We envision three primary usages of ADBench:
 - **Benchmark your anomaly detection algorithms**: see [notebook](https://github.com/Minqi824/ADBench/blob/main/run_customized.ipynb) for instruction.
 
 
-
 ### Dependency
 The experiment code is written in Python 3 and built on a number of Python packages:  
-- scikit-learn==0.20.3 
+- scikit-learn==0.20.3
 - pyod==0.9.8 
-- Keras==2.3.0 (required only for certain deep learning methods)
-- tensorflow==1.15.0 (required only for certain deep learning methods)
-- torch==1.9.0 (required only for certain deep learning methods)
+- Keras==2.3.0
+- tensorflow==2.8.0
+- torch==1.9.0
 - rtdl==0.0.13
+
+### Quickly implement ADBench for benchmarking AD algorithms.
+We present the following example for quickly implementing ADBench in three different angles illustrated
+in the paper. Currently [55 datasets](#datasets) can be used for evaluating 30 algorithms in ADBench,
+and we encourage to test your customized datasets / algorithms in our ADBench testbed.
+
+**_Angle I: Availability of Ground Truth Labels (Supervision)_**
+```python
+
+```
+**_Angle II: Types of Anomalies_**
+```python
+
+```
+**_Angle III: Model Robustness with Noisy and Corrupted Data_**
+```python
+
+```
+
+- We also provide an example for quickly implementing ADBench, as shown in [notebook](run_customized.ipynb).
+- For **complete results** of ADBench, please refer to our [paper](https://arxiv.org/abs/2206.09426).
+- For **reproduce** experiment results of ADBench, please run the [code](run.py).
 
 ### Datasets
 ADBench includes 55 existing and freshly proposed datasets, as shown in the following Table. 
@@ -209,11 +230,3 @@ score = model.predict_score(X_test) # predict
 | [FTTransformer](https://arxiv.org/pdf/2106.11959.pdf) | 2019  | Sup |  &check;   | from baseline.FTTransformer.run import FTTransformer | [Link](https://yura52.github.io/rtdl/stable/index.html) |
 - '†' marks ensembling. This symbol is not included in the model name.
 - Un-, semi-, and fully-supervised methods are denoted as _unsup_, _semi_ and _sup_, respectively.
-
-### Results in Our Papers
-- For complete results of ADBench, please refer to our [paper](https://arxiv.org/abs/2206.09426).
-- For reproduce experiment results of ADBench, please run the [code](run.py).
-
-### Quickly implement ADBench for benchmarking AD algorithms.
-We provide an example for quickly implementing ADBench for any customized (AD) algorithms,
-as shown in [notebook](run_customized.ipynb).
