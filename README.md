@@ -4,7 +4,7 @@ __Please star, watch, and fork ADBench for the active updates!__
 ## Citing ADBench:
 Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/2206.09426). If you find this work useful, we would appreciate citations to the following paper:
 ```
-@misc{han2022adbench,  
+@article{han2022adbench,  
       title={ADBench: Anomaly Detection Benchmark},   
       author={Songqiao Han and Xiyang Hu and Hailiang Huang and Mingqi Jiang and Yue Zhao},  
       year={2022},  
