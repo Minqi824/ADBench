@@ -1,4 +1,4 @@
-Official implementation of paper [_**ADBench**: Anomaly Detection Benchmark_](https://arxiv.org/abs/2206.09426). 
+Official implementation of [_**ADBench**: Anomaly Detection Benchmark_](https://arxiv.org/abs/2206.09426).
 __Please star, watch, and fork ADBench for the active updates!__
 
 ## Citing ADBench:
@@ -19,9 +19,11 @@ Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/22
 ## Who Are We? ✨
 
 ADBench is a colloborative product between researchers at _Shanghai University of Finance and Economics (SUFE)_ and _Carnegie Mellon University (CMU)_. 
-The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao062) and [Xiyang Hu (CMU)](https://github.com/xiyanghu) --the author(s) of important anomaly detection libraries, including  
-anomaly detection for tabular ([PyOD](https://github.com/yzhao062/pyod)), time-series ([TODS](https://github.com/datamllab/tods)), 
-and graph data ([PyGOD](https://github.com/pygod-team/pygod)). 
+The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao062) and [Xiyang Hu (CMU)](https://github.com/xiyanghu) --the author(s) of important anomaly detection libraries, including anomaly detection for tabular ([PyOD](https://github.com/yzhao062/pyod)), time-series ([TODS](https://github.com/datamllab/tods)), and graph data ([PyGOD](https://github.com/pygod-team/pygod)). 
+
+<a href="https://github.com/Minqi824/ADBench/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Minqi824/ADBench" />
+</a>
 
 
 ## Why Do You Need ADBench?
@@ -34,7 +36,7 @@ by including 14 unsupervised, 7 semi-supervised, and 9 supervised methods;
 simulating the environments with 4 types of anomalies; and
  3. **algorithm robustness and stability** under 3 settings of data corruptions. 
 
-**Key Takeaways**: Adbench answers many questions for both researchers with interesting findings: 
+**Key Takeaways in 1 Minute**:
 1. :bangbang: surprisingly none of the benchmarked unsupervised algorithms is statistically better than others, emphasizing the importance of algorithm selection;
 2. :bangbang: with merely 1% labeled anomalies, most semi-supervised methods can outperform the best unsupervised method, justifying the importance of supervision;
 3. in controlled environments, we observe that best unsupervised methods for specific types of anomalies are even better than semi- and fully-supervised methods, revealing the necessity of understanding data characteristics;
@@ -69,7 +71,7 @@ The experiment code is written in Python 3 and built on a number of Python packa
 ### Quickly implement ADBench for benchmarking AD algorithms.
 We present the following example for quickly implementing ADBench in _three different Angles_ illustrated
 in the paper. Currently [55 datasets](#datasets) can be used for evaluating [30 algorithms](#algorithms) in ADBench,
-and we encourage to test your customized datasets / algorithms in our ADBench testbed.
+and we encourage to test your customized datasets/algorithms in our ADBench testbed.
 
 
 **_Angle I: Availability of Ground Truth Labels (Supervision)_**
