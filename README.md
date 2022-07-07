@@ -61,6 +61,9 @@ We envision three primary usages of ADBench:
 
 ### Dependency
 The experiment code is written in Python 3 and built on a number of Python packages:  
+
+- catboost (required for running catboost) 
+- copulas (required for running anomaly type analysis)
 - scikit-learn==0.20.3
 - pyod==0.9.8 
 - Keras==2.3.0

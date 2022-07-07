@@ -1,9 +1,7 @@
 import numpy as np
 import pandas as pd
 import random
-import scipy.io
 import os
-import mat73
 from math import ceil
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
@@ -213,7 +211,7 @@ class DataGenerator():
         if self.dataset is None:
             assert X is not None and y is not None, "For customized dataset, you should provide the X and y!"
         else:
-            data = np.load(os.path.join('datasets', self.dataset), allow_pickle=True)
+            data = np.load(os.path.join('datasets', self.dataset+'.npz'), allow_pickle=True)
             X = data['X']
             y = data['y']
 
