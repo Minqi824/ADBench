@@ -62,14 +62,16 @@ We envision three primary usages of ADBench:
 ### Dependency
 The experiment code is written in Python 3 and built on a number of Python packages:  
 
-- catboost (required for running catboost) 
-- copulas (required for running anomaly type analysis)
 - scikit-learn==0.20.3
 - pyod==0.9.8 
 - Keras==2.3.0
 - tensorflow==2.8.0
 - torch==1.9.0
 - rtdl==0.0.13
+- lightgbm
+- xgboost
+- catboost 
+- copulas
 
 ### Quickly implement ADBench for benchmarking AD algorithms.
 We present the following example for quickly implementing ADBench in _three different Angles_ illustrated
@@ -124,7 +126,7 @@ data_generator = DataGenerator(dataset='1_abalone.npz')
 data = data_generator.generator(noise_type='duplicated_anomalies')
 ```
 
-- We also provide an example for quickly implementing ADBench, as shown in [notebook](run_customized.ipynb).
+- We also provide an example for quickly implementing ADBench, as shown in [notebook](demo.ipynb).
 - For **complete results** of ADBench, please refer to our [paper](https://arxiv.org/abs/2206.09426).
 - For **reproduce** experiment results of ADBench, please run the [code](run.py).
 
