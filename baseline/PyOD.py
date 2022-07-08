@@ -29,12 +29,7 @@ from pyod.models.auto_encoder_torch import AutoEncoder
 from pyod.models.so_gaal import SO_GAAL
 from pyod.models.mo_gaal import MO_GAAL
 from pyod.models.xgbod import XGBOD
-
-try:
-    from pyod.models.deep_svdd import DeepSVDD
-except Exception as error:
-    print(error)
-    pass
+from pyod.models.deep_svdd import DeepSVDD
 
 
 class PYOD():
@@ -51,13 +46,8 @@ class PYOD():
         self.model_dict = {'IForest':IForest, 'OCSVM':OCSVM, 'ABOD':ABOD, 'CBLOF':CBLOF, 'COF':COF, 'AOM':aom,
                            'COPOD':COPOD, 'ECOD':ECOD,  'FeatureBagging':FeatureBagging, 'HBOS':HBOS, 'KNN':KNN,
                            'LMDD':LMDD, 'LODA':LODA, 'LOF':LOF, 'LOCI':LOCI, 'LSCP':LSCP, 'MAD':MAD,
-                           'MCD':MCD, 'PCA':PCA, 'ROD':ROD, 'SOD':SOD, 'SOS':SOS, 'VAE':VAE,
+                           'MCD':MCD, 'PCA':PCA, 'ROD':ROD, 'SOD':SOD, 'SOS':SOS, 'VAE':VAE, 'DeepSVDD': DeepSVDD,
                            'AutoEncoder': AutoEncoder, 'SOGAAL': SO_GAAL, 'MOGAAL': MO_GAAL,'XGBOD': XGBOD}
-
-        try:
-            self.model_dict['DeepSVDD'] = DeepSVDD
-        except:
-            pass
 
         self.tune = tune
 
@@ -211,7 +201,6 @@ class PYOD():
               f' the best candidate: {best_param}')
 
         return best_param
-
 
     def fit(self, X_train, y_train, ratio=None):
         if self.model_name in ['AutoEncoder', 'VAE']:

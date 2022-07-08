@@ -10,7 +10,9 @@ import sklearn.preprocessing
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import zero
+# import zero
+import delu # the new version of zero package
+
 
 from myutils import Utils
 
@@ -32,7 +34,8 @@ class FTTransformer():
             self.device = self.utils.get_device(gpu_specific=False)
 
         # Docs: https://yura52.github.io/zero/0.0.4/reference/api/zero.improve_reproducibility.html
-        zero.improve_reproducibility(seed=self.seed)
+        # zero.improve_reproducibility(seed=self.seed)
+        delu.improve_reproducibility(base_seed=self.seed)
 
         # hyper-parameter
         self.n_epochs = n_epochs # default is 1000
@@ -54,8 +57,8 @@ class FTTransformer():
     def evaluate(self, X, y=None):
         self.model.eval()
         score = []
-        # for batch in zero.iter_batches(X[part], 1024):
-        for batch in zero.iter_batches(X, self.batch_size):
+        # for batch in delu.iter_batches(X[part], 1024):
+        for batch in delu.iter_batches(X, self.batch_size):
             score.append(self.apply_model(batch))
         score = torch.cat(score).squeeze(1).cpu().numpy()
         score = scipy.special.expit(score)
@@ -124,11 +127,11 @@ class FTTransformer():
 
         # Create a dataloader for batches of indices
         # Docs: https://yura52.github.io/zero/reference/api/zero.data.IndexLoader.html
-        train_loader = zero.data.IndexLoader(len(X['train']), self.batch_size, device=self.device)
+        train_loader = delu.data.IndexLoader(len(X['train']), self.batch_size, device=self.device)
 
         # Create a progress tracker for early stopping
         # Docs: https://yura52.github.io/zero/reference/api/zero.ProgressTracker.html
-        progress = zero.ProgressTracker(patience=100)
+        progress = delu.ProgressTracker(patience=100)
 
         # training
         # report_frequency = len(X['train']) // self.batch_size // 5

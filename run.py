@@ -59,6 +59,9 @@ class RunPipeline():
         self.suffix = suffix + '_' + 'type(' + str(realistic_synthetic_mode) + ')_' + 'noise(' + str(noise_type) + ')_'\
                       + self.parallel
 
+        if not os.path.exists('result'):
+            os.makedirs('result')
+
         # data generator instantiation
         self.data_generator = DataGenerator(generate_duplicates=self.generate_duplicates,
                                             n_samples_threshold=self.n_samples_threshold)
@@ -95,12 +98,12 @@ class RunPipeline():
         # unsupervised algorithms
         if self.parallel == 'unsupervise':
             # from pyod
-            for _ in ['IForest', 'OCSVM', 'CBLOF', 'COF', 'COPOD', 'ECOD', 'FeatureBagging', 'HBOS', 'KNN', 'LODA',
-                      'LOF', 'LSCP', 'MCD', 'PCA', 'SOD', 'SOGAAL', 'MOGAAL']:
-                self.model_dict[_] = PYOD
-
-            # DAGMM
-            self.model_dict['DAGMM'] = DAGMM
+            # for _ in ['IForest', 'OCSVM', 'CBLOF', 'COF', 'COPOD', 'ECOD', 'FeatureBagging', 'HBOS', 'KNN', 'LODA',
+            #           'LOF', 'LSCP', 'MCD', 'PCA', 'SOD', 'SOGAAL', 'MOGAAL', 'DeepSVDD']:
+            #     self.model_dict[_] = PYOD
+            #
+            # # DAGMM
+            # self.model_dict['DAGMM'] = DAGMM
 
             # DeepSVDD (if necessary, the DeepSVDD is only for tensorflow 2.0+)
             for _ in ['DeepSVDD']:
@@ -135,7 +138,7 @@ class RunPipeline():
     # dataset filter for delelting those datasets that do not satisfy the experimental requirement
     def dataset_filter(self):
         # dataset list in the current folder
-        dataset_list_org = os.listdir('datasets')
+        dataset_list_org = [os.path.splitext(_)[0] for _ in os.listdir('datasets')]
 
         dataset_list = []
         dataset_size = []
