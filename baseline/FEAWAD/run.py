@@ -72,6 +72,8 @@ class FEAWAD():
         self.data_format = 0
 
         self.save_suffix = save_suffix
+        if not os.path.exists('baseline/FEAWAD/model'):
+            os.makedirs('baseline/FEAWAD/model')
 
     def auto_encoder(self, input_shape):
         x_input = Input(shape=input_shape)

@@ -24,6 +24,8 @@ class REPEN():
         self.n_epochs = n_epochs
 
         self.save_suffix = save_suffix
+        if not os.path.exists('baseline/REPEN/model'):
+            os.makedirs('baseline/REPEN/model')
 
     def fit(self, X_train, y_train, ratio=None):
         # initialization the network

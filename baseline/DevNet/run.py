@@ -71,6 +71,8 @@ class DevNet():
         # random_seed = args.ramdn_seed
 
         self.save_suffix = save_suffix
+        if not os.path.exists('baseline/DevNet/model'):
+            os.makedirs('baseline/DevNet/model')
         self.ref = None # normal distribution reference, created for reusing across subsequent function calls
 
     def dev_network_d(self,input_shape):
