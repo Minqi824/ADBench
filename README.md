@@ -215,7 +215,10 @@ X, y = data['X'], data['y']
 |54| imdb                           | 10000    | 768        | 500       | 5.00               | NLP|
 |55| yelp                           | 10000    | 768        | 500       | 5.00               | NLP|
 
-
+- Here we demonstrate the MNIST-C and MVTec-AD data embedded the by the ResNet-18 pretrained on the ImageNet dataset.
+These transformed (from image/text to tabular) data could be considered as a good baseline for evaluating different AD algorithms.
+![MNIST-C](figs/MNIST-C.png)
+![MVTec-AD](figs/MVTec-AD.png)
 
 ### Algorithms
 Compared to the previous benchmark studies, we have a larger algorithm collection with
