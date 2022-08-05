@@ -269,6 +269,7 @@ class DataGenerator():
                                                              realistic_synthetic_mode=realistic_synthetic_mode,
                                                              alpha=alpha, percentage=percentage)
                     np.savez_compressed(os.path.join('datasets', 'synthetic', filepath), X=X, y=y)
+                    pass
 
             else:
                 X, y = self.generate_realistic_synthetic(X, y,

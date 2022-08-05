@@ -132,7 +132,7 @@ class RunPipeline():
     # dataset filter for delelting those datasets that do not satisfy the experimental requirement
     def dataset_filter(self):
         # dataset list in the current folder
-        dataset_list_org = [os.path.splitext(_)[0] for _ in os.listdir('datasets')]
+        dataset_list_org = [os.path.splitext(_)[0] for _ in os.listdir('datasets') if os.path.splitext(_)[1] in ['.npz', '.csv']]
         dataset_list_org = [_ for _ in dataset_list_org if not _.split('_')[0].isdigit()]
 
         dataset_list = []
@@ -160,7 +160,7 @@ class RunPipeline():
 
             # remove high-dimensional CV and NLP datasets if generating synthetic anomalies or robustness test
             if self.realistic_synthetic_mode is not None or self.noise_type is not None:
-                if any([_ in dataset for _ in ['CIFAR10, FashionMNIST', 'SVHN', 'agnews', 'amazon', 'imdb', 'yelp']]):
+                if self.isin_NLPCV(dataset):
                     add = False
 
             if add:
@@ -310,5 +310,5 @@ class RunPipeline():
                 df_time.to_csv(os.path.join(os.getcwd(), 'result', 'Time_' + self.suffix + '.csv'), index=True)
 
 # run the above pipeline for reproducing the results in the paper
-pipeline = RunPipeline(suffix='ADBench', parallel='unsupervise', realistic_synthetic_mode='dependency', noise_type=None)
+pipeline = RunPipeline(suffix='ADBench', parallel='unsupervise', realistic_synthetic_mode='cluster', noise_type=None)
 pipeline.run()
