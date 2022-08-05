@@ -11,22 +11,6 @@ from keras import backend as K
 from data_generator import DataGenerator
 from myutils import Utils
 
-# unsupervised models
-from baseline.PyOD import PYOD
-from baseline.DAGMM.run import DAGMM
-
-# semi-supervised models
-from baseline.GANomaly.run import GANomaly
-from baseline.DeepSAD.src.run import DeepSAD
-from baseline.REPEN.run import REPEN
-from baseline.DevNet.run import DevNet
-from baseline.PReNet.run import PReNet
-from baseline.FEAWAD.run import FEAWAD
-
-# # fully-supervised models
-from baseline.Supervised import supervised
-from baseline.FTTransformer.run import FTTransformer
-
 class RunPipeline():
     def __init__(self, suffix:str=None, mode:str='rla', parallel:str=None,
                  generate_duplicates=True, n_samples_threshold=1000,
@@ -97,20 +81,27 @@ class RunPipeline():
 
         # unsupervised algorithms
         if self.parallel == 'unsupervise':
-            # from pyod
-            # for _ in ['IForest', 'OCSVM', 'CBLOF', 'COF', 'COPOD', 'ECOD', 'FeatureBagging', 'HBOS', 'KNN', 'LODA',
-            #           'LOF', 'LSCP', 'MCD', 'PCA', 'SOD', 'SOGAAL', 'MOGAAL', 'DeepSVDD']:
-            #     self.model_dict[_] = PYOD
-            #
-            # # DAGMM
-            # self.model_dict['DAGMM'] = DAGMM
+            from baseline.PyOD import PYOD
+            from baseline.DAGMM.run import DAGMM
 
-            # DeepSVDD (if necessary, the DeepSVDD is only for tensorflow 2.0+)
-            for _ in ['DeepSVDD']:
+            # from pyod
+            for _ in ['IForest', 'OCSVM', 'CBLOF', 'COF', 'COPOD', 'ECOD', 'FeatureBagging', 'HBOS', 'KNN', 'LODA',
+                      'LOF', 'LSCP', 'MCD', 'PCA', 'SOD', 'SOGAAL', 'MOGAAL', 'DeepSVDD']:
                 self.model_dict[_] = PYOD
+
+            # DAGMM
+            self.model_dict['DAGMM'] = DAGMM
 
         # semi-supervised algorithms
         elif self.parallel == 'semi-supervise':
+            from baseline.PyOD import PYOD
+            from baseline.GANomaly.run import GANomaly
+            from baseline.DeepSAD.src.run import DeepSAD
+            from baseline.REPEN.run import REPEN
+            from baseline.DevNet.run import DevNet
+            from baseline.PReNet.run import PReNet
+            from baseline.FEAWAD.run import FEAWAD
+
             self.model_dict = {'GANomaly': GANomaly,
                                'DeepSAD': DeepSAD,
                                'REPEN': REPEN,
@@ -121,6 +112,9 @@ class RunPipeline():
 
         # fully-supervised algorithms
         elif self.parallel == 'supervise':
+            from baseline.Supervised import supervised
+            from baseline.FTTransformer.run import FTTransformer
+
             # from sklearn
             for _ in ['LR', 'NB', 'SVM', 'MLP', 'RF', 'LGB', 'XGB', 'CatB']:
                 self.model_dict[_] = supervised
@@ -139,6 +133,7 @@ class RunPipeline():
     def dataset_filter(self):
         # dataset list in the current folder
         dataset_list_org = [os.path.splitext(_)[0] for _ in os.listdir('datasets')]
+        dataset_list_org = [_ for _ in dataset_list_org if not _.split('_')[0].isdigit()]
 
         dataset_list = []
         dataset_size = []
@@ -302,5 +297,5 @@ class RunPipeline():
                 df_time.to_csv(os.path.join(os.getcwd(), 'result', 'Time_' + self.suffix + '.csv'), index=True)
 
 # run the above pipeline for reproducing the results in the paper
-pipeline = RunPipeline(suffix='ADBench_test', parallel='unsupervise', realistic_synthetic_mode=None, noise_type=None)
+pipeline = RunPipeline(suffix='ADBench_test', parallel='supervise', realistic_synthetic_mode=None, noise_type=None)
 pipeline.run()

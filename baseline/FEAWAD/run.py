@@ -34,6 +34,7 @@ except:
     from tensorflow.keras.optimizers import Adam, RMSprop
 
 # Disable TF eager execution mode for avoid the errors caused by the custom loss function
+# the disable_eager_execution may occur error with DeepSVDD in pyod (2022.08.05)
 from tensorflow.python.framework.ops import disable_eager_execution
 disable_eager_execution()
 

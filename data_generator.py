@@ -195,7 +195,7 @@ class DataGenerator():
 
         return X, y
 
-    def generator(self, X=None, y=None,
+    def generator(self, X=None, y=None, minmax=True,
                   la=None, at_least_one_labeled=False,
                   realistic_synthetic_mode=None, alpha:int=5, percentage:float=0.1,
                   noise_type=None, duplicate_times:int=2, contam_ratio=1.00, noise_ratio:float=0.05):
@@ -210,6 +210,15 @@ class DataGenerator():
         # load dataset
         if self.dataset is None:
             assert X is not None and y is not None, "For customized dataset, you should provide the X and y!"
+        # datasets from https://github.com/GuansongPang/ADRepository-Anomaly-detection-datasets/tree/main/numerical%20data/DevNet%20datasets
+        elif self.dataset in ['bank-additional-full_normalised', 'celeba_baldvsnonbald_normalised',
+                              'census-income-full-mixed-binarized', 'creditcardfraud_normalised',
+                              'KDD2014_donors_10feat_nomissing_normalised', 'UNSW_NB15_traintest_backdoor']:
+            data = pd.read_csv(os.path.join('datasets', self.dataset+'.csv'))
+            X = data.drop(['class'], axis=1).values
+            y = data['class'].values
+
+            minmax = False
         else:
             data = np.load(os.path.join('datasets', self.dataset+'.npz'), allow_pickle=True)
             X = data['X']
@@ -294,9 +303,10 @@ class DataGenerator():
             X_train, y_train = self.add_label_contamination(X_train, y_train, noise_ratio=noise_ratio)
 
         # minmax scaling
-        scaler = MinMaxScaler().fit(X_train)
-        X_train = scaler.transform(X_train)
-        X_test = scaler.transform(X_test)
+        if minmax:
+            scaler = MinMaxScaler().fit(X_train)
+            X_train = scaler.transform(X_train)
+            X_test = scaler.transform(X_test)
 
         # idx of normal samples and unlabeled/labeled anomalies
         idx_normal = np.where(y_train == 0)[0]
