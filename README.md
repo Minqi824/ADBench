@@ -150,12 +150,16 @@ For CV datasets, we use ResNet18 pretrained on the ImageNet to extract the embed
 For multi-class dataset like CIFAR10, additional class numbers should be specified as "number_data_class.npz".
 Please see the folder for more details.
 
+- We provide the data processing code [for NLP datasets](https://colab.research.google.com/drive/1uMr_5jIqrlP1UL1SlBm7cdO7fmDaEamB?usp=sharing)
+and [for CV datasets](https://colab.research.google.com/drive/1tB90CB-BuKDOM3WYV75-WkK6xrMQxQ5M?usp=sharing)
+in **Google Colab**, where one can quickly
+reproduce our procedures via the free GPUs. We hope this could be helpful for the AD community.
+
 ```python
 import numpy as np
 data = np.load('1_abalone.npz', allow_pickle=True)
 X, y = data['X'], data['y']
 ```
-
 
 | Number | Data | # Samples | # Features | # Anomaly | % Anomaly | Category |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
