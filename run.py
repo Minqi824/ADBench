@@ -174,6 +174,14 @@ class RunPipeline():
 
         return dataset_list
 
+    # whether the dataset in the NLP / CV dataset
+    # currently we have 5 NLP datasets and 5 CV datasets
+    def isin_NLPCV(self, dataset):
+        NLPCV_list = ['agnews', 'amazon', 'imdb', 'yelp', '20news',
+                      'MNIST-C', 'FashionMNIST', 'CIFAR10', 'SVHN', 'MVTec-AD']
+
+        return any([_ in dataset for _ in NLPCV_list])
+
     # model fitting function
     def model_fit(self):
         try:
@@ -247,6 +255,11 @@ class RunPipeline():
             if self.parallel == 'unsupervise' and la != 0.0 and self.noise_type is None:
                 continue
 
+            # We only run one time on CV / NLP datasets for considering computational cost
+            # The final results are the average performance on different classes
+            if self.isin_NLPCV(dataset) and self.seed > 1:
+                continue
+
             print(f'Current experiment parameters: {params}')
 
             # generate data
@@ -297,5 +310,5 @@ class RunPipeline():
                 df_time.to_csv(os.path.join(os.getcwd(), 'result', 'Time_' + self.suffix + '.csv'), index=True)
 
 # run the above pipeline for reproducing the results in the paper
-pipeline = RunPipeline(suffix='ADBench_test', parallel='supervise', realistic_synthetic_mode=None, noise_type=None)
+pipeline = RunPipeline(suffix='ADBench', parallel='unsupervise', realistic_synthetic_mode='dependency', noise_type=None)
 pipeline.run()

@@ -35,7 +35,7 @@ class FTTransformer():
 
         # Docs: https://yura52.github.io/zero/0.0.4/reference/api/zero.improve_reproducibility.html
         # zero.improve_reproducibility(seed=self.seed)
-        delu.improve_reproducibility(base_seed=self.seed)
+        delu.improve_reproducibility(base_seed=int(self.seed))
 
         # hyper-parameter
         self.n_epochs = n_epochs # default is 1000

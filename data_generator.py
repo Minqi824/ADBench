@@ -253,15 +253,22 @@ class DataGenerator():
 
         # whether to generate realistic synthetic outliers
         if realistic_synthetic_mode is not None:
-            # we generate the dependency anomalies in advance, since the Vine Copula could spend too long for generation
+            # we save the generated dependency anomalies, since the Vine Copula could spend too long for generation
             if realistic_synthetic_mode == 'dependency':
-                dataset_dict = np.load(os.path.join('datasets', 'Dependency_outlier', 'dependency_outlier_large.npz'), allow_pickle=True)
-                dataset_dict = dataset_dict['dataset'].item()
+                if not os.path.exists('datasets/synthetic'):
+                    os.makedirs('datasets/synthetic')
 
-                if self.dataset in dataset_dict.keys():
-                    X, y = dataset_dict[self.dataset]
-                else:
-                    raise NotImplementedError
+                filepath = 'dependency_anomalies_' + self.dataset + '_' + str(self.seed) + '.npz'
+                try:
+                    data_dependency = np.load(os.path.join('datasets', 'synthetic', filepath), allow_pickle=True)
+                    X = data_dependency['X']; y = data_dependency['y']
+
+                except:
+                    print(f'Generating dependency anomalies...')
+                    X, y = self.generate_realistic_synthetic(X, y,
+                                                             realistic_synthetic_mode=realistic_synthetic_mode,
+                                                             alpha=alpha, percentage=percentage)
+                    np.savez_compressed(os.path.join('datasets', 'synthetic', filepath), X=X, y=y)
 
             else:
                 X, y = self.generate_realistic_synthetic(X, y,
