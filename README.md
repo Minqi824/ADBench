@@ -63,11 +63,12 @@ We envision three primary usages of ADBench:
 The experiment code is written in Python 3 and built on a number of Python packages:  
 
 - scikit-learn==0.20.3
-- pyod==0.9.8 
-- Keras==2.3.0
+- pyod==1.0.0
+- Keras==2.8.0
 - tensorflow==2.8.0
 - torch==1.9.0
 - rtdl==0.0.13
+- delu
 - lightgbm
 - xgboost
 - catboost 
