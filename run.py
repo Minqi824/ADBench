@@ -125,7 +125,7 @@ class RunPipeline():
             raise NotImplementedError
 
         # We remove the following model for considering the computational cost
-        for _ in ['MOGAAL', 'LSCP', 'MCD']:
+        for _ in ['SOGAAL', 'MOGAAL', 'LSCP', 'MCD', 'FeatureBagging']:
             if _ in self.model_dict.keys():
                 self.model_dict.pop(_)
 
@@ -133,7 +133,7 @@ class RunPipeline():
     def dataset_filter(self):
         # dataset list in the current folder
         dataset_list_org = [os.path.splitext(_)[0] for _ in os.listdir('datasets') if os.path.splitext(_)[1] in ['.npz', '.csv']]
-        dataset_list_org = [_ for _ in dataset_list_org if not _.split('_')[0].isdigit()]
+        # dataset_list_org = [_ for _ in dataset_list_org if not _.split('_')[0].isdigit()]
 
         dataset_list = []
         dataset_size = []
@@ -197,13 +197,19 @@ class RunPipeline():
 
         try:
             # fitting
+            start_time = time.time()
             self.clf = self.clf.fit(X_train=self.data['X_train'], y_train=self.data['y_train'],
                                     ratio=sum(self.data['y_test']) / len(self.data['y_test']))
-            # predicting score
+            end_time = time.time(); time_fit = end_time - start_time
+
+
+            # predicting score (inference)
+            start_time = time.time()
             if self.model_name == 'DAGMM':
                 score_test = self.clf.predict_score(self.data['X_train'], self.data['X_test'])
             else:
                 score_test = self.clf.predict_score(self.data['X_test'])
+            end_time = time.time(); time_inference = end_time - start_time
 
             # performance
             result = self.utils.metric(y_true=self.data['y_test'], y_score=score_test, pos_label=1)
@@ -216,14 +222,15 @@ class RunPipeline():
 
         except Exception as error:
             print(f'Error in model fitting. Model:{self.model_name}, Error: {error}')
+            time_fit, time_inference = None, None
             result = {'aucroc': np.nan, 'aucpr': np.nan}
             pass
 
-        return result
+        return time_fit, time_inference, result
 
     # run the experiment
     def run(self):
-        #  filteting dataset that do not meet the experimental requirements
+        #  filteting dataset that does not meet the experimental requirements
         dataset_list = self.dataset_filter()
 
         # experimental parameters
@@ -238,13 +245,13 @@ class RunPipeline():
             else:
                 experiment_params = list(product(dataset_list, self.rla_list, self.seed_list))
 
-
         print(f'{len(dataset_list)} datasets, {len(self.model_dict.keys())} models')
 
         # save the results
         df_AUCROC = pd.DataFrame(data=None, index=experiment_params, columns=list(self.model_dict.keys()))
         df_AUCPR = pd.DataFrame(data=None, index=experiment_params, columns=list(self.model_dict.keys()))
-        df_time = pd.DataFrame(data=None, index=experiment_params, columns=list(self.model_dict.keys()))
+        df_time_fit = pd.DataFrame(data=None, index=experiment_params, columns=list(self.model_dict.keys()))
+        df_time_inference = pd.DataFrame(data=None, index=experiment_params, columns=list(self.model_dict.keys()))
 
         for i, params in tqdm(enumerate(experiment_params)):
             if self.noise_type is not None:
@@ -296,19 +303,19 @@ class RunPipeline():
                 self.clf = self.model_dict[self.model_name]
 
                 # fit model
-                start_time = time.time() # starting time
-                result = self.model_fit()
-                end_time = time.time() # ending time
+                time_fit, time_inference, result = self.model_fit()
 
-                # store and save the result (AUC-ROC, AUC-PR and runtime)
+                # store and save the result (AUC-ROC, AUC-PR and runtime / inference time)
                 df_AUCROC[model_name].iloc[i] = result['aucroc']
                 df_AUCPR[model_name].iloc[i] = result['aucpr']
-                df_time[model_name].iloc[i] = round(end_time - start_time, 2)
+                df_time_fit[model_name].iloc[i] = time_fit
+                df_time_inference[model_name].iloc[i] = time_inference
 
                 df_AUCROC.to_csv(os.path.join(os.getcwd(), 'result', 'AUCROC_' + self.suffix + '.csv'), index=True)
                 df_AUCPR.to_csv(os.path.join(os.getcwd(), 'result', 'AUCPR_' + self.suffix + '.csv'), index=True)
-                df_time.to_csv(os.path.join(os.getcwd(), 'result', 'Time_' + self.suffix + '.csv'), index=True)
+                df_time_fit.to_csv(os.path.join(os.getcwd(), 'result', 'Time(fit)_' + self.suffix + '.csv'), index=True)
+                df_time_inference.to_csv(os.path.join(os.getcwd(), 'result', 'Time(inference)_' + self.suffix + '.csv'), index=True)
 
 # run the above pipeline for reproducing the results in the paper
-pipeline = RunPipeline(suffix='ADBench', parallel='unsupervise', realistic_synthetic_mode='cluster', noise_type=None)
+pipeline = RunPipeline(suffix='ADBench', parallel='unsupervise', realistic_synthetic_mode=None, noise_type=None)
 pipeline.run()
