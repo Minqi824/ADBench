@@ -211,7 +211,7 @@ def graph_ranks(avranks, names, p_values, cd=None, cdmethod=None, lowv=None, hig
              linewidth=linewidth)
         if labels:
             # text(textspace + 0.3, chei - 0.075, format(ssums[i], '.4f'), ha="right", va="center", size=10)
-            text(textspace + 0.7, chei - 0.075, format(avmetrics[i], '.4f'), ha="right", va="center", size=12) # by bug, show the average metric
+            text(textspace + 0.6, chei - 0.075, format(avmetrics[i], '.2f'), ha="right", va="center", size=12) # by bug, show the average metric
         text(textspace - 0.2, chei, filter_names(nnames[i]), ha="right", va="center", size=16)
 
     for i in range(math.ceil(k / 2), k):
@@ -222,7 +222,7 @@ def graph_ranks(avranks, names, p_values, cd=None, cdmethod=None, lowv=None, hig
              linewidth=linewidth)
         if labels:
             # text(textspace + scalewidth - 0.3, chei - 0.075, format(ssums[i], '.4f'), ha="left", va="center", size=10)
-            text(textspace + scalewidth - 0.7, chei - 0.075, format(avmetrics[i], '.4f'), ha="left", va="center", size=12) # by bug, show the average metric
+            text(textspace + scalewidth - 0.6, chei - 0.075, format(avmetrics[i], '.2f'), ha="left", va="center", size=12) # by bug, show the average metric
         text(textspace + scalewidth + 0.2, chei, filter_names(nnames[i]),
              ha="left", va="center", size=16)
 
