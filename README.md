@@ -45,7 +45,7 @@ simulating the environments with 4 types of anomalies; and
 
 The Figure below provides an overview of our proposed ADBench (see our [paper](https://arxiv.org/abs/2206.09426) for details).
 
-![ADBench](figs/ADBench.png)
+![ADBench](figs/ADBenchV2.png)
 
 ----
 
