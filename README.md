@@ -28,7 +28,7 @@ The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com
 
 ## Why Do You Need ADBench?
 
-ADBench is (to our best knowledge) **the most comprehensive tabular anomaly detection benchmark**, where we analyze the performance of **30** anomaly detection algorithms on **55** benchmark datasets. By analyzing both research needs and deployment requirements in industry,
+ADBench is (to our best knowledge) **the most comprehensive tabular anomaly detection benchmark**, where we analyze the performance of **30** anomaly detection algorithms on **57** benchmark datasets. By analyzing both research needs and deployment requirements in industry,
 ADBench conducts 93,654 experiments with three major angles:
  1. **the effect of supervision** (e.g., ground truth labels) 
 by including 14 unsupervised, 7 semi-supervised, and 9 supervised methods;
@@ -76,7 +76,7 @@ The experiment code is written in Python 3 and built on a number of Python packa
 
 ### Quickly implement ADBench for benchmarking AD algorithms.
 We present the following example for quickly implementing ADBench in _three different Angles_ illustrated
-in the paper. Currently [55 datasets](#datasets) can be used for evaluating [30 algorithms](#algorithms) in ADBench,
+in the paper. Currently [57 datasets](#datasets) can be used for evaluating [30 algorithms](#algorithms) in ADBench,
 and we encourage to test your customized datasets/algorithms in our ADBench testbed.
 
 
@@ -132,21 +132,20 @@ data = data_generator.generator(noise_type='duplicated_anomalies')
 - For **reproduce** experiment results of ADBench, please run the [code](run.py).
 
 ### Datasets
-ADBench includes 55 existing and freshly proposed datasets, as shown in the following Table. 
+ADBench includes 57 existing and freshly proposed datasets, as shown in the following Table. 
 
-- Among them, 48 widely-used real-world datasets are gathered for model evaluation, which cover many application domains, 
+- Among them, 47 widely-used real-world datasets are gathered for model evaluation, which cover many application domains, 
 including healthcare (e.g., disease diagnosis), 
 audio and language processing (e.g., speech recognition), 
 image processing (e.g., object identification), 
 finance (e.g., financial fraud detection), etc.  
 
 - **Moreover**, as most of these datasets are relatively small, 
-we introduce 7 more complex datasets from CV and NLP domains with more samples and richer features in ADBench.
+we introduce 10 more complex datasets from CV and NLP domains with more samples and richer features in ADBench.
 Pretrained models are applied to extract data embedding from NLP and CV datasets to access more complex representation.
-For NLP datasets, we use BERT pretrained on the BookCorpus and English Wikipedia to extract the embedding of the [CLS] token.
-For CV datasets, we use ResNet18 pretrained on the ImageNet to extract the embedding after the last average pooling layer.
+Please see the [datasets](datasets) folder and our [paper]((https://arxiv.org/abs/2206.09426)) for detailed information.
 
-- We organize the above 55 datasets into user-friendly format. All the datasets are named as "number_data.npz" in the
+- We organize the above 57 datasets into user-friendly format. All the datasets are named as "number_data.npz" in the
 [datasets](datasets) folder. For example, one can evaluate AD algorithms on the abalone dataset by the following codes.
 For multi-class dataset like CIFAR10, additional class numbers should be specified as "number_data_class.npz".
 Please see the folder for more details.
@@ -164,22 +163,22 @@ X, y = data['X'], data['y']
 
 | Number | Data | # Samples | # Features | # Anomaly | % Anomaly | Category |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|1| abalone                         | 4177    | 7        | 2081      | 49.82               |      Biology    |
-|2| ALOI                    | 49534   | 27       | 1508      | 3.04                |     Image     |
-|3| annthyroid   | 7200    | 6        | 534       | 7.42                |      Healthcare    |
-|4| Arrhythmia          | 450     | 259      | 206       | 45.78               | Healthcare      |
-|5| breastw                              | 683     | 9        | 239       | 34.99               | Healthcare  |       
+|1| ALOI                    | 49534   | 27       | 1508      | 3.04                |     Image     |
+|2| annthyroid   | 7200    | 6        | 534       | 7.42                |      Healthcare    |
+|3| backdoor| 95329| 196| 2329| 2.44| Network|
+|4| breastw                              | 683     | 9        | 239       | 34.99               | Healthcare  |
+|5|campaign| 41188| 62| 4640| 11.27| Finance|
 |6| cardio                               | 1831    | 21       | 176       | 9.61                | Healthcare |        
 |7| Cardiotocography    | 2114    | 21       | 466       | 22.04               | Healthcare         |
-|8| comm.and.crime                | 1994    | 101      | 993       | 49.80                | Socio-economic    |     
-|9| concrete                      | 1030    | 8        | 515       | 50.00                  | Physical      |   
-|10| cover                                | 286048  | 10       | 2747      | 0.96                | Botany    |     
-|11| fault                      | 1941    | 27       | 673       | 34.67               | Physical         |
-|12| glass | 214     | 7        | 9         | 4.21                | Forensic          |
-|13| HeartDisease        | 270     | 13       | 120       | 44.44               | Healthcare        | 
-|14| Hepatitis           | 80      | 19       | 13        | 16.25               | Healthcare         |
-|15| http                                 | 567498  | 3        | 2211      | 0.39                | Web   |      
-|16| imgseg                         | 2310    | 18       | 990       | 42.86               | Image    |     
+|8|celeba| 202599| 39| 4547| 2.24| Image|
+|9|census| 299285| 500| 18568| 6.20| Sociology|
+|10| cover                                | 286048  | 10       | 2747      | 0.96                | Botany    | 
+|11|donors| 619326| 10| 36710| 5.93| Sociology|
+|12| fault                      | 1941    | 27       | 673       | 34.67               | Physical         |
+|13|fraud| 284807| 29| 492| 0.17| Finance|
+|14| glass | 214     | 7        | 9         | 4.21                | Forensic          |
+|15| Hepatitis           | 80      | 19       | 13        | 16.25               | Healthcare         |
+|16| http                                 | 567498  | 3        | 2211      | 0.39                | Web   |      
 |17| InternetAds   | 1966    | 1555     | 368       | 18.72               | Image         |
 |18| Ionosphere        | 351     | 32       | 126       | 35.90                | Oryctognosy         |
 |19| landsat                         | 6435    | 36       | 1333      | 20.71               | Astronautics    |     
@@ -191,39 +190,26 @@ X, y = data['X'], data['y']
 |25| musk                                 | 3062    | 166      | 97        | 3.17                | Chemistry   |      
 |26| optdigits                            | 5216    | 64       | 150       | 2.88                | Image     |    
 |27| PageBlocks         | 5393    | 10       | 510       | 9.46                | Document         |
-|28| Parkinson           | 195     | 22       | 147       | 75.38               | Healthcare         |
-|29| pendigits                            | 6870    | 16       | 156       | 2.27                | Image        | 
-|30| Pima                | 768     | 8        | 268       | 34.90                | Healthcare         |
-|31| satellite                            | 6435    | 36       | 2036      | 31.64               | Astronautics     |    
-|32| satimage-2                           | 5803    | 36       | 71        | 1.22                | Astronautics    |     
-|33| shuttle                              | 49097   | 9        | 3511      | 7.15                | Astronautics  |       
-|34| skin                            | 245057  | 3        | 50859     | 20.75               |    Image      |
-|35| smtp                                 | 95156   | 3        | 30        | 0.03                | Web        | 
-|36| SpamBase            | 4207    | 57       | 1679      | 39.91               | Document         |
-|37| speech                               | 3686    | 400      | 61        | 1.65                | Linguistics    |     
-|38| Stamps              | 340     | 9        | 31        | 9.12                | Document         |
-|39| thyroid                              | 3772    | 6        | 93        | 2.47                | Healthcare      |   
-|40| vertebral                            | 240     | 6        | 30        | 12.50                | Biology       |  
-|41| vowels                               | 1456    | 12       | 50        | 3.43                | Linguistics  |       
-|42| Waveform           | 3443    | 21       | 100       | 2.90                 | Physics         |
-|43| WBC                | 223     | 9        | 10        | 4.48                | Healthcare         |
-|44| WDBC               | 367     | 30       | 10        | 2.72                | Healthcare         |
-|45| Wilt                | 4819    | 5        | 257       | 5.33                | Botany         |
-|46| wine                                 | 129     | 13       | 10        | 7.75                | Chemistry   |      
-|47| WPBC             | 198     | 33       | 47        | 23.74               | Healthcare   |      
-|48| yeast                           | 1484    | 8        | 507       | 34.16               | Biology|
-|49| CIFAR10                           | 5263    | 512        | 263       | 5.00               | Image|
-|50| FashionMNIST                           | 6315    | 512        | 315       | 5.00               | Image|
-|51| SVHN                           | 5208    | 512        | 260       | 5.00               | Image|
-|52| agnews                           | 10000    | 768        | 500       | 5.00               | NLP|
-|53| amazon                           | 10000    | 768        | 500       | 5.00               | NLP|
-|54| imdb                           | 10000    | 768        | 500       | 5.00               | NLP|
-|55| yelp                           | 10000    | 768        | 500       | 5.00               | NLP|
-
-- Here we demonstrate the MNIST-C and MVTec-AD data embedded the by the ResNet-18 pretrained on the ImageNet dataset.
-These transformed (from image/text to tabular) data could be considered as a good baseline for evaluating different AD algorithms.
-![MNIST-C](figs/MNIST-C.png)
-![MVTec-AD](figs/MVTec-AD.png)
+|28| pendigits                            | 6870    | 16       | 156       | 2.27                | Image        | 
+|29| Pima                | 768     | 8        | 268       | 34.90                | Healthcare         |
+|30| satellite                            | 6435    | 36       | 2036      | 31.64               | Astronautics     |    
+|31| satimage-2                           | 5803    | 36       | 71        | 1.22                | Astronautics    |     
+|32| shuttle                              | 49097   | 9        | 3511      | 7.15                | Astronautics  |       
+|33| skin                            | 245057  | 3        | 50859     | 20.75               |    Image      |
+|34| smtp                                 | 95156   | 3        | 30        | 0.03                | Web        | 
+|35| SpamBase            | 4207    | 57       | 1679      | 39.91               | Document         |
+|36| speech                               | 3686    | 400      | 61        | 1.65                | Linguistics    |     
+|37| Stamps              | 340     | 9        | 31        | 9.12                | Document         |
+|38| thyroid                              | 3772    | 6        | 93        | 2.47                | Healthcare      |   
+|39| vertebral                            | 240     | 6        | 30        | 12.50                | Biology       |  
+|40| vowels                               | 1456    | 12       | 50        | 3.43                | Linguistics  |       
+|41| Waveform           | 3443    | 21       | 100       | 2.90                 | Physics         |
+|42| WBC                | 223     | 9        | 10        | 4.48                | Healthcare         |
+|43| WDBC               | 367     | 30       | 10        | 2.72                | Healthcare         |
+|44| Wilt                | 4819    | 5        | 257       | 5.33                | Botany         |
+|45| wine                                 | 129     | 13       | 10        | 7.75                | Chemistry   |      
+|46| WPBC             | 198     | 33       | 47        | 23.74               | Healthcare   |      
+|47| yeast                           | 1484    | 8        | 507       | 34.16               | Biology|
 
 ### Algorithms
 Compared to the previous benchmark studies, we have a larger algorithm collection with
