@@ -86,7 +86,7 @@ from data_generator import DataGenerator
 from myutils import Utils
 
 # one can use our already included datasets
-data_generator = DataGenerator(dataset='1_abalone.npz')
+data_generator = DataGenerator(dataset='6_cardio.npz')
 # specify the ratio of labeled anomalies to generate X and y
 # la could be any float number in [0.0, 1.0]
 data = data_generator.generator(la=0.1) 
@@ -113,7 +113,7 @@ result = utils.metric(y_true=data['y_test'], y_score=score)
 **_Angle II: Types of Anomalies_**
 ```python
 # For Angle II, different types of anomalies are generated as the following
-data_generator = DataGenerator(dataset='1_abalone.npz')
+data_generator = DataGenerator(dataset='6_cardio.npz')
 # the type of anomalies could be 'local', 'global', 'dependency' or 'cluster'.
 data = data_generator.generator(realistic_synthetic_mode='local')
 ```
@@ -122,7 +122,7 @@ data = data_generator.generator(realistic_synthetic_mode='local')
 **_Angle III: Model Robustness with Noisy and Corrupted Data_**
 ```python
 # For Angle III, different data noises and corruptions are added as the following
-data_generator = DataGenerator(dataset='1_abalone.npz')
+data_generator = DataGenerator(dataset='6_cardio.npz')
 # the type of anomalies could be 'duplicated_anomalies', 'irrelevant_features' or 'label_contamination'.
 data = data_generator.generator(noise_type='duplicated_anomalies')
 ```
@@ -146,7 +146,7 @@ Pretrained models are applied to extract data embedding from NLP and CV datasets
 Please see the [datasets](datasets) folder and our [paper]((https://arxiv.org/abs/2206.09426)) for detailed information.
 
 - We organize the above 57 datasets into user-friendly format. All the datasets are named as "number_data.npz" in the
-[datasets](datasets) folder. For example, one can evaluate AD algorithms on the abalone dataset by the following codes.
+[datasets](datasets) folder. For example, one can evaluate AD algorithms on the cardio dataset by the following codes.
 For multi-class dataset like CIFAR10, additional class numbers should be specified as "number_data_class.npz".
 Please see the folder for more details.
 
@@ -157,7 +157,7 @@ reproduce our procedures via the free GPUs. We hope this could be helpful for th
 
 ```python
 import numpy as np
-data = np.load('1_abalone.npz', allow_pickle=True)
+data = np.load('6_cardio.npz', allow_pickle=True)
 X, y = data['X'], data['y']
 ```
 

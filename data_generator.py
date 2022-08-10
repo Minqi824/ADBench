@@ -32,6 +32,14 @@ class DataGenerator():
         self.generate_duplicates = generate_duplicates
         self.n_samples_threshold = n_samples_threshold
 
+        # dataset list
+        self.dataset_list_classical = [os.path.splitext(_)[0] for _ in os.listdir('datasets/Classical')
+                                       if os.path.splitext(_)[1] == '.npz'] # classical AD datasets
+        self.dataset_list_cv = [os.path.splitext(_)[0] for _ in os.listdir('datasets/CV(by ResNet-18)')
+                                if os.path.splitext(_)[1] == '.npz'] # CV datasets
+        self.dataset_list_nlp = [os.path.splitext(_)[0] for _ in os.listdir('datasets/NLP(by BERT)')
+                                 if os.path.splitext(_)[1] == '.npz'] # NLP datasets
+
         # myutils function
         self.utils = Utils()
 
@@ -210,17 +218,16 @@ class DataGenerator():
         # load dataset
         if self.dataset is None:
             assert X is not None and y is not None, "For customized dataset, you should provide the X and y!"
-        # datasets from https://github.com/GuansongPang/ADRepository-Anomaly-detection-datasets/tree/main/numerical%20data/DevNet%20datasets
-        elif self.dataset in ['bank-additional-full_normalised', 'celeba_baldvsnonbald_normalised',
-                              'census-income-full-mixed-binarized', 'creditcardfraud_normalised',
-                              'KDD2014_donors_10feat_nomissing_normalised', 'UNSW_NB15_traintest_backdoor']:
-            data = pd.read_csv(os.path.join('datasets', self.dataset+'.csv'))
-            X = data.drop(['class'], axis=1).values
-            y = data['class'].values
-
-            minmax = False
         else:
-            data = np.load(os.path.join('datasets', self.dataset+'.npz'), allow_pickle=True)
+            if self.dataset in self.dataset_list_classical:
+                data = np.load(os.path.join('datasets', 'Classical', self.dataset + '.npz'), allow_pickle=True)
+            elif self.dataset in self.dataset_list_cv:
+                data = np.load(os.path.join('datasets', 'CV(by ResNet-18)', self.dataset + '.npz'), allow_pickle=True)
+            elif self.dataset in self.dataset_list_nlp:
+                data = np.load(os.path.join('datasets', 'NLP(by BERT)', self.dataset + '.npz'), allow_pickle=True)
+            else:
+                raise NotImplementedError
+
             X = data['X']
             y = data['y']
 
@@ -264,6 +271,7 @@ class DataGenerator():
                     X = data_dependency['X']; y = data_dependency['y']
 
                 except:
+                    # raise NotImplementedError
                     print(f'Generating dependency anomalies...')
                     X, y = self.generate_realistic_synthetic(X, y,
                                                              realistic_synthetic_mode=realistic_synthetic_mode,

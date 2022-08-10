@@ -132,8 +132,13 @@ class RunPipeline():
     # dataset filter for delelting those datasets that do not satisfy the experimental requirement
     def dataset_filter(self):
         # dataset list in the current folder
-        dataset_list_org = [os.path.splitext(_)[0] for _ in os.listdir('datasets') if os.path.splitext(_)[1] in ['.npz', '.csv']]
-        # dataset_list_org = [_ for _ in dataset_list_org if not _.split('_')[0].isdigit()]
+        dataset_list_org = [os.path.splitext(_)[0] for _ in os.listdir('datasets/Classical')
+                            if os.path.splitext(_)[1] == '.npz'] # classical AD datasets
+        dataset_list_org.extend([os.path.splitext(_)[0] for _ in os.listdir('datasets/CV(by ResNet-18)')
+                                 if os.path.splitext(_)[1] == '.npz']) # CV datasets
+        dataset_list_org.extend([os.path.splitext(_)[0] for _ in os.listdir('datasets/NLP(by BERT)')
+                                 if os.path.splitext(_)[1] == '.npz']) # NLP datasets
+
 
         dataset_list = []
         dataset_size = []
