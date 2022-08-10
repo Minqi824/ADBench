@@ -23,7 +23,9 @@ For the **NLP** datasets, we provide two versions of transformed embedding data 
 - 20newsgroups: http://qwone.com/~jason/20Newsgroups/
 
 ****
-Here we demonstrate the MNIST-C and MVTec-AD data embedded the by the ResNet-18 pretrained on the ImageNet dataset.
+Here we demonstrate the MVTec-AD data embedded by the pretrained ResNet-18 and ViT, respectively.
 These transformed (from image/text to tabular) data could be considered as a good baseline for evaluating different AD algorithms.
-![MNIST-C](figs/MNIST-C.png)
-![MVTec-AD](figs/MVTec-AD.png)
+- MVTec-AD embedded by the pretrained ResNet-18
+![MVTec-AD](../figs/MVTec-AD.png)
+- MVTec-AD embedded by the pretrained ViT
+![MVTec-AD](../figs/MVTec-AD(ViT).png)
