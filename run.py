@@ -134,9 +134,9 @@ class RunPipeline():
         # dataset list in the current folder
         dataset_list_org = [os.path.splitext(_)[0] for _ in os.listdir('datasets/Classical')
                             if os.path.splitext(_)[1] == '.npz'] # classical AD datasets
-        dataset_list_org.extend([os.path.splitext(_)[0] for _ in os.listdir('datasets/CV(by ResNet-18)')
+        dataset_list_org.extend([os.path.splitext(_)[0] for _ in os.listdir('datasets/CV_by_ResNet18')
                                  if os.path.splitext(_)[1] == '.npz']) # CV datasets
-        dataset_list_org.extend([os.path.splitext(_)[0] for _ in os.listdir('datasets/NLP(by BERT)')
+        dataset_list_org.extend([os.path.splitext(_)[0] for _ in os.listdir('datasets/NLP_by_BERT')
                                  if os.path.splitext(_)[1] == '.npz']) # NLP datasets
 
 

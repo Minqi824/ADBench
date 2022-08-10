@@ -35,9 +35,9 @@ class DataGenerator():
         # dataset list
         self.dataset_list_classical = [os.path.splitext(_)[0] for _ in os.listdir('datasets/Classical')
                                        if os.path.splitext(_)[1] == '.npz'] # classical AD datasets
-        self.dataset_list_cv = [os.path.splitext(_)[0] for _ in os.listdir('datasets/CV(by ResNet-18)')
+        self.dataset_list_cv = [os.path.splitext(_)[0] for _ in os.listdir('datasets/CV_by_ResNet18')
                                 if os.path.splitext(_)[1] == '.npz'] # CV datasets
-        self.dataset_list_nlp = [os.path.splitext(_)[0] for _ in os.listdir('datasets/NLP(by BERT)')
+        self.dataset_list_nlp = [os.path.splitext(_)[0] for _ in os.listdir('datasets/NLP_by_BERT')
                                  if os.path.splitext(_)[1] == '.npz'] # NLP datasets
 
         # myutils function
@@ -222,9 +222,9 @@ class DataGenerator():
             if self.dataset in self.dataset_list_classical:
                 data = np.load(os.path.join('datasets', 'Classical', self.dataset + '.npz'), allow_pickle=True)
             elif self.dataset in self.dataset_list_cv:
-                data = np.load(os.path.join('datasets', 'CV(by ResNet-18)', self.dataset + '.npz'), allow_pickle=True)
+                data = np.load(os.path.join('datasets', 'CV_by_ResNet18', self.dataset + '.npz'), allow_pickle=True)
             elif self.dataset in self.dataset_list_nlp:
-                data = np.load(os.path.join('datasets', 'NLP(by BERT)', self.dataset + '.npz'), allow_pickle=True)
+                data = np.load(os.path.join('datasets', 'NLP_by_BERT', self.dataset + '.npz'), allow_pickle=True)
             else:
                 raise NotImplementedError
 
