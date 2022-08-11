@@ -12,12 +12,12 @@ AD literature [1,2,3]. Please refer to Section 3.2 and Appx. B.1 for details.
 For the **CV** datasets, we provide two versions of transformed embedding data
 for evaluating tabular-based AD algorithms (codes are available in [colab](https://colab.research.google.com/drive/1tB90CB-BuKDOM3WYV75-WkK6xrMQxQ5M?usp=sharing)):
 - [ImageNet-pretrained ResNet-18](https://pytorch.org/hub/pytorch_vision_resnet/) to extract the embedding after the last average pooling layer. See [Data Folder](https://github.com/Minqi824/ADBench/tree/main/datasets/CV_by_ResNet18).
-- [ImageNet-pretrained ViT](https://github.com/lukemelas/PyTorch-Pretrained-ViT) to extract the embedding after the last average pooling layer. See [Data Folder](https://github.com/Minqi824/ADBench/tree/main/datasets/CV_by_ResNet18).
+- [ImageNet-pretrained ViT](https://github.com/lukemelas/PyTorch-Pretrained-ViT) to extract the embedding after the last average pooling layer. See [Data Folder](https://github.com/Minqi824/ADBench/tree/main/datasets/CV_by_ViT).
 
 
 For the **NLP** datasets, we provide two versions of transformed embedding data (codes are available in [colab](https://colab.research.google.com/drive/1uMr_5jIqrlP1UL1SlBm7cdO7fmDaEamB?usp=sharing))
 - [Pretrained BERT](https://huggingface.co/bert-base-uncased) to extract the embedding of the [CLS] token. See [Data Folder](https://github.com/Minqi824/ADBench/tree/main/datasets/NLP_by_BERT).
-- [Pretrained RoBERTa](https://huggingface.co/roberta-base) to extract the embedding of the [CLS] token. See [Data Folder](https://github.com/Minqi824/ADBench/tree/main/datasets/CV_by_ResNet18).
+- [Pretrained RoBERTa](https://huggingface.co/roberta-base) to extract the embedding of the [CLS] token. See [Data Folder](https://github.com/Minqi824/ADBench/tree/main/datasets/NLP_by_RoBERTa).
 
 
 ### Raw Data File Download

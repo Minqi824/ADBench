@@ -1,6 +1,8 @@
 Official implementation of [_**ADBench**: Anomaly Detection Benchmark_](https://arxiv.org/abs/2206.09426).
 __Please star, watch, and fork ADBench for the active updates!__
 
+**We are making revision to the paper, and there might be some mismatchs between the repo and the paper. The next paper release will be around Mid Sep.**
+
 ## Citing ADBench:
 Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/2206.09426). If you find this work useful, we would appreciate citations to the following paper:
 ```
@@ -18,7 +20,7 @@ Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/22
 
 ## Who Are We? ✨
 
-ADBench is a colloborative product between researchers at _Shanghai University of Finance and Economics (SUFE)_ and _Carnegie Mellon University (CMU)_. 
+ADBench is a collaborative effort between researchers at _Shanghai University of Finance and Economics (SUFE)_ and _Carnegie Mellon University (CMU)_. 
 The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao062) and [Xiyang Hu (CMU)](https://github.com/xiyanghu) --the author(s) of important anomaly detection libraries, including anomaly detection for tabular ([PyOD](https://github.com/yzhao062/pyod)), time-series ([TODS](https://github.com/datamllab/tods)), and graph data ([PyGOD](https://github.com/pygod-team/pygod)). 
 
 <a href="https://github.com/Minqi824/ADBench/graphs/contributors">
