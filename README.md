@@ -29,7 +29,7 @@ The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com
 ## Why Do You Need ADBench?
 
 ADBench is (to our best knowledge) **the most comprehensive tabular anomaly detection benchmark**, where we analyze the performance of **30** anomaly detection algorithms on **57** benchmark datasets. By analyzing both research needs and deployment requirements in industry,
-ADBench conducts 93,654 experiments with three major angles:
+ADBench conducts 98,436 experiments with three major angles:
  1. **the effect of supervision** (e.g., ground truth labels) 
 by including 14 unsupervised, 7 semi-supervised, and 9 supervised methods;
  2. **algorithm performance under different types of anomalies** by 
