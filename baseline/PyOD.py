@@ -103,7 +103,7 @@ class PYOD():
             # index of normal ana abnormal samples
             idx_a = np.where(y_train==1)[0]
             idx_n = np.where(y_train==0)[0]
-            idx_n = np.random.choice(idx_n, int(len(idx_a) / ratio), replace=True)
+            idx_n = np.random.choice(idx_n, int((len(idx_a) * (1-ratio)) / ratio), replace=True)
 
             idx = np.append(idx_n, idx_a) #combine
             np.random.shuffle(idx) #shuffle
