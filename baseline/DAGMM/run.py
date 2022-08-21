@@ -39,7 +39,7 @@ class DAGMM():
     def grid_search(self, X_train, y_train, ratio):
         '''
         implement the grid search for unsupervised models and return the best hyper-parameters
-        the ratio is the ground truth anomaly ratio of input dataset
+        the ratio could be the ground truth anomaly ratio of input dataset
         '''
 
         # set seed
