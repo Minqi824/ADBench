@@ -211,6 +211,7 @@ class PYOD():
 
         # selecting the best hyper-parameters of unsupervised model for fair comparison (if labeled anomalies is available)
         if sum(y_train) > 0 and self.tune:
+            assert ratio is not None
             best_param = self.grid_search(X_train, y_train, ratio)
         else:
             best_param = None

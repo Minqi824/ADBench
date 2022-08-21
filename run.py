@@ -203,8 +203,7 @@ class RunPipeline():
         try:
             # fitting
             start_time = time.time()
-            self.clf = self.clf.fit(X_train=self.data['X_train'], y_train=self.data['y_train'],
-                                    ratio=sum(self.data['y_test']) / len(self.data['y_test']))
+            self.clf = self.clf.fit(X_train=self.data['X_train'], y_train=self.data['y_train'])
             end_time = time.time(); time_fit = end_time - start_time
 
 
