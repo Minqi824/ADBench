@@ -134,9 +134,9 @@ data = data_generator.generator(noise_type='duplicated_anomalies')
 - For **reproduce** experiment results of ADBench, please run the [code](run.py).
 
 ### Datasets
-ADBench includes [57 datasets](#datasets), as shown in the following Table. 
+ADBench includes [57 datasets](https://github.com/Minqi824/ADBench/tree/main/datasets), as shown in the following Table. 
 
-- Among them, **47 widely-used real-world datasets are gathered for model evaluation, which cover many application domains, 
+- Among them, **47 widely-used real-world datasets** are gathered for model evaluation, which cover many application domains, 
 including healthcare (e.g., disease diagnosis), 
 audio and language processing (e.g., speech recognition), 
 image processing (e.g., object identification), 
