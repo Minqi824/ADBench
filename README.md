@@ -1,10 +1,10 @@
-Official implementation of [_**ADBench**: Anomaly Detection Benchmark_](https://arxiv.org/abs/2206.09426).
+Official code and data repository of [_**ADBench**: Anomaly Detection Benchmark_](https://arxiv.org/abs/2206.09426).
 __Please star, watch, and fork ADBench for the active updates!__
 
-**We are making revision to the paper, and there might be some mismatchs between the repo and the paper. The next paper release will be around Mid Sep.**
+**We are making revision to the paper, and there might be some mismatches between the repo and the paper. The next paper release will be around Mid Sep.**
 
 ## Citing ADBench:
-Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/2206.09426). If you find this work useful, we would appreciate citations to the following paper:
+Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/2206.09426). If you find this work useful or use some our released datasets, we would appreciate citations to the following paper:
 ```
 @article{han2022adbench,  
       title={ADBench: Anomaly Detection Benchmark},   
@@ -21,7 +21,7 @@ Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/22
 ## Who Are We? ✨
 
 ADBench is a collaborative effort between researchers at _Shanghai University of Finance and Economics (SUFE)_ and _Carnegie Mellon University (CMU)_. 
-The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao062) and [Xiyang Hu (CMU)](https://github.com/xiyanghu) --the author(s) of important anomaly detection libraries, including anomaly detection for tabular ([PyOD](https://github.com/yzhao062/pyod)), time-series ([TODS](https://github.com/datamllab/tods)), and graph data ([PyGOD](https://github.com/pygod-team/pygod)). 
+The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao062), and [Xiyang Hu (CMU)](https://github.com/xiyanghu) --the author(s) of important anomaly detection libraries, including anomaly detection for tabular ([PyOD](https://github.com/yzhao062/pyod)), time-series ([TODS](https://github.com/datamllab/tods)), and graph data ([PyGOD](https://github.com/pygod-team/pygod)). 
 
 <a href="https://github.com/Minqi824/ADBench/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Minqi824/ADBench" />
@@ -30,7 +30,7 @@ The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com
 
 ## Why Do You Need ADBench?
 
-ADBench is (to our best knowledge) **the most comprehensive tabular anomaly detection benchmark**, where we analyze the performance of **30** anomaly detection algorithms on **57** benchmark datasets. By analyzing both research needs and deployment requirements in industry,
+ADBench is (to our best knowledge) **the most comprehensive tabular anomaly detection benchmark**, where we analyze the performance of **30** anomaly detection algorithms on [**57 datasets**](#datasets) (where we introduced 10 new datasets). By analyzing both research needs and deployment requirements in industry,
 ADBench conducts 98,436 experiments with three major angles:
  1. **the effect of supervision** (e.g., ground truth labels) 
 by including 14 unsupervised, 7 semi-supervised, and 9 supervised methods;
@@ -55,7 +55,7 @@ The Figure below provides an overview of our proposed ADBench (see our [paper](h
 
 We envision three primary usages of ADBench:
 
-- **Have better understanding of anomaly detection algorithms**: please read our [paper](https://arxiv.org/abs/2206.09426) for details
+- **Have better understanding of anomaly detection algorithms**: please read our [paper](https://arxiv.org/abs/2206.09426) for details.
 - **Conduct future research on anomaly detection**: we list 4 important future research questions in the paper--see Section 4 to see some thoughts!
 - **Access rich algorithm implementation and datasets**: see details below for how to use them
 - **Benchmark your anomaly detection algorithms**: see [notebook](https://github.com/Minqi824/ADBench/blob/main/demo.ipynb) for instruction.
@@ -78,7 +78,7 @@ The experiment code is written in Python 3 and built on a number of Python packa
 
 ### Quickly implement ADBench for benchmarking AD algorithms.
 We present the following example for quickly implementing ADBench in _three different Angles_ illustrated
-in the paper. Currently [57 datasets](#datasets) can be used for evaluating [30 algorithms](#algorithms) in ADBench,
+in the paper. Currently, [57 datasets](#datasets) can be used for evaluating [30 algorithms](#algorithms) in ADBench,
 and we encourage to test your customized datasets/algorithms in our ADBench testbed.
 
 
@@ -134,16 +134,15 @@ data = data_generator.generator(noise_type='duplicated_anomalies')
 - For **reproduce** experiment results of ADBench, please run the [code](run.py).
 
 ### Datasets
-ADBench includes 57 existing and freshly proposed datasets, as shown in the following Table. 
+ADBench includes [57 datasets](#datasets), as shown in the following Table. 
 
-- Among them, 47 widely-used real-world datasets are gathered for model evaluation, which cover many application domains, 
+- Among them, **47 widely-used real-world datasets are gathered for model evaluation, which cover many application domains, 
 including healthcare (e.g., disease diagnosis), 
 audio and language processing (e.g., speech recognition), 
 image processing (e.g., object identification), 
 finance (e.g., financial fraud detection), etc.  
 
-- **Moreover**, as most of these datasets are relatively small, 
-we introduce 10 more complex datasets from CV and NLP domains with more samples and richer features in ADBench.
+- we introduce **10 more complex datasets** from CV and NLP domains with more samples and richer features in ADBench.
 Pretrained models are applied to extract data embedding from NLP and CV datasets to access more complex representation.
 Please see the [datasets](datasets) folder and our [paper]((https://arxiv.org/abs/2206.09426)) for detailed information.
 
@@ -164,6 +163,7 @@ import numpy as np
 data = np.load('6_cardio.npz', allow_pickle=True)
 X, y = data['X'], data['y']
 ```
+
 | Number | Data | # Samples | # Features | # Anomaly | % Anomaly | Category |
 |:--:|:---:|:---------:|:----------:|:---------:|:---------:|:---:|
 |1| ALOI                    |   49534   |     27     |   1508    |   3.04    |     Image     |
@@ -239,12 +239,14 @@ The only thing worth noting is that model name should be specified
 (especially for those models deployed by their corresponding package, e.g., [PyOD](https://github.com/yzhao062/pyod)). 
 The following codes show the example to import AD models. 
 Please see the Table for complete AD models included in ADBench and their import methods.
+
 ```python
 from baseline.PyOD import PYOD
 model = PYOD(model_name='XGBOD') # initialization
 model.fit(X_train, y_train) # fit
 score = model.predict_score(X_test) # predict
 ```
+
 |  Model  | Year | Type |  DL  |       Import       |  Source  |
 | :-----: | :--------: | :--: | :--: | :-----------------: | :------: |
 | [PCA](https://apps.dtic.mil/sti/pdfs/ADA465712.pdf) | Before 2017 | Unsup |  &cross;   | from baseline.PyOD import PYOD | [Link](https://pyod.readthedocs.io/en/latest/#) |
