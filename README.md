@@ -1,18 +1,16 @@
-Official code and data repository of [_**ADBench**: Anomaly Detection Benchmark_](https://arxiv.org/abs/2206.09426).
+Official code and data repository of [_**ADBench**: Anomaly Detection Benchmark_](https://arxiv.org/abs/2206.09426) (NeurIPS 2022).
 __Please star, watch, and fork ADBench for the active updates!__
 
-**We are making revision to the paper, and there might be some mismatches between the repo and the paper. The next paper release will be around Mid Sep.**
 
 ## Citing ADBench:
-Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/2206.09426). If you find this work useful or use some our released datasets, we would appreciate citations to the following paper:
+Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/2206.09426) and [OpenReview](https://openreview.net/forum?id=foA_SFQ9zo0).
+If you find this work useful or use some our released datasets, we would appreciate citations to the following paper:
 ```
-@article{han2022adbench,  
+@inproceedings{han2022adbench,  
       title={ADBench: Anomaly Detection Benchmark},   
       author={Songqiao Han and Xiyang Hu and Hailiang Huang and Mingqi Jiang and Yue Zhao},  
+      booktitle={Neural Information Processing Systems (NeurIPS)}
       year={2022},  
-      eprint={2206.09426},  
-      archivePrefix={arXiv},  
-      primaryClass={cs.LG}  
 }
 ```
 
