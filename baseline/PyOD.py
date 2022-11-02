@@ -66,7 +66,7 @@ class PYOD():
                            'ECOD': None,
                            'FeatureBagging': [3, 5, 10, 20], # n_estimators, default=10
                            'HBOS': [3, 5, 10, 20], # n_bins, default=10
-                           'KNN': [3, 5, 10, 20], # n_neighbors, default=5
+                           'KNN': [1, 3, 5, 10, 20], # n_neighbors, default=5
                            'LMDD': ['aad', 'var', 'iqr'], # dis_measure, default='aad'
                            'LODA': [3, 5, 10, 20], # n_bins, default=10
                            'LOF': [5, 10, 20, 50], # n_neighbors, default=20
