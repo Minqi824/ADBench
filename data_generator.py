@@ -16,18 +16,20 @@ from myutils import Utils
 # currently, data generator only supports for generating the binary classification datasets
 class DataGenerator():
     def __init__(self, seed:int=42, dataset:str=None, test_size:float=0.3,
-                 generate_duplicates=True, n_samples_threshold=1000):
+                 generate_duplicates=True, n_samples_threshold=1000, normal = False):
         '''
         :param seed: seed for reproducible results
         :param dataset: specific the dataset name
         :param test_size: testing set size
         :param generate_duplicates: whether to generate duplicated samples when sample size is too small
         :param n_samples_threshold: threshold for generating the above duplicates, if generate_duplicates is False, then datasets with sample size smaller than n_samples_threshold will be dropped
+        :param normal: using only normal samples for training (second semi-supervised setting)
         '''
 
         self.seed = seed
         self.dataset = dataset
         self.test_size = test_size
+        self.normal = normal
 
         self.generate_duplicates = generate_duplicates
         self.n_samples_threshold = n_samples_threshold
@@ -206,7 +208,7 @@ class DataGenerator():
     def generator(self, X=None, y=None, minmax=True,
                   la=None, at_least_one_labeled=False,
                   realistic_synthetic_mode=None, alpha:int=5, percentage:float=0.1,
-                  noise_type=None, duplicate_times:int=2, contam_ratio=1.00, noise_ratio:float=0.05):
+                  noise_type=None, duplicate_times:int=2, contam_ratio=1.00, noise_ratio:float=0.05, max_size:int=10000):
         '''
         la: labeled anomalies, can be either the ratio of labeled anomalies or the number of labeled anomalies
         at_least_one_labeled: whether to guarantee at least one labeled anomalies in the training set
@@ -251,10 +253,10 @@ class DataGenerator():
             y = y[idx_duplicate]
 
         # if the dataset is too large, subsampling for considering the computational cost
-        if len(y) > 10000:
+        if len(y) > max_size:
             print(f'subsampling for dataset {self.dataset}...')
             self.utils.set_seed(self.seed)
-            idx_sample = np.random.choice(np.arange(len(y)), 10000, replace=False)
+            idx_sample = np.random.choice(np.arange(len(y)), max_size, replace=False)
             X = X[idx_sample]
             y = y[idx_sample]
 
@@ -307,7 +309,21 @@ class DataGenerator():
         self.utils.data_description(X=X, y=y)
 
         # spliting the current data to the training set and testing set
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=self.test_size, shuffle=True, stratify=y)
+        if self.normal: # if we use normal samples only for training
+            indices = np.arange(len(X))
+            normal_indices = indices[y == 0]
+            anomaly_indices = indices[y == 1]
+
+            train_size = round((1-self.test_size) * normal_indices.size)
+            train_indices, test_indices = normal_indices[:train_size], normal_indices[train_size:]
+            test_indices = np.append(test_indices, anomaly_indices)
+            
+            X_train = X[train_indices]
+            y_train = y[train_indices]
+            X_test = X[test_indices]
+            y_test = y[test_indices]
+        else: # classical unsupervised
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=self.test_size, shuffle=True, stratify=y)
 
         # we respectively generate the duplicated anomalies for the training and testing set
         if noise_type == 'duplicated_anomalies':
