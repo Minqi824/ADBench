@@ -3,7 +3,7 @@ __Please star, watch, and fork ADBench for the active updates!__
 
 
 ## Citing ADBench:
-Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/2206.09426) and [OpenReview](https://openreview.net/forum?id=foA_SFQ9zo0).
+Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/2206.09426) and [NeurIPS Proceedings](https://proceedings.neurips.cc/paper_files/paper/2022/hash/cf93972b116ca5268827d575f2cc226b-Abstract-Datasets_and_Benchmarks.html).
 If you find this work useful or use some our released datasets, we would appreciate citations to the following paper:
 ```
 @inproceedings{han2022adbench,  
