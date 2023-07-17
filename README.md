@@ -59,20 +59,49 @@ We envision three primary usages of ADBench:
 - **Benchmark your anomaly detection algorithms**: see [notebook](https://github.com/Minqi824/ADBench/blob/main/demo.ipynb) for instruction.
 
 
-### Dependency
-The experiment code is written in Python 3 and built on a number of Python packages:  
+[comment]: <> (### Dependency)
 
-- scikit-learn==0.20.3
-- pyod==1.0.0
-- Keras==2.8.0
-- tensorflow==2.8.0
-- torch==1.9.0
-- rtdl==0.0.13
-- delu
-- lightgbm
-- xgboost
-- catboost 
-- copulas
+[comment]: <> (The experiment code is written in Python 3 and built on a number of Python packages:  )
+
+[comment]: <> (- scikit-learn==0.20.3)
+
+[comment]: <> (- pyod==1.0.0)
+
+[comment]: <> (- torch==1.9.0)
+
+[comment]: <> (- rtdl==0.0.13)
+
+[comment]: <> (- keras)
+
+[comment]: <> (- tensorflow)
+
+[comment]: <> (- delu)
+
+[comment]: <> (- lightgbm)
+
+[comment]: <> (- xgboost)
+
+[comment]: <> (- catboost )
+
+[comment]: <> (- copulas)
+
+[comment]: <> (- combo)
+
+[comment]: <> (- barbar)
+
+We provide full guidence of ADBench in the [notebook](guidence.ipynb)
+### Installation
+```python
+pip install adbench
+pip install --upgrade adbench
+```
+
+_Prerequisite: Downloading datasets in ADBench from the remote repo_
+```python
+from adbench.myutils import Utils
+utils = Utils() # utility function
+utils.download_datasets() # download datasets from the remote github repo
+```
 
 ### Quickly implement ADBench for benchmarking AD algorithms.
 We present the following example for quickly implementing ADBench in _three different Angles_ illustrated
@@ -81,22 +110,24 @@ and we encourage to test your customized datasets/algorithms in our ADBench test
 
 
 **_Angle I: Availability of Ground Truth Labels (Supervision)_**
+
 ```python
-from data_generator import DataGenerator
-from myutils import Utils
+from datasets.data_generator import DataGenerator
+from adbench.myutils import Utils
 
 # one can use our already included datasets
 data_generator = DataGenerator(dataset='6_cardio.npz')
 # specify the ratio of labeled anomalies to generate X and y
 # la could be any float number in [0.0, 1.0]
-data = data_generator.generator(la=0.1) 
+data = data_generator.generator(la=0.1)
 
 # or specify the X and y of your customized data
 # data_generator = DataGenerator(dataset=None)
 # data = data_generator.generator(X=X, y=y, la=0.1)
 
 # import AD algorithms (e.g., DevNet) and initialization
-from baseline.DevNet.run import DevNet
+from adbench.baseline import DevNet
+
 model = DevNet(seed=42)
 
 # fitting
@@ -127,9 +158,9 @@ data_generator = DataGenerator(dataset='6_cardio.npz')
 data = data_generator.generator(noise_type='duplicated_anomalies')
 ```
 
-- We also provide an example for quickly implementing ADBench, as shown in [notebook](demo.ipynb).
+- We also provide an example for quickly implementing ADBench, as shown in [notebook](guidence.ipynb).
 - For **complete results** of ADBench, please refer to our [paper](https://arxiv.org/abs/2206.09426).
-- For **reproduce** experiment results of ADBench, please run the [code](run.py).
+- For **reproduce** experiment results of ADBench, please run the [code](adbench/run.py).
 
 ### Datasets
 ADBench includes [57 datasets](https://github.com/Minqi824/ADBench/tree/main/datasets), as shown in the following Table. 
@@ -239,10 +270,11 @@ The following codes show the example to import AD models.
 Please see the Table for complete AD models included in ADBench and their import methods.
 
 ```python
-from baseline.PyOD import PYOD
-model = PYOD(model_name='XGBOD') # initialization
-model.fit(X_train, y_train) # fit
-score = model.predict_score(X_test) # predict
+from adbench.baseline import PYOD
+
+model = PYOD(model_name='XGBOD')  # initialization
+model.fit(X_train, y_train)  # fit
+score = model.predict_score(X_test)  # predict
 ```
 
 |  Model  | Year | Type |  DL  |       Import       |  Source  |

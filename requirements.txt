@@ -1,0 +1,14 @@
+pyod==1.0.0
+rtdl
+scikit-learn
+torch
+keras
+tensorflow
+delu
+lightgbm
+xgboost
+catboost 
+copulas
+combo
+barbar
+fsspec
