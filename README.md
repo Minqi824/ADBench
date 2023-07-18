@@ -135,7 +135,6 @@ pipeline.run()
 **_Run Your Customized Algorithms on either ADBench Datasets or Your Customized Dataset_**
 ```python
 # customized model on ADBench's datasets
-from adbench.run import RunPipeline
 from adbench.baseline.Customized.run import Customized
 results = pipeline.run(clf=Customized)
 
@@ -172,11 +171,11 @@ and [for CV datasets](https://colab.research.google.com/drive/1tB90CB-BuKDOM3WYV
 in **Google Colab**, where one can quickly
 reproduce our procedures via the free GPUs. We hope this could be helpful for the AD community.
 
-We have unified all the datasets in .npz format, and you can read a dataset by the following script
+We have unified all the datasets in .npz format, and you can directly access a dataset by the following script
 
 ```python
 import numpy as np
-data = np.load('6_cardio.npz', allow_pickle=True)
+data = np.load('adbench/datasets/Classical/6_cardio.npz', allow_pickle=True)
 X, y = data['X'], data['y']
 ```
 
@@ -242,7 +241,7 @@ X, y = data['X'], data['y']
 
 ### Algorithms
 ADBench can be served as a great complement to the [PyOD](https://pyod.readthedocs.io/en/latest/) toolkit,
-providing additional deep learning anomaly detection algorithms API.
+providing **additional deep learning anomaly detection algorithms API**.
 Compared to the previous benchmark studies, we have a larger algorithm collection with
 1. latest unsupervised AD algorithms like DeepSVDD and ECOD;
 2. SOTA semi-supervised algorithms, including DeepSAD and DevNet;
@@ -259,9 +258,15 @@ The following codes show the example to import AD models.
 Please see the Table for complete AD models included in ADBench and their import methods.
 
 ```python
-from adbench.baseline import PYOD
+# Directly import AD algorithms from the existing toolkits like PyOD
+from adbench.baseline.PyOD import PYOD
+model = PYOD(seed=42, model_name='XGBOD')  # initialization
+model.fit(X_train, y_train)  # fit
+score = model.predict_score(X_test)  # predict
 
-model = PYOD(model_name='XGBOD')  # initialization
+# Import deep learning AD algorithms from our ADBench
+from adbench.baseline.PReNet.run import PReNet
+model = PReNet(seed=42, model_name='PReNet')
 model.fit(X_train, y_train)  # fit
 score = model.predict_score(X_test)  # predict
 ```
