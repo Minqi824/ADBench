@@ -89,7 +89,7 @@ We envision three primary usages of ADBench:
 
 [comment]: <> (- barbar)
 
-We provide full guidence of ADBench in the [notebook](guidence.ipynb)
+We provide full guidance of ADBench in the [notebook](guidance.ipynb).
 ### Installation
 ```python
 pip install adbench
@@ -109,58 +109,45 @@ in the paper. Currently, [57 datasets](#datasets) can be used for evaluating [30
 and we encourage to test your customized datasets/algorithms in our ADBench testbed.
 
 
-**_Angle I: Availability of Ground Truth Labels (Supervision)_**
+**_Run Entire Experiments of ADBench_**
 
 ```python
-from datasets.data_generator import DataGenerator
-from adbench.myutils import Utils
+from adbench.run import RunPipeline
 
-# one can use our already included datasets
-data_generator = DataGenerator(dataset='6_cardio.npz')
-# specify the ratio of labeled anomalies to generate X and y
-# la could be any float number in [0.0, 1.0]
-data = data_generator.generator(la=0.1)
+'''
+Params:
+suffix: file name suffix;
 
-# or specify the X and y of your customized data
-# data_generator = DataGenerator(dataset=None)
-# data = data_generator.generator(X=X, y=y, la=0.1)
+parallel: running either 'unsupervise', 'semi-supervise', or 'supervise' (AD) algorithms,
+corresponding to the Angle I: Availability of Ground Truth Labels (Supervision);
 
-# import AD algorithms (e.g., DevNet) and initialization
-from adbench.baseline import DevNet
+realistic_synthetic_mode: testing on 'local', 'global', 'dependency', and 'cluster' anomalies, 
+corresponding to the Angle II: Types of Anomalies;
 
-model = DevNet(seed=42)
+noise type: evaluating algorithms on 'duplicated_anomalies', 'irrelevant_features' and 'label_contamination',
+corresponding to the Angle III: Model Robustness with Noisy and Corrupted Data.
+'''
 
-# fitting
-model.fit(X_train=data['X_train'], y_train=data['y_train'])
-
-# prediction
-score = model.predict_score(data['X_test'])
-
-# evaluation
-utils = Utils()
-result = utils.metric(y_true=data['y_test'], y_score=score)
+pipeline = RunPipeline(suffix='ADBench', parallel='semi-supervise', realistic_synthetic_mode=None, noise_type=None)
+pipeline.run()
 ```
 
-**_Angle II: Types of Anomalies_**
+**_Run Your Customized Algorithms on either ADBench Datasets or Your Customized Dataset_**
 ```python
-# For Angle II, different types of anomalies are generated as the following
-data_generator = DataGenerator(dataset='6_cardio.npz')
-# the type of anomalies could be 'local', 'global', 'dependency' or 'cluster'.
-data = data_generator.generator(realistic_synthetic_mode='local')
+# customized model on ADBench's datasets
+from adbench.run import RunPipeline
+from adbench.baseline.Customized.run import Customized
+results = pipeline.run(clf=Customized)
+
+# customized model on customized dataset
+import numpy as np
+dataset = {}
+dataset['X'] = np.random.randn(1000, 20)
+dataset['y'] = np.random.choice([0, 1], 1000)
+results = pipeline.run(dataset=dataset, clf=Customized)
 ```
 
-
-**_Angle III: Model Robustness with Noisy and Corrupted Data_**
-```python
-# For Angle III, different data noises and corruptions are added as the following
-data_generator = DataGenerator(dataset='6_cardio.npz')
-# the type of anomalies could be 'duplicated_anomalies', 'irrelevant_features' or 'label_contamination'.
-data = data_generator.generator(noise_type='duplicated_anomalies')
-```
-
-- We also provide an example for quickly implementing ADBench, as shown in [notebook](guidence.ipynb).
-- For **complete results** of ADBench, please refer to our [paper](https://arxiv.org/abs/2206.09426).
-- For **reproduce** experiment results of ADBench, please run the [code](adbench/run.py).
+See detailed guidance of ADBench in the [notebook](guidance.ipynb).
 
 ### Datasets
 ADBench includes [57 datasets](https://github.com/Minqi824/ADBench/tree/main/datasets), as shown in the following Table. 
@@ -254,6 +241,8 @@ X, y = data['X'], data['y']
 |57| 20newsgroups| See Table B3. |     |          |       |   NLP   |
 
 ### Algorithms
+ADBench can be served as a great complement to the [PyOD](https://pyod.readthedocs.io/en/latest/) toolkit,
+providing additional deep learning anomaly detection algorithms API.
 Compared to the previous benchmark studies, we have a larger algorithm collection with
 1. latest unsupervised AD algorithms like DeepSVDD and ECOD;
 2. SOTA semi-supervised algorithms, including DeepSAD and DevNet;
