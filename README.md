@@ -1,6 +1,9 @@
 Official code and data repository of [_**ADBench**: Anomaly Detection Benchmark_](https://arxiv.org/abs/2206.09426) (NeurIPS 2022).
 __Please star, watch, and fork ADBench for the active updates!__
 
+## Recent News:
+- ADBench has received 600+⭐ in github and released an official Python package📦 for a better user experience! Thank you all for your attention.
+
 
 ## Citing ADBench:
 Our ADBench benchmark paper is now available on [arxiv](https://arxiv.org/abs/2206.09426) and [NeurIPS Proceedings](https://proceedings.neurips.cc/paper_files/paper/2022/hash/cf93972b116ca5268827d575f2cc226b-Abstract-Datasets_and_Benchmarks.html).
@@ -96,7 +99,7 @@ pip install adbench
 pip install --upgrade adbench
 ```
 
-_Prerequisite: Downloading datasets in ADBench from the remote repo_
+_Prerequisite: Downloading datasets in ADBench from the github repo_
 ```python
 from adbench.myutils import Utils
 utils = Utils() # utility function
@@ -266,7 +269,7 @@ score = model.predict_score(X_test)  # predict
 
 # Import deep learning AD algorithms from our ADBench
 from adbench.baseline.PReNet.run import PReNet
-model = PReNet(seed=42, model_name='PReNet')
+model = PReNet(seed=42)
 model.fit(X_train, y_train)  # fit
 score = model.predict_score(X_test)  # predict
 ```
