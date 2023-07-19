@@ -70,6 +70,7 @@ class Utils():
 
         for folder in tqdm(folder_list):
             save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datasets', folder)
+            print(f'Current saving path: {save_path}')
             if os.path.exists(save_path):
                 print(f'{folder} already exists. Skipping download...')
                 continue

@@ -1,15 +1,16 @@
 import logging; logging.basicConfig(level=logging.WARNING)
 import numpy as np
+import pandas as pd
 import itertools
 from itertools import product
 from tqdm import tqdm
 import time
 import gc
+import os
 from keras import backend as K
 
 from adbench.datasets.data_generator import DataGenerator
 from adbench.myutils import Utils
-from adbench.baseline.Customized.run import Customized
 
 class RunPipeline():
     def __init__(self, suffix:str=None, mode:str='rla', parallel:str=None,
@@ -249,7 +250,15 @@ class RunPipeline():
 
         print(f'{len(dataset_list)} datasets, {len(self.model_dict.keys())} models')
 
-        result = []
+        # save the results
+        os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'result'), exist_ok=True)
+        columns = list(self.model_dict.keys()) if clf is None else ['Customized']
+        df_AUCROC = pd.DataFrame(data=None, index=experiment_params, columns=columns)
+        df_AUCPR = pd.DataFrame(data=None, index=experiment_params, columns=columns)
+        df_time_fit = pd.DataFrame(data=None, index=experiment_params, columns=columns)
+        df_time_inference = pd.DataFrame(data=None, index=experiment_params, columns=columns)
+
+        results = []
         for i, params in tqdm(enumerate(experiment_params)):
             if self.noise_type is not None:
                 dataset, la, noise_param, self.seed = params
@@ -297,15 +306,46 @@ class RunPipeline():
 
                     # fit and test model
                     time_fit, time_inference, metrics = self.model_fit()
+                    results.append([params, model_name, metrics, time_fit, time_inference])
                     print(f'Current experiment parameters: {params}, model: {model_name}, metrics: {metrics}, '
                           f'fitting time: {time_fit}, inference time: {time_inference}')
-                    result.append([params, model_name, metrics, time_fit, time_inference])
+
+                    # store and save the result (AUC-ROC, AUC-PR and runtime / inference time)
+                    df_AUCROC[model_name].iloc[i] = metrics['aucroc']
+                    df_AUCPR[model_name].iloc[i] = metrics['aucpr']
+                    df_time_fit[model_name].iloc[i] = time_fit
+                    df_time_inference[model_name].iloc[i] = time_inference
+
+                    df_AUCROC.to_csv(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                                  'result', 'AUCROC_' + self.suffix + '.csv'), index=True)
+                    df_AUCPR.to_csv(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                                 'result', 'AUCPR_' + self.suffix + '.csv'), index=True)
+                    df_time_fit.to_csv(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                                    'result', 'Time(fit)_' + self.suffix + '.csv'), index=True)
+                    df_time_inference.to_csv(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                                          'result', 'Time(inference)_' + self.suffix + '.csv'), index=True)
+
             else:
-                self.clf = clf; self.model_name = 'customized model'
+                self.clf = clf; self.model_name = 'Customized'
                 # fit and test model
                 time_fit, time_inference, metrics = self.model_fit()
+                results.append([params, self.model_name, metrics, time_fit, time_inference])
                 print(f'Current experiment parameters: {params}, model: {self.model_name}, metrics: {metrics}, '
                       f'fitting time: {time_fit}, inference time: {time_inference}')
-                result.append([params, self.model_name, metrics, time_fit, time_inference])
 
-        return result
+                # store and save the result (AUC-ROC, AUC-PR and runtime / inference time)
+                df_AUCROC[self.model_name].iloc[i] = metrics['aucroc']
+                df_AUCPR[self.model_name].iloc[i] = metrics['aucpr']
+                df_time_fit[self.model_name].iloc[i] = time_fit
+                df_time_inference[self.model_name].iloc[i] = time_inference
+
+                df_AUCROC.to_csv(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                              'result', 'AUCROC_' + self.suffix + '.csv'), index=True)
+                df_AUCPR.to_csv(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                             'result', 'AUCPR_' + self.suffix + '.csv'), index=True)
+                df_time_fit.to_csv(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                                'result', 'Time(fit)_' + self.suffix + '.csv'), index=True)
+                df_time_inference.to_csv(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                                      'result', 'Time(inference)_' + self.suffix + '.csv'), index=True)
+
+        return results

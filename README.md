@@ -132,7 +132,15 @@ corresponding to the Angle III: Model Robustness with Noisy and Corrupted Data.
 '''
 
 pipeline = RunPipeline(suffix='ADBench', parallel='semi-supervise', realistic_synthetic_mode=None, noise_type=None)
+# return the results including [params, model_name, metrics, time_fit, time_inference]
+# besides, results will be automatically saved in the dataframe and ouputted as csv file in adbench/result folder
 pipeline.run()
+
+pipeline = RunPipeline(suffix='ADBench', parallel='unsupervise', realistic_synthetic_mode='cluster', noise_type=None)
+results = pipeline.run()
+
+pipeline = RunPipeline(suffix='ADBench', parallel='supervise', realistic_synthetic_mode=None, noise_type='irrelevant_features')
+results = pipeline.run()
 ```
 
 **_Run Your Customized Algorithms on either ADBench Datasets or Your Customized Dataset_**
