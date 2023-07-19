@@ -251,6 +251,7 @@ class RunPipeline():
         print(f'{len(dataset_list)} datasets, {len(self.model_dict.keys())} models')
 
         # save the results
+        print(f"Experiment results are saved at: {os.path.join(os.path.dirname(os.path.abspath(__file__)), 'result')}")
         os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'result'), exist_ok=True)
         columns = list(self.model_dict.keys()) if clf is None else ['Customized']
         df_AUCROC = pd.DataFrame(data=None, index=experiment_params, columns=columns)

@@ -76,7 +76,7 @@ class Utils():
                 continue
 
             os.makedirs(save_path, exist_ok=True)
-            fs.get(fs.ls("datasets/" + folder), save_path, recursive=True)
+            fs.get(fs.ls("adbench/datasets/" + folder), save_path, recursive=True)
 
     def data_description(self, X, y):
         des_dict = {}
