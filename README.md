@@ -103,7 +103,9 @@ _Prerequisite: Downloading datasets in ADBench from the github repo_
 ```python
 from adbench.myutils import Utils
 utils = Utils() # utility function
-utils.download_datasets() # download datasets from the remote github repo
+# download datasets from the remote github repo
+# we recommend gitee for China mainland user and github otherwise
+utils.download_datasets(repo='gitee')
 ```
 
 ### Quickly implement ADBench for benchmarking AD algorithms.
@@ -131,9 +133,9 @@ noise type: evaluating algorithms on 'duplicated_anomalies', 'irrelevant_feature
 corresponding to the Angle III: Model Robustness with Noisy and Corrupted Data.
 '''
 
-pipeline = RunPipeline(suffix='ADBench', parallel='semi-supervise', realistic_synthetic_mode=None, noise_type=None)
 # return the results including [params, model_name, metrics, time_fit, time_inference]
 # besides, results will be automatically saved in the dataframe and ouputted as csv file in adbench/result folder
+pipeline = RunPipeline(suffix='ADBench', parallel='semi-supervise', realistic_synthetic_mode=None, noise_type=None)
 pipeline.run()
 
 pipeline = RunPipeline(suffix='ADBench', parallel='unsupervise', realistic_synthetic_mode='cluster', noise_type=None)
