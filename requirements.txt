@@ -12,3 +12,4 @@ copulas
 combo
 barbar
 fsspec
+tqdm

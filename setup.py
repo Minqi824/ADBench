@@ -8,7 +8,7 @@ with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'requirements
 # 配置
 setup(
     name="adbench",
-    version='0.1.2',
+    version='0.1.3',
     author="Minqi Jiang",
     author_email="<jiangmq95@163.com>",
     url='https://github.com/Minqi824/ADBench',

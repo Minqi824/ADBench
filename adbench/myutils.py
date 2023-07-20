@@ -65,7 +65,8 @@ class Utils():
     # download datasets from the remote github repo
     def download_datasets(self):
         fs = fsspec.filesystem("github", org="Minqi824", repo="ADBench")
-        folder_list = ['CV_by_ResNet18', 'CV_by_ViT', 'NLP_by_BERT', 'NLP_by_RoBERTa', 'Classical']
+        # folder_list = ['CV_by_ResNet18', 'CV_by_ViT', 'NLP_by_BERT', 'NLP_by_RoBERTa', 'Classical']
+        folder_list = ['CV_by_ResNet18', 'NLP_by_BERT', 'Classical']
         print(f'Downloading datasets from the remote github repo...')
 
         for folder in tqdm(folder_list):
