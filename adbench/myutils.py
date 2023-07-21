@@ -86,13 +86,14 @@ class Utils():
             print(f'Downloading datasets from the remote gitee repo...')
             
             # load the datasets path
-            url_dictionary = os.path.join(url_repo,'datasets_files_name.json')
+            # url_dictionary = os.path.join(url_repo,'datasets_files_name.json') # only for linux
+            url_dictionary = url_repo + '/datasets_files_name.json'
             response = requests.get(url_dictionary)
             save_dictionary_path = os.path.join(os.path.dirname(os.path.abspath(os.getcwd())), 'datasets_files_name.json')
             with open(save_dictionary_path, 'wb') as f:
                 f.write(response.content)
             with open(save_dictionary_path, 'r') as json_file:
-                loaded_dict = json.load(json_file)
+                loaded_dict = json.loads(json_file.read())
 
             # download datasets
             for folder in tqdm(folder_list):
