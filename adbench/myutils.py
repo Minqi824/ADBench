@@ -89,7 +89,7 @@ class Utils():
             # url_dictionary = os.path.join(url_repo,'datasets_files_name.json') # only for linux
             url_dictionary = url_repo + '/datasets_files_name.json'
             response = requests.get(url_dictionary)
-            save_dictionary_path = os.path.join(os.path.dirname(os.path.abspath(os.getcwd())), 'datasets_files_name.json')
+            save_dictionary_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datasets', 'datasets_files_name.json')
             with open(save_dictionary_path, 'wb') as f:
                 f.write(response.content)
             with open(save_dictionary_path, 'r') as json_file:
@@ -98,11 +98,11 @@ class Utils():
             # download datasets
             for folder in tqdm(folder_list):
                 datasets_list = loaded_dict[folder]
-                save_fold_path = os.path.join(os.path.dirname(os.path.abspath(os.getcwd())), 'datasets', folder)
+                save_fold_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datasets', folder)
                 if os.path.exists(save_fold_path) is False:
                     os.makedirs(save_fold_path, exist_ok=True)
                 for datasets in datasets_list:
-                    save_path = os.path.join(save_fold_path,datasets)
+                    save_path = os.path.join(save_fold_path, datasets)
                     if os.path.exists(save_path):
                         print(f'{datasets} already exists. Skipping download...')
                         continue
