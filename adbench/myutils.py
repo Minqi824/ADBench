@@ -64,11 +64,11 @@ class Utils():
         return int(u)
 
     # download datasets from the remote git repo
-    def download_datasets(self,repo='gitee'):
+    def download_datasets(self, repo='gitee'):
         # folder_list = ['CV_by_ResNet18', 'CV_by_ViT', 'NLP_by_BERT', 'NLP_by_RoBERTa', 'Classical']
         folder_list = ['CV_by_ResNet18', 'NLP_by_BERT', 'Classical']
         
-        if repo=='github':
+        if repo == 'github':
             fs = fsspec.filesystem("github", org="Minqi824", repo="ADBench")
             print(f'Downloading datasets from the remote github repo...')
             for folder in tqdm(folder_list):
@@ -81,7 +81,7 @@ class Utils():
                 os.makedirs(save_path, exist_ok=True)
                 fs.get(fs.ls("adbench/datasets/" + folder), save_path, recursive=True)
         
-        elif repo=='gitee':
+        elif repo == 'gitee':
             url_repo = 'https://gitee.com/hou-chaochuan/adbench_datasets/raw/master'
             print(f'Downloading datasets from the remote gitee repo...')
             
