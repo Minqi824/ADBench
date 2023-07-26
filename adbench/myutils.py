@@ -8,6 +8,9 @@ import fsspec
 from tqdm import tqdm
 import requests
 import json
+import time
+import wget
+import zipfile
 # metric
 from sklearn.metrics import roc_auc_score, average_precision_score
 
@@ -64,7 +67,7 @@ class Utils():
         return int(u)
 
     # download datasets from the remote git repo
-    def download_datasets(self, repo='gitee'):
+    def download_datasets(self, repo='tianchi'):
         # folder_list = ['CV_by_ResNet18', 'CV_by_ViT', 'NLP_by_BERT', 'NLP_by_RoBERTa', 'Classical']
         folder_list = ['CV_by_ResNet18', 'NLP_by_BERT', 'Classical']
         
@@ -81,6 +84,32 @@ class Utils():
                 os.makedirs(save_path, exist_ok=True)
                 fs.get(fs.ls("adbench/datasets/" + folder), save_path, recursive=True)
         
+        elif repo == 'tianchi':
+            print(f'Downloading datasets from aliyun tianchi datasets...')
+            dic_datasetsName2url = {
+                'Classical':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/Classical.zip?Expires=1690154932&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=cBQiIMTuxI12Drz7rSux479RrFM%3D',
+                'CV_by_ResNet18':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/CV_by_ResNet18.zip?Expires=1690155534&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=lG3iXH%2B1PlOCKIdSUt4%2Bb%2FZ4yiA%3D',
+                'NLP_by_BERT':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/NLP_by_BERT.zip?Expires=1690155579&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=EvzKTodvUXNQEZS%2FD2bajY3gpzY%3D',
+                'NLP_by_RoBERTa':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/NLP_by_RoBERTa.zip?Expires=1690155694&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=2%2FtIBZs%2FAkAI79W1Y9qr%2F12Q2I8%3D',
+                'CV_by_Vit':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/CV_by_ViT.zip?Expires=1690155712&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=4EsYCySYZOC0m8xz4GGd8ZEa5hA%3D'
+            } # the link won't work after Friday, December 12, 2023 17:22:12 (in GMT)
+            for folder in tqdm(folder_list):
+                save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datasets')
+                print(f'Current saving path: {save_path}')
+                if os.path.exists(os.path.join(save_path, folder)):
+                    print(f'{folder} already exists. Skipping download...')
+                    continue
+                    
+                dataset_url = dic_datasetsName2url[folder]
+                wget.download(dataset_url,out = folder+'.zip') # download the datasets zip
+                zip_file = zipfile.ZipFile(folder+'.zip') # save to the current fold temporarily
+                zip_file.extractall(save_path)
+                
+                zip_file.close()
+                del zip_file
+                time.sleep(1)
+                os.remove(folder+'.zip') # delete the temporary zip file
+                
         elif repo == 'gitee':
             url_repo = 'https://gitee.com/hou-chaochuan/adbench_datasets/raw/master'
             print(f'Downloading datasets from the remote gitee repo...')
