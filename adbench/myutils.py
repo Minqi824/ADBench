@@ -109,6 +109,38 @@ class Utils():
                 del zip_file
                 time.sleep(1)
                 os.remove(folder+'.zip') # delete the temporary zip file
+                
+        elif repo == 'gitee':
+            url_repo = 'https://gitee.com/hou-chaochuan/adbench_datasets/raw/master'
+            print(f'Downloading datasets from the remote gitee repo...')
+            
+            # load the datasets path
+            # url_dictionary = os.path.join(url_repo,'datasets_files_name.json') # only for linux
+            url_dictionary = url_repo + '/datasets_files_name.json'
+            response = requests.get(url_dictionary)
+            save_dictionary_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datasets', 'datasets_files_name.json')
+            with open(save_dictionary_path, 'wb') as f:
+                f.write(response.content)
+            with open(save_dictionary_path, 'r') as json_file:
+                loaded_dict = json.loads(json_file.read())
+
+            # download datasets
+            for folder in tqdm(folder_list):
+                datasets_list = loaded_dict[folder]
+                save_fold_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datasets', folder)
+                if os.path.exists(save_fold_path) is False:
+                    os.makedirs(save_fold_path, exist_ok=True)
+                for datasets in datasets_list:
+                    save_path = os.path.join(save_fold_path, datasets)
+                    if os.path.exists(save_path):
+                        print(f'{datasets} already exists. Skipping download...')
+                        continue
+                    print(f'Current saving path: {save_path}')
+                    url = os.path.join(url_repo,folder,datasets)
+                    response = requests.get(url, stream=True)
+                    with open(save_path, 'wb') as f:
+                        for chunk in response.iter_content(chunk_size=8192):
+                            f.write(chunk)
         else:
             raise NotImplementedError
 

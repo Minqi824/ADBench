@@ -136,7 +136,7 @@ corresponding to the Angle III: Model Robustness with Noisy and Corrupted Data.
 # return the results including [params, model_name, metrics, time_fit, time_inference]
 # besides, results will be automatically saved in the dataframe and ouputted as csv file in adbench/result folder
 pipeline = RunPipeline(suffix='ADBench', parallel='semi-supervise', realistic_synthetic_mode=None, noise_type=None)
-pipeline.run()
+results = pipeline.run()
 
 pipeline = RunPipeline(suffix='ADBench', parallel='unsupervise', realistic_synthetic_mode='cluster', noise_type=None)
 results = pipeline.run()
@@ -148,7 +148,13 @@ results = pipeline.run()
 **_Run Your Customized Algorithms on either ADBench Datasets or Your Customized Dataset_**
 ```python
 # customized model on ADBench's datasets
+from adbench.run import RunPipeline
 from adbench.baseline.Customized.run import Customized
+
+# notice that you should specify the corresponding category of your customized AD algorithm
+# for example, here we use Logistic Regression as customized clf, which belongs to the supervised algorithm
+# for your own algorithm, you can realize the same usage as other baselines by modifying the fit.py, model.py, and run.py files in the adbench/baseline/Customized
+pipeline = RunPipeline(suffix='ADBench', parallel='supervise', realistic_synthetic_mode=None, noise_type=None)
 results = pipeline.run(clf=Customized)
 
 # customized model on customized dataset
