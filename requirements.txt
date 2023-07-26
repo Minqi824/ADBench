@@ -13,3 +13,5 @@ combo
 barbar
 fsspec
 tqdm
+wget
+zipfile
