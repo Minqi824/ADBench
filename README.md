@@ -59,7 +59,7 @@ We envision three primary usages of ADBench:
 - **Have better understanding of anomaly detection algorithms**: please read our [paper](https://arxiv.org/abs/2206.09426) for details.
 - **Conduct future research on anomaly detection**: we list 4 important future research questions in the paper--see Section 4 to see some thoughts!
 - **Access rich algorithm implementation and datasets**: see details below for how to use them
-- **Benchmark your anomaly detection algorithms**: see [notebook](https://github.com/Minqi824/ADBench/blob/main/demo.ipynb) for instruction.
+- **Benchmark your anomaly detection algorithms**: see [notebook](guidance.ipynb) for instruction.
 
 
 [comment]: <> (### Dependency)
