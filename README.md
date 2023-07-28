@@ -23,6 +23,7 @@ If you find this work useful or use some our released datasets, we would appreci
 
 ADBench is a collaborative effort between researchers at _Shanghai University of Finance and Economics (SUFE)_ and _Carnegie Mellon University (CMU)_. 
 The project is designed and conducted by [Minqi Jiang (SUFE)](https://github.com/Minqi824) and [Yue Zhao (CMU)](https://github.com/yzhao062), and [Xiyang Hu (CMU)](https://github.com/xiyanghu) --the author(s) of important anomaly detection libraries, including anomaly detection for tabular ([PyOD](https://github.com/yzhao062/pyod)), time-series ([TODS](https://github.com/datamllab/tods)), and graph data ([PyGOD](https://github.com/pygod-team/pygod)). 
+The project is also maintained by [Chaochuan Hou (SUFE)](https://github.com/BraudoCC).
 
 <a href="https://github.com/Minqi824/ADBench/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Minqi824/ADBench" />
