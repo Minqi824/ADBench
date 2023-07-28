@@ -14,4 +14,3 @@ barbar
 fsspec
 tqdm
 wget
-zipfile
