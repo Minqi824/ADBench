@@ -105,8 +105,8 @@ _Prerequisite: Downloading datasets in ADBench from the github repo_
 from adbench.myutils import Utils
 utils = Utils() # utility function
 # download datasets from the remote github repo
-# we recommend tianchi for China mainland user and github otherwise
-utils.download_datasets(repo='tianchi')
+# we recommend jihulab for China mainland user and github otherwise
+utils.download_datasets(repo='jihulab')
 ```
 
 ### Quickly implement ADBench for benchmarking AD algorithms.
