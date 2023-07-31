@@ -67,11 +67,11 @@ class Utils():
         return int(u)
 
     # download datasets from the remote git repo
-    def download_datasets(self, repo='tianchi'):
+    def download_datasets(self, repo='jihulab'):
         print('if there is any question while downloading datasets, we suggest you to download it from the website:')
         print('https://github.com/Minqi824/ADBench/tree/main/adbench/datasets')
         print('如果您在中国大陆地区，请使用链接：')
-        print('https://tianchi.aliyun.com/dataset/159210')
+        print('https://jihulab.com/BraudoCC/ADBench_datasets/')
         # folder_list = ['CV_by_ResNet18', 'CV_by_ViT', 'NLP_by_BERT', 'NLP_by_RoBERTa', 'Classical']
         folder_list = ['CV_by_ResNet18', 'NLP_by_BERT', 'Classical']
         
@@ -88,44 +88,13 @@ class Utils():
                 os.makedirs(save_path, exist_ok=True)
                 fs.get(fs.ls("adbench/datasets/" + folder), save_path, recursive=True)
         
-        elif repo == 'tianchi':
-            print(f'Downloading datasets from aliyun tianchi datasets...')
-            dic_datasetsName2url = {
-                'Classical':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/Classical.zip?Expires=1690550830&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=o4v%2B5NiBc2wVQen37Tw%2FCQHh1XI%3D',
-                'CV_by_ResNet18':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/CV_by_ResNet18.zip?Expires=1690550872&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=fTWywCDEFm8S%2B8n0%2FT6aXH8kniQ%3D',
-                'NLP_by_BERT':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/NLP_by_BERT.zip?Expires=1690550894&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=%2B5L9PjLMWp4N5CxAnoeY6Op8r6s%3D',
-                'NLP_by_RoBERTa':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/NLP_by_RoBERTa.zip?Expires=1690550920&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=K6b6AhNHNSBEQN8etsOXWO%2F3Zdc%3D',
-                'CV_by_Vit':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/CV_by_ViT.zip?Expires=1690550944&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=Jlk3JVOONcep4B3uQ0%2F75I%2BXNlM%3D'
-            } # the link won't work after Friday, December 12, 2023 17:22:12 (in GMT)
-            for folder in tqdm(folder_list):
-                save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datasets')
-                print(f'Current saving path: {save_path}')
-                if os.path.exists(os.path.join(save_path, folder)):
-                    print(f'{folder} already exists. Skipping download...')
-                    continue
-                    
-                dataset_url = dic_datasetsName2url[folder]
-                wget.download(dataset_url,out = folder+'.zip') # download the datasets zip
-                zip_file = zipfile.ZipFile(folder+'.zip') # save to the current fold temporarily
-                zip_file.extractall(save_path)
-                
-                zip_file.close()
-                del zip_file
-                time.sleep(1)
-                os.remove(folder+'.zip') # delete the temporary zip file
-                
-        elif repo == 'gitee':
-            url_repo = 'https://gitee.com/hou-chaochuan/adbench_datasets/raw/master'
-            print(f'Downloading datasets from the remote gitee repo...')
-            
+        elif repo == 'jihulab':
+            print(f'Downloading datasets from jihulab...')
+            url_repo = 'https://jihulab.com/BraudoCC/ADBench_datasets/-/raw/339d2ab2d53416854f6535442a67393634d1a778'
             # load the datasets path
-            # url_dictionary = os.path.join(url_repo,'datasets_files_name.json') # only for linux
             url_dictionary = url_repo + '/datasets_files_name.json'
-            response = requests.get(url_dictionary)
-            save_dictionary_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datasets', 'datasets_files_name.json')
-            with open(save_dictionary_path, 'wb') as f:
-                f.write(response.content)
-            with open(save_dictionary_path, 'r') as json_file:
+            wget.download(url_dictionary,out = './datasets_files_name.json')
+            with open('./datasets_files_name.json', 'r') as json_file:
                 loaded_dict = json.loads(json_file.read())
 
             # download datasets
@@ -140,11 +109,67 @@ class Utils():
                         print(f'{datasets} already exists. Skipping download...')
                         continue
                     print(f'Current saving path: {save_path}')
-                    url = os.path.join(url_repo,folder,datasets)
-                    response = requests.get(url, stream=True)
-                    with open(save_path, 'wb') as f:
-                        for chunk in response.iter_content(chunk_size=8192):
-                            f.write(chunk)
+                    # url = os.path.join(url_repo,folder,datasets)
+                    url = f'{url_repo}/{folder}/{datasets}'
+                    wget.download(url,out = save_path)
+
+        # elif repo == 'tianchi':
+        #     print(f'Downloading datasets from aliyun tianchi datasets...')
+        #     dic_datasetsName2url = {
+        #         'Classical':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/Classical.zip?Expires=1690550830&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=o4v%2B5NiBc2wVQen37Tw%2FCQHh1XI%3D',
+        #         'CV_by_ResNet18':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/CV_by_ResNet18.zip?Expires=1690550872&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=fTWywCDEFm8S%2B8n0%2FT6aXH8kniQ%3D',
+        #         'NLP_by_BERT':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/NLP_by_BERT.zip?Expires=1690550894&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=%2B5L9PjLMWp4N5CxAnoeY6Op8r6s%3D',
+        #         'NLP_by_RoBERTa':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/NLP_by_RoBERTa.zip?Expires=1690550920&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=K6b6AhNHNSBEQN8etsOXWO%2F3Zdc%3D',
+        #         'CV_by_Vit':'https://tianchi-jupyter-sh.oss-cn-shanghai.aliyuncs.com/file/opensearch/documents/159210/CV_by_ViT.zip?Expires=1690550944&OSSAccessKeyId=LTAI4GGBCQcb7KD7NwKinA3D&Signature=Jlk3JVOONcep4B3uQ0%2F75I%2BXNlM%3D'
+        #     } # the link won't work after Friday, December 12, 2023 17:22:12 (in GMT)
+        #     for folder in tqdm(folder_list):
+        #         save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datasets')
+        #         print(f'Current saving path: {save_path}')
+        #         if os.path.exists(os.path.join(save_path, folder)):
+        #             print(f'{folder} already exists. Skipping download...')
+        #             continue
+                    
+        #         dataset_url = dic_datasetsName2url[folder]
+        #         wget.download(dataset_url,out = folder+'.zip') # download the datasets zip
+        #         zip_file = zipfile.ZipFile(folder+'.zip') # save to the current fold temporarily
+        #         zip_file.extractall(save_path)
+                
+        #         zip_file.close()
+        #         del zip_file
+        #         time.sleep(1)
+        #         os.remove(folder+'.zip') # delete the temporary zip file
+                
+        # elif repo == 'gitee':
+        #     url_repo = 'https://gitee.com/hou-chaochuan/adbench_datasets/raw/master'
+        #     print(f'Downloading datasets from the remote gitee repo...')
+            
+        #     # load the datasets path
+        #     # url_dictionary = os.path.join(url_repo,'datasets_files_name.json') # only for linux
+        #     url_dictionary = url_repo + '/datasets_files_name.json'
+        #     response = requests.get(url_dictionary)
+        #     save_dictionary_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datasets', 'datasets_files_name.json')
+        #     with open(save_dictionary_path, 'wb') as f:
+        #         f.write(response.content)
+        #     with open(save_dictionary_path, 'r') as json_file:
+        #         loaded_dict = json.loads(json_file.read())
+
+        #     # download datasets
+        #     for folder in tqdm(folder_list):
+        #         datasets_list = loaded_dict[folder]
+        #         save_fold_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datasets', folder)
+        #         if os.path.exists(save_fold_path) is False:
+        #             os.makedirs(save_fold_path, exist_ok=True)
+        #         for datasets in datasets_list:
+        #             save_path = os.path.join(save_fold_path, datasets)
+        #             if os.path.exists(save_path):
+        #                 print(f'{datasets} already exists. Skipping download...')
+        #                 continue
+        #             print(f'Current saving path: {save_path}')
+        #             url = os.path.join(url_repo,folder,datasets)
+        #             response = requests.get(url, stream=True)
+        #             with open(save_path, 'wb') as f:
+        #                 for chunk in response.iter_content(chunk_size=8192):
+        #                     f.write(chunk)
         else:
             raise NotImplementedError
 
