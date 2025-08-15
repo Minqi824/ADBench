@@ -33,7 +33,7 @@ class DataGenerator():
         self.n_samples_threshold = n_samples_threshold
 
         # dataset list
-        self.dataset_list_classical, self.dataset_list_cv, self.dataset_list_nlp = self.generate_dataset_list()
+        # self.dataset_list_classical, self.dataset_list_cv, self.dataset_list_nlp = self.generate_dataset_list()
 
         # myutils function
         self.utils = Utils()
@@ -232,6 +232,8 @@ class DataGenerator():
             assert X is not None and y is not None, "For customized dataset, you should provide the X and y!"
             print('Testing on customized dataset...')
         else:
+            self.dataset_list_classical, self.dataset_list_cv, self.dataset_list_nlp = self.generate_dataset_list()
+            
             if self.dataset in self.dataset_list_classical:
                 data = np.load(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Classical', self.dataset + '.npz'), allow_pickle=True)
             elif self.dataset in self.dataset_list_cv:
